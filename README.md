@@ -1,6 +1,6 @@
 # DouraSoft
 
-Desafio Assinaturas - DouraSoft
+Desafio Assinaturas
 
 Desenvolvimento de uma API para cobrar assinaturas de seus cadastros em **PHP** e **PostgreSQL**
 
@@ -9,7 +9,7 @@ Desenvolvimento de uma API para cobrar assinaturas de seus cadastros em **PHP** 
 
 **Assinaturas**: ID, Cadastro, Descrição, Valor
 
-**Faturas**: ID, Cadastro, Assinatura, Vencimento, Valor.
+**Faturas**: ID, Cadastro, Assinatura, Descrição, Vencimento, Valor.
 
 ## Instruções
 
@@ -19,7 +19,6 @@ Desenvolvimento de uma API para cobrar assinaturas de seus cadastros em **PHP** 
 4. Estão faltando alguns campos propositalmente, você deve criá-los
 
 ## Como o Sistema Deve Funcionar
-
  - Deve possuir um CRUD Listagem/Inclusão/Edição/Exclusão de Cadastros
  - Deve possuir um CRUD Listagem/Inclusão/Edição/Exclusão de Assinaturas
  - Deve possuir um CRUD Listagem/Inclusão/Edição/Exclusão de Faturas
@@ -27,23 +26,21 @@ Desenvolvimento de uma API para cobrar assinaturas de seus cadastros em **PHP** 
  - A Task não pode converter faturas já convertidas hoje.
  
 ## Você deve
-
 - Utilizar composer
 - Utilizar qualquer Framework PHP. Caso opte por não utilizar, desenvolver nos padrões de projeto MVC.
-- Utilizar quaisquer bibliotecas ou frameworks para o frontend como VueJS, React, jQuery ou outras
-- Utilizar quaisquer frameworks CSS como Bootstrap, Materialize ou outras
+- Utilizar o Postman para documentar a API. Exporte a documentação junto ao projeto na pasta docs.
 
 ## Não esqueça de
-
 - Criar as Migrations
 - Criar os Seeds
-- Criar o frontend em um projeto separado.
-- A task não pode converter faturas já convertidas hoje.
 
-## Dúvidas:question:
+## Pontos Extras
+- Criar o frontend em um projeto separado com o framework de sua preferência.
+
+## Dúvidas ❓
 
 Abra uma [issue](https://github.com/dourasoft/desafio-assinaturas/issues/new)
 
 Ou envie um email para: **paulo@dourasoft.com.br**
 
-Boa sorte! :muscle:
+Boa sorte! 💪
