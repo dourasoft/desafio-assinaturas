@@ -44,3 +44,19 @@ Abra uma [issue](https://github.com/paulop/dourasoft/issues/new)
 Ou envie um email para: **paulo@dourasoft.com.br**
 
 Boa sorte! :muscle:
+
+==============
+
+Crie um projeto com o obejtivo de cobrar mensalidades dos clientes
+
+assinaturas
+cadastros
+faturas
+
+Crie o migrations e os seeds para inicializar as tabelas.
+
+Quero que voce crie um cron que verifique uma vez ao dia todas 
+as assinaturas que vencem daqui a 10 dias e converta elas em faturas.
+
+abra um pull request
+
