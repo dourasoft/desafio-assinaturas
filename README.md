@@ -2,61 +2,48 @@
 
 Desafio Assinaturas - DouraSoft
 
-Desenvolvimento de um projeto para cobrar assinaturas de seus cadastros em **PHP** e **PostgreSQL**
+Desenvolvimento de uma API para cobrar assinaturas de seus cadastros em **PHP** e **PostgreSQL**
 
 ## Deverá conter
-**Cadastros**: ID, Codigo, Nome, Descrição e Preço
+**Cadastros**: ID, Codigo, Nome, Email e Telefone
 
-**Assinaturas**: ID, Nome, Telefone, Endereço
+**Assinaturas**: ID, Cadastro, Descrição, Valor
 
-**Faturas**: ID, Cliente, Total, Data, Status(Aberto, Entregue, Cancelado), Lista de Produtos (Produto, Quantidade, Valor Unitário e Valor Total).
+**Faturas**: ID, Cadastro, Assinatura, Vencimento, Valor.
 
 ## Instruções
 
 1. Faça um fork do projeto para sua conta pessoal
 2. Crie uma branch com o padrão: `desafio-seu-nome`
 3. Submeta seu código criando um Pull Request
+4. Estão faltando alguns campos propositalmente, você deve criá-los
 
 ## Como o Sistema Deve Funcionar
 
- - Deve possuir uma Listagem/Inclusão/Edição/Exclusão de Produtos
- - Deve possuir uma Listagem/Inclusão/Edição/Exclusão de Clientes
- - Deve possuir uma Listagem/Inclusão/Edição/Exclusão de Pedidos com possibilidade de detalhar o pedido
- - A tela de pedidos deve possuir a pesquisa e inclusão de clientes caso o cliente não exista
- - Lembre-se um pedido tem uma lista de itens (Quantidade, Produto, Valor Unitário e Valor Total)
+ - Deve possuir um CRUD Listagem/Inclusão/Edição/Exclusão de Cadastros
+ - Deve possuir um CRUD Listagem/Inclusão/Edição/Exclusão de Assinaturas
+ - Deve possuir um CRUD Listagem/Inclusão/Edição/Exclusão de Faturas
+ - Deve possuir uma Task que verifica uma vez ao dia todas as assinaturas que vencem daqui a 10 dias e converta elas em faturas.
+ - A Task não pode converter faturas já convertidas hoje.
+ 
+## Você deve
 
-## Você pode
-
-- Utilizar qualquer Framework PHP ou Javascript. Caso opte por não utilizar, desenvolver nos padrões de projeto MVC
-- Utilizar composer ou npm
-- Utilizar quaisquer bibliotecas ou frameworks Javascript como VueJS, React, jQuery ou outras
+- Utilizar composer
+- Utilizar qualquer Framework PHP. Caso opte por não utilizar, desenvolver nos padrões de projeto MVC.
+- Utilizar quaisquer bibliotecas ou frameworks para o frontend como VueJS, React, jQuery ou outras
 - Utilizar quaisquer frameworks CSS como Bootstrap, Materialize ou outras
 
 ## Não esqueça de
 
-- Manter o script sql junto da sua aplicação. De preferencia ao Migrations.
-- Criar um manual de como instalar seu sistema
+- Criar as Migrations
+- Criar os Seeds
+- Criar o frontend em um projeto separado.
+- A task não pode converter faturas já convertidas hoje.
 
 ## Dúvidas:question:
 
-Abra uma [issue](https://github.com/paulop/dourasoft/issues/new)
+Abra uma [issue](https://github.com/dourasoft/desafio-assinaturas/issues/new)
 
 Ou envie um email para: **paulo@dourasoft.com.br**
 
 Boa sorte! :muscle:
-
-==============
-
-Crie um projeto com o obejtivo de cobrar mensalidades dos clientes
-
-assinaturas
-cadastros
-faturas
-
-Crie o migrations e os seeds para inicializar as tabelas.
-
-Quero que voce crie um cron que verifique uma vez ao dia todas 
-as assinaturas que vencem daqui a 10 dias e converta elas em faturas.
-
-abra um pull request
-
