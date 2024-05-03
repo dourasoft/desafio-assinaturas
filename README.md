@@ -11,6 +11,8 @@ Desenvolvimento de uma API para cobrar assinaturas de seus cadastros em **PHP** 
 
 **Faturas**: ID, Cadastro, Assinatura, Descrição, Vencimento, Valor.
 
+#### Atenção 🚨 Os campos Cadastro e Assinatura são chaves extrangeiras de Cadastros e Assinaturas respectivamente.
+
 ## Instruções 🌄
 
 1. Faça um fork do projeto para sua conta pessoal
