@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('cadastro')->unique();
             $table->string('assinatura');
-            $table->string('situacao');
+            $table->string('status');
             $table->string('descricao')->unique();
             $table->string('vencimento');
             $table->string('valor');

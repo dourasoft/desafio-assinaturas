@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CadastroController;
+use App\Http\Controllers\AssinaturaController;
 
 /**
  * Deve possuir um CRUD Listagem/Inclusão/Edição/Exclusão de Cadastros
@@ -15,12 +16,29 @@ use App\Http\Controllers\CadastroController;
  * Criar os Seeds
 */
 
-Route::get('/cadastro/getall', [CadastroController::class,'getAllcadastros']);
 
-Route::get('/cadastro/get/{id?}', [CadastroController::class,'getcadastro']);
+/**
+ * Cadastro group
+ */
+Route::get('/cadastro/getall', [CadastroController::class,'getAllCadastros']);
 
-Route::post('/cadastro/insert', [CadastroController::class, 'insertcadastros']);
+Route::get('/cadastro/get/{id?}', [CadastroController::class,'getCadastro']);
 
-Route::put('/cadastro/update/{id?}', [CadastroController::class,'updatecadastro']);
+Route::post('/cadastro/insert', [CadastroController::class, 'insertCadastros']);
 
-Route::delete('/cadastro/delete/{id?}', [CadastroController::class,'deletecadastro']);
+Route::put('/cadastro/update/{id?}', [CadastroController::class,'updateCadastro']);
+
+Route::delete('/cadastro/delete/{id?}', [CadastroController::class,'deleteCadastro']);
+
+/**
+ * Assinatura group
+ */
+Route::get('/assinatura/getall', [AssinaturaController::class,'getAllAssinaturas']);
+
+Route::get('/assinatura/get/{id?}', [AssinaturaController::class,'getAssinatura']);
+
+Route::post('/assinatura/insert', [AssinaturaController::class, 'insertAssinaturas']);
+
+Route::put('/assinatura/update/{id?}', [AssinaturaController::class,'updateAssinatura']);
+
+Route::delete('/assinatura/delete/{id?}', [AssinaturaController::class,'deleteAssinatura']);

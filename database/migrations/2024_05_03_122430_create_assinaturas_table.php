@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('assinaturas', function (Blueprint $table) {
             $table->id();
-            $table->string('cadastro')->unique();
+            $table->string('cadastro');
+            $table->string('status');
             $table->string('descricao');
             $table->string('valor');
             $table->timestamps();

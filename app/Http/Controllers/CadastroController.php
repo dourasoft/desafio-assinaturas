@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Validator;
 class CadastroController extends Controller
 {
     // GET
-    public function getAllcadastros()
+    public function getAllCadastros()
     {
         try {
             $cadastros = Cadastro::all();
@@ -35,7 +35,7 @@ class CadastroController extends Controller
     }
 
     // GET
-    public function getcadastro($id = null)
+    public function getCadastro($id = null)
     {
         if (!is_numeric($id)) return response()->json(['message' => 'O ID deve ser um número inteiro', 'code' => 400], 400);
 
@@ -70,7 +70,7 @@ class CadastroController extends Controller
     }
 
     // POST
-    public function insertcadastros(Request $request)
+    public function insertCadastros(Request $request)
     {
         if ($this->validateEmptyField($request)) return response()->json([
             'message' => 'os campos: nome, email e telefone e codigo são obrigatórios',
@@ -113,7 +113,7 @@ class CadastroController extends Controller
     }
 
     // PUT
-    public function updatecadastro(Request $request, $id = null)
+    public function updateCadastro(Request $request, $id = null)
     {
         if (!is_numeric($id)) return response()->json(['message' => 'O ID deve ser um número inteiro', 'code' => 400], 400);
 
