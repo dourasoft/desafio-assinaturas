@@ -7,7 +7,6 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\JsonResponse;
 
-
 class RegistrationsStoreRequest extends FormRequest
 {
     public function authorize()

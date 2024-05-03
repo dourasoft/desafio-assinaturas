@@ -10,4 +10,9 @@ class Registration extends Model
     use HasFactory;
 
     protected $fillable = ['code', 'name', 'email', 'phone'];
+
+    public function subscriptions()
+    {
+        return $this->hasMany(Subscription::class);
+    }
 }
