@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('cadastros', function (Blueprint $table) {
             $table->id();
             $table->string('codigo')->unique();
-            $table->string('nome');
+            $table->string('nome', 100);
             $table->string('email')->unique();
-            $table->string('telefone');
+            $table->integer('telefone', 8);
             $table->rememberToken();
             $table->timestamps();
             $table->timestamp('deleted_at')->nullable();
