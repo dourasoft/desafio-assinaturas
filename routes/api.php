@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CadastroController;
 use App\Http\Controllers\AssinaturaController;
+use App\Http\Controllers\FaturaController;
 
 /**
  * Deve possuir um CRUD Listagem/Inclusão/Edição/Exclusão de Cadastros
@@ -24,7 +25,7 @@ Route::get('/cadastro/getall', [CadastroController::class,'getAllCadastros']);
 
 Route::get('/cadastro/get/{id?}', [CadastroController::class,'getCadastro']);
 
-Route::post('/cadastro/insert', [CadastroController::class, 'insertCadastros']);
+Route::post('/cadastro/insert', [CadastroController::class, 'insertCadastro']);
 
 Route::put('/cadastro/update/{id?}', [CadastroController::class,'updateCadastro']);
 
@@ -42,3 +43,16 @@ Route::post('/assinatura/insert', [AssinaturaController::class, 'insertAssinatur
 Route::put('/assinatura/update/{id?}', [AssinaturaController::class,'updateAssinatura']);
 
 Route::delete('/assinatura/delete/{id?}', [AssinaturaController::class,'deleteAssinatura']);
+
+/**
+ * Fatura group
+ */
+Route::get('/fatura/getall', [FaturaController::class,'getAllFaturas']);
+
+Route::get('/fatura/get/{id?}', [FaturaController::class,'getFatura']);
+
+Route::post('/fatura/insert', [FaturaController::class, 'insertFatura']);
+
+Route::put('/fatura/update/{id?}', [FaturaController::class,'updateFatura']);
+
+Route::delete('/fatura/delete/{id?}', [FaturaController::class,'deleteFatura']);

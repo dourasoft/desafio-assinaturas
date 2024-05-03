@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\cadastro;
+use App\Models\Fatura;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class CadastroController extends Controller
+class FaturaController extends Controller
 {
     // GET
-    public function getAllCadastros()
+    public function getAllfaturas()
     {
         try {
-            $cadastros = Cadastro::all();
+            $faturas = Fatura::all();
         } catch (\Exception $e) {
             return response()->json([
                 'message' => 'Ocorreu um erro ao realizar a consulta.',
@@ -21,37 +21,37 @@ class CadastroController extends Controller
             ], 500);
         };
 
-        if (count($cadastros) == 0) {
+        if (count($faturas) == 0) {
             return response()->json([
-                'message' => 'Ainda não há cadastros inseridos.',
+                'message' => 'Ainda não há faturas cadastradas.',
                 'code' => 204
             ], 204);
         }
 
         return response()->json([
-            'data' => $cadastros,
+            'data' => $faturas,
             'code' => 200
         ], 200);
     }
 
     // GET
-    public function getCadastro($id = null)
+    public function getFatura($id = null)
     {
         if (!is_numeric($id)) return response()->json(['message' => 'O ID deve ser um número inteiro', 'code' => 400], 400);
 
-        if(is_null($id)) return response()->json(['message' => 'Você esqueceu de informar o ID do cadastro', 'code' => 400], 400);
+        if(is_null($id)) return response()->json(['message' => 'Você esqueceu de informar o ID da fatura', 'code' => 400], 400);
 
         try {
-            $cadastroExist = Cadastro::where('id', $id)
+            $faturaExist = Fatura::where('id', $id)
                 ->exists();
 
-            if (!$cadastroExist) return response()->json(['message' => 'O ID informado não é de um cadastro válido', 'code' => 406], 406);
+            if (!$faturaExist) return response()->json(['message' => 'O ID informado não é de uma fatura válida', 'code' => 406], 406);
 
-            $cadastros = Cadastro::find($id);
+            $faturas = Fatura::find($id);
 
-            if ($cadastros == null) {
+            if ($faturas == null) {
                 return response()->json([
-                    'message' => 'O cadastro buscado não existe',
+                    'message' => 'A fatura buscada não existe',
                     'code' => 204
                 ], 204);
             }
@@ -64,16 +64,17 @@ class CadastroController extends Controller
         };
 
         return response()->json([
-            'data' => $cadastros,
+            'data' => $faturas,
             'code' => 200
         ], 200);
     }
 
     // POST
-    public function insertCadastro(Request $request)
+    public function insertFatura(Request $request)
     {
+        // return $request;
         if ($this->validateEmptyField($request)) return response()->json([
-            'message' => 'os campos: nome, email e telefone e codigo são obrigatórios',
+            'message' => 'os campos: cadastro, assinatura, descricao, vencimento, valor e status são obrigatórios',
             'code' => 400
         ], 400);
 
@@ -84,22 +85,18 @@ class CadastroController extends Controller
         }
 
         try {
-            $cadastroExist = Cadastro::where('email', $request->email)
-                ->orWhere('codigo', $request->codigo)
-                ->exists();
-
-            if ($cadastroExist) return response()->json(['message' => 'Já existe um cadastro com o mesmo email ou codigo', 'code' => 406], 406);
-
-            $cadastro = Cadastro::create([
-                'codigo'=> $request->codigo,
-                'nome' => $request->nome,
-                'email' => $request->email,
-                'telefone' => $request->telefone,
+            $fatura = Fatura::create([
+                'cadastro'=> $request->cadastro,
+                'assinatura' => $request->assinatura,
+                'descricao' => $request->descricao,
+                'vencimento' => $request->vencimento,
+                'valor' => $request->valor,
+                'status' => $request->status,
             ]);
 
             return response()->json([
-                'message'=> 'O cadastro foi inserido com sucesso!',
-                'data' => $cadastro,
+                'message'=> 'A fatura foi inserida com sucesso!',
+                'data' => $fatura,
                 'code' => 201
             ], 201);
 
@@ -113,7 +110,7 @@ class CadastroController extends Controller
     }
 
     // PUT
-    public function updateCadastro(Request $request, $id = null)
+    public function updateFatura(Request $request, $id = null)
     {
         if (!is_numeric($id)) return response()->json(['message' => 'O ID deve ser um número inteiro', 'code' => 400], 400);
 
@@ -129,14 +126,14 @@ class CadastroController extends Controller
         }
 
         try {
-            if(is_null($id)) return response()->json(['message' => 'Você esqueceu de informar o ID do cadastro'], 400);
+            if(is_null($id)) return response()->json(['message' => 'Você esqueceu de informar o ID da fatura'], 400);
 
-            $cadastroExist = Cadastro::where('id', $id)
+            $faturaExist = Fatura::where('id', $id)
                 ->exists();
 
-            if (!$cadastroExist) return response()->json(['message' => 'O ID do cadastro informado não existe', 'code' => 406], 406);
+            if (!$faturaExist) return response()->json(['message' => 'O ID da fatura informada não existe', 'code' => 406], 406);
 
-            Cadastro::where('id', $id)
+            Fatura::where('id', $id)
               ->update([
                 'codigo'=> $request->codigo,
                 'nome' => $request->nome,
@@ -145,8 +142,8 @@ class CadastroController extends Controller
             ]);
 
             return response()->json([
-                'message'=> 'O cadastro foi atualizado com sucesso!',
-                'data' => Cadastro::find($id),
+                'message'=> 'O fatura foi atualizado com sucesso!',
+                'data' => Fatura::find($id),
                 'code' => 201
             ], 201);
 
@@ -160,28 +157,28 @@ class CadastroController extends Controller
     }
 
     // DELETE
-    public function deleteCadastro($id = null)
+    public function deletefatura($id = null)
     {
         if (!is_numeric($id)) return response()->json(['message' => 'O ID deve ser um número inteiro', 'code' => 400], 400);
 
-        if(is_null($id)) return response()->json(['message' => 'Você esqueceu de informar o ID do cadastro', 'code' => 400], 400);
+        if(is_null($id)) return response()->json(['message' => 'Você esqueceu de informar o ID da fatura', 'code' => 400], 400);
 
         try {
-            $cadastroExist = Cadastro::where('id', $id)
+            $faturaExist = Fatura::where('id', $id)
                     ->exists();
 
-            if (!$cadastroExist) return response()->json(['message' => 'O ID informado não é de um cadastro válido', 'code' => 406], 406);
+            if (!$faturaExist) return response()->json(['message' => 'O ID informado não é de uma fatura válida', 'code' => 406], 406);
 
-            Cadastro::where('id', $id)->delete();
+            Fatura::where('id', $id)->delete();
 
             return response()->json([
-                'message'=> 'O cadastro com ID '. $id .' foi deletado com sucesso!',
-                'data' => cadastro::all(),
+                'message'=> 'A fatura com ID '. $id .' foi deletada com sucesso!',
+                'data' => Fatura::all(),
                 'code' => 200
             ], 200);
         } catch (\Exception $e) {
             return response()->json([
-                'message' => 'Ocorreu um erro ao tentar deletar o cadastro',
+                'message' => 'Ocorreu um erro ao tentar deletar a fatura',
                 'info' => $e->getMessage(),
                 'code' => 500
             ], 500);
@@ -190,7 +187,7 @@ class CadastroController extends Controller
 
     function validateEmptyField($request)
     {
-        if (!isset($request->email) || !isset($request->codigo) || !isset($request->nome) || !isset($request->telefone)) {
+        if (!isset($request->cadastro) || !isset($request->assinatura) || !isset($request->descricao) || !isset($request->vencimento) || !isset($request->valor) || !isset($request->status)) {
             return true;
         } else {
             return false;
@@ -200,10 +197,12 @@ class CadastroController extends Controller
     function validatorFields($request)
     {
         $validator = Validator::make($request->all(), [
-            'codigo' => 'required|string|min:4',
-            'nome' => 'required|string',
-            'email' => 'required|email',
-            'telefone' => 'required|string|min:8',
+            'cadastro' => 'required|string|min:4',
+            'assinatura' => 'required|integer',
+            'descricao' => 'required|string',
+            'vencimento' => 'required|date',
+            'valor' => 'required|integer',
+            'status' => 'required|string|in:pago,pendente',
         ]);
 
         return $validator->fails() ? $validator : false;

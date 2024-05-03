@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('faturas', function (Blueprint $table) {
             $table->id();
-            $table->string('cadastro')->unique();
+            $table->string('cadastro');
             $table->string('assinatura');
-            $table->string('status');
-            $table->string('descricao')->unique();
-            $table->string('vencimento');
+            $table->string('descricao');
+            $table->timestamp('vencimento');
             $table->string('valor');
+            $table->string('status');
             $table->rememberToken();
             $table->timestamps();
             $table->timestamp('deleted_at')->nullable();

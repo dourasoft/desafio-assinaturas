@@ -217,7 +217,7 @@ class AssinaturaController extends Controller
             'cadastro' => 'required|string|min:4',
             'descricao' => 'required|string',
             'valor' => 'required|integer',
-            'status' => 'required|string|in:ativo,inativo',
+            'status' => 'required|string|in:emitido,aguardando',
         ]);
 
         return $validator->fails() ? $validator : false;

@@ -6,14 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Assinatura extends Model
+class Fatura extends Model
 {
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'cadastro',
         'assinatura',
-        'descricao',
+        'descrição',
         'vencimento',
         'valor',
         'status',

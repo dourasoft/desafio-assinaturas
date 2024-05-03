@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('status');
             $table->string('descricao');
             $table->string('valor');
+            $table->timestamp('vencimento');
             $table->timestamps();
             $table->timestamp('deleted_at')->nullable();
         });
