@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\Cadastro;
 use App\Repositories\Cadastro\CadastroRepository;
 use Illuminate\Http\Request;
 
