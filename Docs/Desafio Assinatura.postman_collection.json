@@ -1,0 +1,657 @@
+{
+	"info": {
+		"_postman_id": "4291a5ef-faf8-4e76-bfeb-5fff100833ec",
+		"name": "Desafio Assinatura",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28917486"
+	},
+	"item": [
+		{
+			"name": "Cadastro",
+			"item": [
+				{
+					"name": "Show Cadastro",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "https://localhost/api/cadastro/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Cadastro",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "https://localhost/api/cadastro"
+					},
+					"response": []
+				},
+				{
+					"name": "Atualiza Cadastro",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Codigo",
+									"value": "Teste",
+									"type": "text"
+								},
+								{
+									"key": "Nome",
+									"value": "Teste",
+									"type": "text"
+								},
+								{
+									"key": "Email",
+									"value": "Teste@hotmail.com",
+									"type": "text"
+								},
+								{
+									"key": "Telefone",
+									"value": "Teste",
+									"type": "text"
+								}
+							]
+						},
+						"url": "https://localhost/api/cadastro/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Cadastro",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": "https://localhost/api/cadastro/6"
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar Cadastro",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Codigo",
+									"value": "COD12",
+									"type": "text"
+								},
+								{
+									"key": "Nome",
+									"value": "Alberto Vitoriano",
+									"type": "text"
+								},
+								{
+									"key": "Telefone",
+									"value": "85 9 9999-9999",
+									"type": "text"
+								},
+								{
+									"key": "Email",
+									"value": "b.nobre@hotmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": "https://localhost/api/cadastro"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Assinatura",
+			"item": [
+				{
+					"name": "Show Assinatura",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "https://localhost/api/assinatura/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Assinatura",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "https://localhost/api/assinatura"
+					},
+					"response": []
+				},
+				{
+					"name": "Atualiza Assinatura",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id_tab_Cadastros",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "Descricao",
+									"value": "Teste",
+									"type": "text"
+								},
+								{
+									"key": "Vencimento",
+									"value": "2024-05-04",
+									"type": "text"
+								},
+								{
+									"key": "Valor",
+									"value": "99.99",
+									"type": "text"
+								}
+							]
+						},
+						"url": "https://localhost/api/assinatura/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Assinatura",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": "https://localhost/api/assinatura/11"
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar Assinatura",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id_tab_Cadastros",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "Descricao",
+									"value": "Teste",
+									"type": "text"
+								},
+								{
+									"key": "Vencimento",
+									"value": "2024-05-04",
+									"type": "text"
+								},
+								{
+									"key": "Valor",
+									"value": "99.99",
+									"type": "text"
+								}
+							]
+						},
+						"url": "https://localhost/api/assinatura"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Fatura",
+			"item": [
+				{
+					"name": "Show Fatura",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "https://localhost/api/fatura/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Fatura",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "https://localhost/api/fatura"
+					},
+					"response": []
+				},
+				{
+					"name": "Atualiza Fatura",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id_tab_Cadastros",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "Descricao",
+									"value": "Teste",
+									"type": "text"
+								},
+								{
+									"key": "Vencimento",
+									"value": "2024-05-04",
+									"type": "text"
+								},
+								{
+									"key": "Valor",
+									"value": "99.99",
+									"type": "text"
+								}
+							]
+						},
+						"url": "https://localhost/api/fatura/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Fatura",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": "https://localhost/api/fatura/11"
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar Fatura",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id_tab_Cadastros",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "Descricao",
+									"value": "Teste",
+									"type": "text"
+								},
+								{
+									"key": "Vencimento",
+									"value": "2024-05-04",
+									"type": "text"
+								},
+								{
+									"key": "Valor",
+									"value": "99.99",
+									"type": "text"
+								}
+							]
+						},
+						"url": "https://localhost/api/fatura"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Registrar User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `",
+							"<style type=\"text/css\">",
+							"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}",
+							"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}",
+							"    .tftable tr {background-color:#ffffff;}",
+							"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}",
+							"    .tftable tr:hover {background-color:#e0ffff;}",
+							"</style>",
+							"",
+							"<table class=\"tftable\" border=\"1\">",
+							"    <tr>",
+							"        <th>Message</th>",
+							"        <th>Exception</th>",
+							"        <th>File</th>",
+							"        <th>Line</th>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>{{response.message}}</td>",
+							"        <td>{{response.exception}}</td>",
+							"        <td>{{response.file}}</td>",
+							"        <td>{{response.line}}</td>",
+							"    </tr>",
+							"</table>",
+							"`;",
+							"",
+							"function constructVisualizerPayload() {",
+							"    return {response: pm.response.json()};",
+							"}",
+							"",
+							"pm.visualizer.set(template, constructVisualizerPayload());"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Aldemar",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "Test@teset.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "senha123",
+							"type": "text"
+						}
+					]
+				},
+				"url": "https://localhost/api/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Fixed the ReferenceError by using pm.response.json()",
+							"const { access_token } = pm.response.json();",
+							"",
+							"const partes = access_token.split(\"|\");",
+							"if(access_token){",
+							"    pm.collectionVariables.set('token', partes[1]);",
+							"}",
+							"",
+							"console.log(pm.collectionVariables.get('token'));"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "Test@teset.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "senha123",
+							"type": "text"
+						}
+					]
+				},
+				"url": "https://localhost/api/login"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "{{token}}"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
