@@ -1,47 +1,66 @@
-# DouraSoft
+## Sobre o app:
 
-Desafio Assinaturas
+Este é um exemplo prático de uso de HTML5, PHP 8.1, JavaScript, Jquery (Ajax) e TailwindCSS
+para desenvolvimento Front-End conectado com Framework Laravel Rest API na versão do PHP 8.2.
 
-Desenvolvimento de uma API para cobrar assinaturas de seus cadastros em **PHP** e **PostgreSQL**
+São dois projetos em PHP:
+- (Frontend) desafio-assinaturas-front
+- (Backend)  desafio-assinaturas
 
-## Deverá conter
-**Cadastros**: ID, Codigo, Nome, Email e Telefone
+## Container Docker (opcional):
 
-**Assinaturas**: ID, Cadastro, Descrição, Valor
+Projeto Frontend - Criei 1 container para facilitar o uso da aplicação com:
+- Container Servidor Web `http://localhost:3000`
 
-**Faturas**: ID, Cadastro, Assinatura, Descrição, Vencimento, Valor.
+Projeto Backend - Utilizei Laravel Sail
+ - Container Servidor web `http://localhost` ou `http://webserverapi`
+ - Container de Banco de dados Postgres
 
-## Instruções 🌄
+## Iniciando o aplicativo:
 
-1. Faça um fork do projeto para sua conta pessoal
-2. Crie uma branch com o padrão: `desafio-seu-nome`
-3. Submeta seu código criando um Pull Request
-4. Estão faltando alguns campos propositalmente, você deve criá-los
+- Desvincule os projetos de dentro da mesma pasta caso ache necessário.
 
-## Como o Sistema Deve Funcionar ⚙️
- - Deve possuir um CRUD Listagem/Inclusão/Edição/Exclusão de Cadastros
- - Deve possuir um CRUD Listagem/Inclusão/Edição/Exclusão de Assinaturas
- - Deve possuir um CRUD Listagem/Inclusão/Edição/Exclusão de Faturas
- - Deve possuir uma Task que verifica uma vez ao dia todas as assinaturas que vencem daqui a 10 dias e converta elas em faturas.
- - A Task não pode converter faturas já convertidas hoje.
- 
-## Você deve 🧯
-- Utilizar composer
-- Utilizar qualquer Framework PHP. Caso opte por não utilizar, desenvolver nos padrões de projeto MVC.
-- Utilizar o Postman para documentar a API. Exporte a documentação junto ao projeto na pasta docs.
+- Antes de mais nada, em um terminal, crie a rede docker que será responsável por conectar 
+os dois projetos com: `docker network create ntw --driver bridge`
 
-## Não esqueça de 📆
-- Criar as Migrations
-- Criar os Seeds
+- Estou subindo o .env dos dois projetos já configurados para o correto funcionamento.
+Segue alguns parâmetros que coloquei no .env da API que vale serem mencionados:
 
-## Pontos Extras ⏭️
-- Criar os casos de testes utilizando PHPUnit
-- Criar o frontend em um projeto separado com o framework de sua preferência.
+- Defina o horário que será executado diariamente: `HORA_DIA_VALIDA_ASSINATURAS="11:42"`
 
-## Dúvidas ❓
+- Defina o intervalo de dias para geração das faturas: `DIAS_GERA_FATURA=10`
 
-Abra uma [issue](https://github.com/dourasoft/desafio-assinaturas/issues/new)
+## Configurando o Projeto Backend
 
-Ou envie um email para: **paulo@dourasoft.com.br**
+Em um Terminal com WSL preferencialmente acesse até a pasta do projeto e execute:
+- Instale os pacotes: `composer install --ignore-platform-reqs`
+- Construa os containers: `sudo ./vendor/bin/sail build` ou em caso de erros `sudo ./vendor/bin/sail build --no-cache`
+- Suba os containers: `sudo ./vendor/bin/sail up -d`
+- Acesse `http://localhost` para constatar o funcionamento
 
-Boa sorte! 💪
+## Configurando o Projeto Frontend
+
+Em um Terminal acesse até a pasta do projeto e execute:
+- Instale os pacotes: `composer install --ignore-platform-reqs`
+- Construa os containers e os suba: `docker-compose up -d --build`
+- Acesse `http://localhost:3000` para constatar o funcionamento
+
+## Migrations (Banco de Dados)
+
+Acesse até a pasta do projeto e execute qualquer um dos comandos para subir as migrations:
+- `php artisan migrate --seed` ou `sudo ./vendor/bin/sail artisan migrate --seed` 
+- `php artisan migrate:fresh --seed` ou `sudo ./vendor/bin/sail artisan migrate:fresh --seed`
+
+## Test Unitário
+
+Em um Terminal com WSL preferencialmente acesse até a pasta do projeto e execute:
+- `php artisan test --filter nome-do-metodo-teste-unitario` ou `sudo ./vendor/bin/sail artisan test --filter nome-do-metodo-teste-unitario` 
+
+## Pasta .postman
+
+- Encontra-se exportado as collections utilizadas para elaboração da API
+
+## Login do Sistema
+
+- `dourasoft@dourasoft.com.br`
+- `.Dourasoft123.` 

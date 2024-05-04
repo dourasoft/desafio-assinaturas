@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  webserver:
+    build:
+      context: .
+      dockerfile: ./.docker/webserver/Dockerfile
+    container_name: 'frontend'
+    restart: 'always'
+    image: 'frontend'
+    ports:
+      - 3000:80
+    volumes:
+      - ./:/var/www/html
+    networks:
+      - ntw    
+
+networks:
+  ntw:
+    external: true 
