@@ -1,0 +1,36 @@
+services:
+  laravelapp:
+    container_name: laravelapp
+    build: ./laravel/ 
+    restart: always  
+    env_file:
+      - ./laravel/.env
+    depends_on:
+      - db
+
+  nginx:  
+    build: ./nginx  
+    restart: always
+    ports:
+      - "8080:80"
+      - "443:443"
+    volumes:  
+      - ./laravel:/var/www  
+      - ./nginx/cert:/etc/nginx/certificados
+    depends_on:  
+      - laravelapp
+
+  db:
+    container_name: db
+    image: postgres:12
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data: {}
