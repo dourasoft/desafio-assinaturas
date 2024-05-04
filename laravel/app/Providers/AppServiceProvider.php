@@ -2,10 +2,12 @@
 
 namespace App\Providers;
 
-use App\Repositories\CadastroRepository;
-use App\Repositories\AssinaturaRepository;
+use App\Repositories\Cadastro\CadastroRepository;
+use App\Repositories\Assinatura\AssinaturaRepository;
+use App\Repositories\Fatura\FaturaRepository;
 use App\Models\Cadastro;
 use App\Models\Assinatura;
+use App\Models\Fatura;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -20,6 +22,9 @@ class AppServiceProvider extends ServiceProvider
         });
         $this->app->bind(AssinaturaRepository::class, function ($app) {
             return new AssinaturaRepository(new Assinatura());
+        });
+        $this->app->bind(FaturaRepository::class, function ($app) {
+            return new FaturaRepository(new Fatura());
         });
     }
 
