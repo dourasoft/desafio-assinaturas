@@ -26,7 +26,8 @@ class UserAuthController extends Controller
     /**
      * Make a login request to the application.
      */
-    public function login(Request $request){
+    public function login(Request $request)
+    {
         $loginUserData = $request->validate([
             'email'=>'required|string|email',
             'password'=>'required|min:8'

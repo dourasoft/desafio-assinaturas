@@ -20,7 +20,9 @@ class CadastroController extends Controller
      */
     public function index()
     {
-        //
+        $cadastros = $this->cadastroRepository->getAll();
+
+        return response()->json($cadastros);
     }
 
     /**
@@ -28,7 +30,18 @@ class CadastroController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validação dos dados recebidos
+        $CadastroData = $request->validate([
+            'Codigo' => 'required|string',
+            'Nome' => 'required|string',
+            'Email' => 'required|email',
+            'Telefone' => 'required|string',
+        ]);
+
+        // Criação do cadastro
+        $cadastro = $this->cadastroRepository->create($CadastroData);
+
+        return response()->json($cadastro, 201);
     }
 
     /**
@@ -48,16 +61,29 @@ class CadastroController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Cadastro $cadastro)
+    public function update(Request $request, $id)
     {
-        //
+        // Validação dos dados recebidos
+        $CadastroData = $request->validate([
+            'Codigo' => 'required|string',
+            'Nome' => 'required|string',
+            'Email' => 'required|email',
+            'Telefone' => 'required|string',
+        ]);
+
+        // Atualização do cadastro
+        $cadastro = $this->cadastroRepository->update($id, $CadastroData);
+
+        return response()->json($cadastro);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Cadastro $cadastro)
+    public function destroy($id)
     {
-        //
+        $this->cadastroRepository->delete($id);
+
+        return response()->json(['message' => 'Cadastro excluído com sucesso']);
     }
 }
