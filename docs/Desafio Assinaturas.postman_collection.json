@@ -1,0 +1,430 @@
+{
+	"info": {
+		"_postman_id": "e3d1633d-22f1-4385-95bc-757f4cdaf3a8",
+		"name": "Desafio Assinaturas",
+		"description": "# Sobre\n\nNeste projeto optei por utilizar Repositories, Services e Controllers para deixar o projeto limpo e escalável. Para gerar as faturas, utilizei um command do laravel que permite rodar tanto manualmente, quanto com shchedule 1x ao dia, utilizei jobs assincronos para processar a criação das faturas.\n\nAcho importante ressaltar que em um projeto real, melhorias de performance podem ser feitas, utilizando um banco de dados em memoria, como redis ou memcached, a execução dos jobs também pode ser feita de forma a aproveitar melhor todos os cores do processador utilizando o supervisor para executar os workers por exemplo.\n\nAbri mão de algumas práticas recomendadas, como por exemplo não versionar credenciais do .env para que a execução se torne mais fácil na hora de testar.\n\n## Rodando o Projeto\n\n### Com Docker:\n\n1. Navegue até a pasta `backend`.\n    \n2. Execute o seguinte comando no terminal:\n    \n\n`docker compose up -d`\n\n### Sem Docker:\n\n1. Instale as dependências com o Composer:\n    \n\n`composer install`\n\n1. Execute as migrações do banco de dados:\n    \n\n`php artisan migrate`\n\n1. Execute o seeder para popular o banco de dados:\n    \n\n`php artisan db:seed`\n\n1. Inicie o worker para processar as filas:\n    \n\n`php artisan queue:work --tries=3`\n\n1. Inicie o worker para executar os agendamentos:\n    \n\n`php artisan schedule:work`\n\n## Testando o Projeto\n\n### Com Postman:\n\n- Importe a documentação da API contida na pasta `docs` para o Postman.\n    \n\n### Com PHPUnit:\n\n- Execute o seguinte comando no terminal:\n    \n\n`php artisan test`\n\n---\n\nPara quaisquer dúvidas ou problemas, entre em contato conosco.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30268896"
+	},
+	"item": [
+		{
+			"name": "Registrations",
+			"item": [
+				{
+					"name": "Find all registrations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/registrations",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"registrations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find registration by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/registrations/127",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"registrations",
+								"127"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Pedro Silva 2\",\n    \"email\": \"pedrosilva@gmail.coma1234\",\n    \"phone\": \"88997866761\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/registrations",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"registrations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update registration",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Pedro Silva\",\n    \"email\": \"pedrosilva@gmail.coma123\",\n    \"phone\": \"88997866761\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/registrations/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"registrations",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete registration",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/registrations/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"registrations",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Subscriptions",
+			"item": [
+				{
+					"name": "Find all subscriptions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/subscriptions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"subscriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find subscription by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/subscriptions/3",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"subscriptions",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find subscription by registration id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/subscriptions/registration/127",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"subscriptions",
+								"registration",
+								"127"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create subscription",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"registration_id\": 127,\n    \"description\": \"assinatura mensal\",\n    \"value\": \"1000\",\n    \"due_day\": 11\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/subscriptions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"subscriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update subscription",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"registration_id\": 2,\n    \"description\": \"assinatura mensal\",\n    \"value\": \"2000\",\n    \"is_active\": true,\n    \"due_day\": 11\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/subscriptions/1200",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"subscriptions",
+								"1200"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete subscription",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/subscriptions/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"subscriptions",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Invoices",
+			"item": [
+				{
+					"name": "Find all subscriptions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/invoices",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"invoices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find subscription by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/invoices/1000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"invoices",
+								"1000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find invoices by subscription id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/invoices/subscription/1000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"invoices",
+								"subscription",
+								"1000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create invoice",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"registration_id\": 3546,\n    \"subscription_id\": 2266,\n    \"description\": \"Fatura de exemplo\",\n    \"due_date\": \"2024-05-13\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/invoices",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"invoices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update invoice",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"Nova descrição da fatura\",\n    \"due_date\": \"2024-05-20\",\n    \"value\": 500,\n    \"status\": \"REVOKED\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/invoices/1000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"invoices",
+								"1000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete subscription",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/subscriptions/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"subscriptions",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "{{apiKey}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "api-key",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8000/api",
+			"type": "string"
+		},
+		{
+			"key": "apiKey",
+			"value": "yFlMjSup.IbHOCjyRiTb8QOO9Ltsbr",
+			"type": "string",
+			"disabled": true
+		}
+	]
+}
