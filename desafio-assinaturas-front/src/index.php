@@ -22,17 +22,17 @@ if (!isset($session->token) || empty($session->token)) {
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/assets/js/scripts.js"></script>
-    <script src="/assets/js/jquery_mask.js"></script>
+    <!-- <script src="/assets/js/jquery_mask.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
 
     <script>
         $(function() {
             $("#tabs").tabs();
 
-            $(".mask-money").mask("000.000.000.000.000,00", {
+            /* $(".mask-money").mask("000.000.000.000.000,00", {
                 reverse: true,
                 placeholder: "0,00"
-            });
+            }); */
 
             $('.maskMoney').maskMoney({
                 prefix: 'R$ ',
@@ -67,7 +67,7 @@ if (!isset($session->token) || empty($session->token)) {
             <h1 class="text-2xl lg:text-md font-bold text-secundary text-center pb-4"><?= $_ENV["TITLE_NAME"] ?></label>
         </div>
 
-        <div class="w-5/6 m-auto justify-center" id="tabs">
+        <div class="w-5/6 lg:w-full m-auto justify-center bg-red-100" id="tabs" style="display: block !important">
             <ul>
                 <li><a href="#tabs-1">Cadastros</a></li>
                 <li><a href="#tabs-2">Assinaturas</a></li>
