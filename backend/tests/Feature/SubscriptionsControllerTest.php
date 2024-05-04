@@ -42,7 +42,8 @@ class SubscriptionsControllerTest extends TestCase
         $requestData = [
             'registration_id' => $registration->id,
             'description' => 'Example Subscription',
-            'value' => 100
+            'value' => 100,
+            'due_day' => 11,
         ];
 
         $this->subscriptionService->shouldReceive('create')->once()->with($requestData)->andReturn(['success' => true]);

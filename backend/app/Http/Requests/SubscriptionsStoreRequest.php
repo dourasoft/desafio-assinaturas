@@ -20,6 +20,7 @@ class SubscriptionsStoreRequest extends FormRequest
             'registration_id' => 'required|exists:registrations,id',
             'description' => 'required|string',
             'value' => 'required|integer',
+            'due_day' => 'required|integer|min:1|max:31',
         ];
     }
 
@@ -31,6 +32,10 @@ class SubscriptionsStoreRequest extends FormRequest
             'description.required' => 'O campo description é obrigatório.',
             'value.required' => 'O campo value é obrigatório.',
             'value.integer' => 'O campo value deve ser um número inteiro.',
+            'due_day.required' => 'O campo due_day é obrigatório.',
+            'due_day.integer' => 'O campo due_day deve ser um número inteiro.',
+            'due_day.min' => 'O campo due_day deve ser no mínimo :min.',
+            'due_day.max' => 'O campo due_day deve ser no máximo :max.',
         ];
     }
 

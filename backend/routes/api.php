@@ -12,3 +12,4 @@ Route::get('/subscriptions/registration/{id}', [SubscriptionsController::class, 
 
 Route::resource('/invoices', InvoicesController::class);
 Route::get('/invoices/subscription/{id}', [InvoicesController::class, 'getBySubscriptionId']);
+

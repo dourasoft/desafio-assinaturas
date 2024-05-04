@@ -17,4 +17,4 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
     
 EXPOSE 9000
 
-ENTRYPOINT ["sh", "-c", "composer install && php artisan migrate && php-fpm"]
+ENTRYPOINT ["sh", "-c", "composer install && php artisan migrate && php artisan queue:work --tries=3 & php artisan schedule:work & php-fpm"]

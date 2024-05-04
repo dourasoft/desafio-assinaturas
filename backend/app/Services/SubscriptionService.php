@@ -87,4 +87,10 @@ class SubscriptionService
 
         return $result;
     }
+
+    public function getToGenerateInvoices() {
+        $result = $this->subscriptionRepository->getToGenerateInvoices();
+
+        return $result;
+    }
 }

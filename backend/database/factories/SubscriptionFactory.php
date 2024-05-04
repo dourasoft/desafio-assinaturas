@@ -26,6 +26,7 @@ class SubscriptionFactory extends Factory
             'description' => $this->faker->sentence(),
             'value' => $this->faker->numberBetween(10, 1000),
             'is_active' => $this->faker->boolean(),
+            'due_day' => $this->faker->numberBetween(1, 31),
         ];
     }
 }

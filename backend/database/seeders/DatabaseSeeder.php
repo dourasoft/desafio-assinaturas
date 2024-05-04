@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
                     ->count(1)
                     ->has(Invoice::factory()->count(1))
             )
-            ->count(1000)
+            ->count(50)
             ->create();
     }
 }

@@ -40,7 +40,8 @@ class InvoicesController extends Controller
         return response()->json($result, 200);
     }
 
-    public function getBySubscriptionId($id) {
+    public function getBySubscriptionId($id)
+    {
         $result = $this->invoiceService->getBySubscriptionId($id);
 
         if (!$result['success']) return response()->json($result, 404);
@@ -74,5 +75,10 @@ class InvoicesController extends Controller
         if (!$result['success']) return response()->json($result, 400);
 
         return response()->json($result, 200);
+    }
+
+    public function test()
+    {
+        
     }
 }
