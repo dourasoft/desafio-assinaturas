@@ -9,7 +9,7 @@ class Assinatura extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['id_tab_Cadastros', 'Descricao', 'Vencimento', 'Valor']; // Campos que podem ser preenchidos em massa
+    protected $fillable = ['id_tab_Cadastros', 'descricao', 'vencimento', 'valor', 'fatura_gerada']; // Campos que podem ser preenchidos em massa
 
     protected $primaryKey = 'id'; // Definindo a chave primária explicitamente
 

@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('cadastros', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('Codigo')->unique();
-            $table->string('Nome');
-            $table->string('Email')->nullable();
-            $table->string('Telefone')->nullable();
+            $table->string('codigo')->unique();
+            $table->string('nome');
+            $table->string('email')->nullable();
+            $table->string('telefone')->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
         });

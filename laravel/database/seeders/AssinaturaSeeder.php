@@ -22,9 +22,9 @@ class AssinaturaSeeder extends Seeder
 
             Assinatura::create([
                 'id_tab_Cadastros' => $i, // Ajuste conforme necessário
-                'Descricao' => 'Assinatura '.$i,
-                'Vencimento' => $randomDate,
-                'Valor' => 100.00, // Ajuste conforme necessário
+                'descricao' => 'Assinatura '.$i,
+                'vencimento' => $randomDate,
+                'valor' => 100.00, // Ajuste conforme necessário
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);

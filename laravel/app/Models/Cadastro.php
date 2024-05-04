@@ -10,7 +10,7 @@ class Cadastro extends Model
     use HasFactory;
 
     protected $fillable = [
-        'Codigo', 'Nome', 'Email', 'Telefone',
+        'codigo', 'nome', 'email', 'telefone',
     ];
 
     protected $primaryKey = 'id'; // Definindo a chave primária explicitamente

@@ -15,9 +15,10 @@ return new class extends Migration
             $table->increments('id');
             $table->unsignedInteger('id_tab_Cadastros');
             $table->foreign('id_tab_Cadastros')->references('id')->on('cadastros');
-            $table->string('Descricao')->nullable();
-            $table->timestamp('Vencimento')->nullable();
-            $table->double('Valor');
+            $table->string('descricao')->nullable();
+            $table->timestamp('vencimento')->nullable();
+            $table->tinyInteger('fatura_gerada')->default(0);
+            $table->double('valor');
             $table->timestamp('created_at');
             $table->timestamp('updated_at')->useCurrent();
         });

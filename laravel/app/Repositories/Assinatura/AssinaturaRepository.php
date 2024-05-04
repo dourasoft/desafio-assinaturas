@@ -3,6 +3,7 @@
 namespace App\Repositories\Assinatura;
 
 use App\Models\Assinatura;
+use Carbon\Carbon;
 
 class AssinaturaRepository
 {
@@ -32,5 +33,19 @@ class AssinaturaRepository
     {
         $assinatura = Assinatura::findOrFail($id);
         $assinatura->delete();
+    }
+
+    public function verificarAssinaturas()
+    {
+        $assinaturas = Assinatura::whereDate('vencimento', '>=', now())
+                                    ->whereDate('vencimento', '<=', now()->addDays(10))
+                                    ->where('fatura_gerada', 0)
+                                    ->get();
+
+        foreach ($assinaturas as $assinatura) {
+            $assinatura->fatura_gerada = 1;
+            $assinatura->save();
+        }
+        return $assinaturas;
     }
 }

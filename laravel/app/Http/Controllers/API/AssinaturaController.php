@@ -32,9 +32,9 @@ class AssinaturaController extends Controller
         // Validação dos dados recebidos
         $AssinaturaData = $request->validate([
             'id_tab_Cadastros' => 'required|integer',
-            'Descricao' => 'nullable|string',
-            'Vencimento' => 'required|date',
-            'Valor' => 'required|numeric',
+            'descricao' => 'nullable|string',
+            'vencimento' => 'required|date',
+            'valor' => 'required|numeric',
         ]);
 
         // Criação do assinatura
@@ -65,9 +65,9 @@ class AssinaturaController extends Controller
         // Validação dos dados recebidos
         $AssinaturaData = $request->validate([
             'id_tab_Cadastros' => 'required|integer',
-            'Descricao' => 'nullable|string',
-            'Vencimento' => 'required|date',
-            'Valor' => 'required|numeric',
+            'descricao' => 'nullable|string',
+            'vencimento' => 'required|date',
+            'valor' => 'required|numeric',
         ]);
 
         // Atualização do assinatura

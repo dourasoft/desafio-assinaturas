@@ -31,10 +31,10 @@ class CadastroController extends Controller
     {
         // Validação dos dados recebidos
         $CadastroData = $request->validate([
-            'Codigo' => 'required|string',
-            'Nome' => 'required|string',
-            'Email' => 'required|email',
-            'Telefone' => 'required|string',
+            'codigo' => 'required|string',
+            'nome' => 'required|string',
+            'email' => 'required|email',
+            'telefone' => 'required|string',
         ]);
 
         // Criação do cadastro
@@ -64,10 +64,10 @@ class CadastroController extends Controller
     {
         // Validação dos dados recebidos
         $CadastroData = $request->validate([
-            'Codigo' => 'required|string',
-            'Nome' => 'required|string',
-            'Email' => 'required|email',
-            'Telefone' => 'required|string',
+            'codigo' => 'required|string',
+            'nome' => 'required|string',
+            'email' => 'required|email',
+            'telefone' => 'required|string',
         ]);
 
         // Atualização do cadastro

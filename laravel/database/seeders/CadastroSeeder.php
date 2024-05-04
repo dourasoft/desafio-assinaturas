@@ -17,10 +17,10 @@ class CadastroSeeder extends Seeder
         // Vamos criar 10 registros fictícios
         for ($i = 1; $i <= 10; $i++) {
             Cadastro::firstOrCreate([
-                'Codigo' => 'COD'.$i,
-                'Nome' => 'Usuário '.$i,
-                'Email' => 'usuario'.$i.'@example.com',
-                'Telefone' => '(XX) 9XXXX-XXXX', // Você pode ajustar para números de telefone fictícios
+                'codigo' => 'COD'.$i,
+                'nome' => 'Usuário '.$i,
+                'email' => 'usuario'.$i.'@example.com',
+                'telefone' => '(XX) 9XXXX-XXXX', // Você pode ajustar para números de telefone fictícios
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);
