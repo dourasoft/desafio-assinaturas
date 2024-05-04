@@ -89,14 +89,6 @@ class FaturaController extends Controller
             ], 422);
         }
 
-        //    $diffEmDias = Carbon::parse('2024-05-14 09:53:41')->diffInDays($request->vencimento);
-
-        //    if ($diffEmDias > 30) {
-        //     return 'maior que 30 dias: ' . $diffEmDias;
-        //    } else {
-        //     return 'menor que 30 dias: '. $diffEmDias;
-        //    }
-
         try {
             if (!$this->validatorCadastroAndAssinatura($request)) {
                 return response()->json([

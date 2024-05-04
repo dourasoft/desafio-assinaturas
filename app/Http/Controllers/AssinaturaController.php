@@ -74,7 +74,7 @@ class AssinaturaController extends Controller
     public function insertAssinaturas(Request $request)
     {
         if ($this->validateEmptyField($request)) return response()->json([
-            'message' => 'os campos: cadastro, descrição e valor são obrigatórios',
+            'message' => 'os campos: cadastro, descrição, vencimento e valor são obrigatórios',
             'code' => 400
         ], 400);
 
@@ -102,6 +102,7 @@ class AssinaturaController extends Controller
             $assinatura = Assinatura::create([
                 'cadastro' => $request->cadastro,
                 'descricao' => $request->descricao,
+                'vencimento' => $request->vencimento,
                 'valor' => $request->valor,
                 'status_fatura' => $request->status_fatura,
             ]);
@@ -126,7 +127,7 @@ class AssinaturaController extends Controller
         if (!is_numeric($id)) return response()->json(['message' => 'O ID deve ser um número inteiro', 'code' => 400], 400);
 
         if ($this->validateEmptyField($request)) return response()->json([
-            'message' => 'os campos: codigo, nome, email e telefone são obrigatórios',
+            'message' => 'os campos: codigo, vencimento, nome, email e telefone são obrigatórios',
             'code' => 400
         ], 400);
 
@@ -155,6 +156,7 @@ class AssinaturaController extends Controller
                 ->update([
                     'cadastro' => $request->cadastro,
                     'descricao' => $request->descricao,
+                    'vencimento'=> $request->vencimento,
                     'valor' => $request->valor,
                     'status_fatura' => $request->status_fatura,
                 ]);
@@ -204,7 +206,7 @@ class AssinaturaController extends Controller
 
     function validateEmptyField($request)
     {
-        if (!isset($request->cadastro) || !isset($request->descricao) || !isset($request->valor) || !isset($request->status_fatura)) {
+        if (!isset($request->cadastro) || !isset($request->descricao) || !isset($request->vencimento) || !isset($request->valor) || !isset($request->status_fatura)) {
             return true;
         } else {
             return false;
@@ -216,6 +218,7 @@ class AssinaturaController extends Controller
         $validator = Validator::make($request->all(), [
             'cadastro' => 'required|string|min:4',
             'descricao' => 'required|string',
+            'vencimento' => 'required|date',
             'valor' => 'required|integer',
             'status_fatura' => 'required|string|in:emitido,aguardando',
         ]);
