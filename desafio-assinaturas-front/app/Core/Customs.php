@@ -75,14 +75,12 @@ class Customs
         }
 
         if ($package['controller'] == "StoreAssinatura") {
-            $package['data']['valor'] = str_replace([".", ","], ["", "."], $package['data']['valor']);
             $package['data']['data_vencimento'] = date("Y-m-d", strtotime($package['data']['data_vencimento']));
             $data = $package['data'];
             return $this->assinatura->store($data);
         }
 
         if ($package['controller'] == "UpdateAssinatura") {
-            $package['data']['valor'] = str_replace([".", ","], ["", "."], $package['data']['valor']);
             $package['data']['data_vencimento'] = date("Y-m-d", strtotime($package['data']['data_vencimento']));
             $data = $package['data'];
             return $this->assinatura->update($data);
@@ -106,14 +104,12 @@ class Customs
         }
 
         if ($package['controller'] == "StoreFatura") {
-            $package['data']['valor'] = str_replace([".", ","], ["", "."], $package['data']['valor']);
             $package['data']['data_vencimento'] = date("Y-m-d", strtotime($package['data']['data_vencimento']));
             $data = $package['data'];
             return $this->fatura->store($data);
         }
 
         if ($package['controller'] == "UpdateFatura") {
-            $package['data']['valor'] = str_replace([".", ","], ["", "."], $package['data']['valor']);
             $package['data']['data_vencimento'] = date("Y-m-d", strtotime($package['data']['data_vencimento']));
             $data = $package['data'];
             return $this->fatura->update($data);

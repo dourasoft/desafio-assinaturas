@@ -23,6 +23,8 @@ function formatarMoedaBRL(valor) {
 }
 
 async function message(text) {
+    console.log(text);
+
     if (text == "") {
         Swal.fire({
             text: 'API error',
@@ -152,7 +154,7 @@ async function login() {
 
     } catch (error) {
         spin(false);
-        throw message('login', `EXCEPTION function login: ${error}`);
+        throw message(`EXCEPTION function login: ${error}`);
     }
 }
 
@@ -183,7 +185,7 @@ async function logout() {
 
     } catch (error) {
         spin(false);
-        throw message('login', `EXCEPTION function logout: ${error}`);
+        throw message(`EXCEPTION function logout: ${error}`);
     }
 }
 
@@ -208,8 +210,6 @@ async function index(controller) {
         }
 
         if (order) {
-            spin(false);
-
             if (controller == "IndexCadastro") {
                 await populaTabelaCadastros(order, controller);
             }
@@ -222,6 +222,8 @@ async function index(controller) {
                 await populaTabelaFaturas(order, controller);
             }
         }
+
+        spin(false);
 
     } catch (error) {
         spin(false);
@@ -396,6 +398,26 @@ async function formularioCadastros(id = null) {
                     if (order) {
                         spin(false);
 
+                        if (order.response.hasOwnProperty('warning')) {
+                            spin(false);
+                            Swal.fire({
+                                text: order.response.warning,
+                                icon: 'error',
+                            });
+            
+                            return false;
+                        }
+            
+                        if (order.response.hasOwnProperty('error')) {
+                            spin(false);
+                            Swal.fire({
+                                text: order.response.error,
+                                icon: 'error',
+                            });
+            
+                            return false;
+                        }
+
                         if (order.status == 422) {
                             Swal.fire({
                                 text: "Dados inválidos",
@@ -499,7 +521,7 @@ async function formularioAssinaturas(id = null) {
                 const result = {
                     cadastro_id: cadastro_id,
                     descricao: descricao,
-                    valor: valor,
+                    valor: parseFloat(valor),
                     flag_assinado: flag_assinado,
                     data_vencimento: data_vencimento,
                 };
@@ -509,13 +531,13 @@ async function formularioAssinaturas(id = null) {
                 }
 
                 return result;
-            },
+            }/* ,
             didOpen: () => {
                 $('#valor').maskMoney({
                     thousands: '.',
                     decimal: ','
                 });
-            }
+            } */
         }).then(async (result) => {
             if (result.isConfirmed) {
                 spin(true);
@@ -536,6 +558,26 @@ async function formularioAssinaturas(id = null) {
                                 icon: 'error',
                             });
 
+                            return false;
+                        }
+
+                        if (order.response.hasOwnProperty('warning')) {
+                            spin(false);
+                            Swal.fire({
+                                text: order.response.warning,
+                                icon: 'error',
+                            });
+            
+                            return false;
+                        }
+            
+                        if (order.response.hasOwnProperty('error')) {
+                            spin(false);
+                            Swal.fire({
+                                text: order.response.error,
+                                icon: 'error',
+                            });
+            
                             return false;
                         }
 
@@ -631,7 +673,7 @@ async function formularioFaturas(id = null) {
                 const result = {
                     cadastro_id: cadastro_id,
                     descricao: descricao,
-                    valor: valor,
+                    valor: parseFloat(valor),
                     assinatura_id: assinatura_id,
                     data_vencimento: data_vencimento,
                 };
@@ -641,13 +683,13 @@ async function formularioFaturas(id = null) {
                 }
 
                 return result;
-            },
+            }/* ,
             didOpen: () => {
                 $('#valor').maskMoney({
                     thousands: '.',
                     decimal: ','
                 });
-            }
+            } */
         }).then(async (result) => {
             if (result.isConfirmed) {
                 spin(true);
@@ -668,6 +710,26 @@ async function formularioFaturas(id = null) {
                                 icon: 'error',
                             });
 
+                            return false;
+                        }
+
+                        if (order.response.hasOwnProperty('warning')) {
+                            spin(false);
+                            Swal.fire({
+                                text: order.response.warning,
+                                icon: 'error',
+                            });
+            
+                            return false;
+                        }
+            
+                        if (order.response.hasOwnProperty('error')) {
+                            spin(false);
+                            Swal.fire({
+                                text: order.response.error,
+                                icon: 'error',
+                            });
+            
                             return false;
                         }
 

@@ -14,9 +14,9 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
         // $schedule->command('inspire')->hourly();
-        //$schedule->job(new FaturaJob())->everySecond();
-        $timer = strval(env('HORA_DIA_VALIDA_ASSINATURAS', '08:00'));
-        $schedule->job(new FaturaJob())->dailyAt($timer);        
+        $schedule->job(new FaturaJob())->everySecond();
+        //$timer = strval(env('HORA_DIA_VALIDA_ASSINATURAS', '08:00'));
+        //$schedule->job(new FaturaJob())->dailyAt($timer);        
     }
 
     /**

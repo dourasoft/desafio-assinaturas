@@ -53,7 +53,7 @@ class FaturaController extends Controller
             $assinatura_id = (isset($fields['assinatura_id']) ? $fields['assinatura_id'] : "");
             $descricao = (isset($fields['descricao']) ? $fields['descricao'] : "");
             $data_vencimento = (isset($fields['vencimento']) ? $fields['vencimento'] : "");
-            $valor = (isset($fields['valor']) ? $fields['valor'] : "");            
+            $valor = (isset($fields['valor']) ? $fields['valor'] : "");
 
             $query = Fatura::with(['cadastro', 'assinatura']);
 
@@ -99,6 +99,11 @@ class FaturaController extends Controller
                 'valor' => ['required', 'numeric']
             ]);
 
+            $assinatura = Assinatura::find($fields['assinatura_id']);
+            if (!empty($assinatura) && $assinatura->cadastro_id != $fields['cadastro_id']) {
+                Response::json(['warning' => 'A assinatura selecionada é inválida'], 200);
+            }
+
             Fatura::create($fields);
 
             Response::success();
@@ -128,6 +133,11 @@ class FaturaController extends Controller
                 'data_vencimento' => ['required', 'date'],
                 'valor' => ['required', 'numeric']
             ]);
+
+            $assinatura = Assinatura::find($fields['assinatura_id']);
+            if (!empty($assinatura) && $assinatura->cadastro_id != $fields['cadastro_id']) {
+                Response::json(['warning' => 'A assinatura selecionada é inválida'], 200);
+            }
 
             $fatura->update($fields);
 

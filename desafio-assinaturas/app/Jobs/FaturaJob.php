@@ -36,29 +36,25 @@ class FaturaJob implements ShouldQueue
 
                 foreach ($assinaturas as $assinatura) {
                     DB::beginTransaction();
-
                     $dataVencimento = $this->verificaVencimento($assinatura->data_vencimento);
-                    logs()->debug("dataVencimento: ". $dataVencimento);
                     if (!$dataVencimento) {
-                        continue;
-                    }
-
-                    $dataAtualizaAssinatura = $this->atualizaAssinatura($assinatura);
-                    logs()->debug("dataAtualizaAssinatura: ". $dataAtualizaAssinatura);
-                    if (!$dataAtualizaAssinatura) {
-                        continue;
-                    }
-
-                    $geraFatura = $this->geraFatura($assinatura);
-                    logs()->debug("geraFatura: ". $geraFatura);
-                    if (!$geraFatura) {
                         DB::rollBack();
                         continue;
                     }
 
+                    $dataAtualizaAssinatura = $this->atualizaAssinatura($assinatura);
+                    if (!$dataAtualizaAssinatura) {  
+                        DB::rollBack();                      
+                        continue;
+                    }
+
+                    $geraFatura = $this->geraFatura($assinatura);
+                    if (!$geraFatura) {
+                        DB::rollBack();
+                        continue;
+                    }
                     DB::commit();
                 }
-
             }
         } catch (\Exception $e) {
             DB::rollBack();
@@ -93,12 +89,12 @@ class FaturaJob implements ShouldQueue
         return false;
     }
 
-     /**
-      * Atualiza tabela Assinatura
-      *
-      * @param Assinatura $assinatura
-      * @return boolean
-      */
+    /**
+     * Atualiza tabela Assinatura
+     *
+     * @param Assinatura $assinatura
+     * @return boolean
+     */
     private static function atualizaAssinatura(Assinatura $assinatura): bool
     {
         try {

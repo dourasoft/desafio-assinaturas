@@ -73,21 +73,21 @@ class DatabaseSeeder extends Seeder
                 'cadastro_id' => 1,
                 "descricao" => "Assinatura (Roberto Vasconcelos)",
                 "valor" => 1005.32,
-                "data_vencimento" => '2024-05-04',
+                "data_vencimento" => '2024-08-04',
                 'created_at' => now()
             ],
             [
                 'cadastro_id' => 2,
                 "descricao" => "Assinatura (Pedro Rodrigo)",
                 "valor" => 2305.49,
-                "data_vencimento" => '2024-05-04',
+                "data_vencimento" => '2024-08-04',
                 'created_at' => now()
             ],
             [
                 'cadastro_id' => 3,
                 "descricao" => "Assinatura (Jose Aldo)",
                 "valor" => 12005.67,
-                "data_vencimento" => '2024-05-04',
+                "data_vencimento" => '2024-08-04',
                 'created_at' => now()
             ],
         ]);

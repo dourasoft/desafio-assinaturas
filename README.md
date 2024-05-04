@@ -27,13 +27,14 @@ os dois projetos com: `docker network create ntw --driver bridge`
 Segue alguns parâmetros que coloquei no .env da API que vale serem mencionados:
 
 - Defina o horário que será executado diariamente: `HORA_DIA_VALIDA_ASSINATURAS="11:42"`
+(obs: mude esse horário para testar a task de gerar faturas)
 
 - Defina o intervalo de dias para geração das faturas: `DIAS_GERA_FATURA=10`
 
 ## Configurando o Projeto Backend
 
 Em um Terminal com WSL preferencialmente acesse até a pasta do projeto e execute:
-- Instale os pacotes: `composer install --ignore-platform-reqs`
+- Instale os pacotes (não necessariamente precisa ser no Terminal com WSL): `composer install --ignore-platform-reqs`
 - Construa os containers: `sudo ./vendor/bin/sail build` ou em caso de erros `sudo ./vendor/bin/sail build --no-cache`
 - Suba os containers: `sudo ./vendor/bin/sail up -d`
 - Acesse `http://localhost` para constatar o funcionamento
@@ -47,7 +48,7 @@ Em um Terminal acesse até a pasta do projeto e execute:
 
 ## Migrations (Banco de Dados)
 
-Acesse até a pasta do projeto e execute qualquer um dos comandos para subir as migrations:
+Acesse até a pasta do projeto Backend e execute qualquer um dos comandos para subir as migrations:
 - `php artisan migrate --seed` ou `sudo ./vendor/bin/sail artisan migrate --seed` 
 - `php artisan migrate:fresh --seed` ou `sudo ./vendor/bin/sail artisan migrate:fresh --seed`
 
