@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\Controller;
 use App\Models\Cadastro;
-use App\Repositories\CadastroRepository;
+use App\Repositories\Cadastro\CadastroRepository;
 use Illuminate\Http\Request;
 
 class CadastroController extends Controller
@@ -35,7 +36,7 @@ class CadastroController extends Controller
      */
     public function show($id)
     {
-        $inventory = $this->cadastroRepository->getById($id);
+        $cadastro = $this->cadastroRepository->getById($id);
 
         if (!$cadastro) {
             return response()->json(['message' => 'Cadastro não encontrado'], 404);
