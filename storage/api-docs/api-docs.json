@@ -1,0 +1,604 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "My OpenApi Documentation",
+        "description": "My OpenApi description",
+        "contact": {
+            "email": "markusmak@gmail.com"
+        },
+        "license": {
+            "name": "Proprietary",
+            "url": ""
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8000",
+            "description": "My API Server"
+        }
+    ],
+    "paths": {
+        "/api/cadastre": {
+            "get": {
+                "tags": [
+                    "Cadastres"
+                ],
+                "summary": "Get list of cadastres",
+                "description": "Returns list of cadastres",
+                "operationId": "getCadastres",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Cadastres"
+                ],
+                "summary": "Create a new cadastre",
+                "description": "Create a new cadastre entry in the database by providing the required information.",
+                "operationId": "f4dc798006d98204e87ad75c81627217",
+                "requestBody": {
+                    "description": "Cadastre data to be stored",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CadastreRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation. Returns the newly created cadastre data.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CadastreRequest"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request or validation error.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": {
+                                    "error": "Validation error message"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/cadastre/{id}": {
+            "get": {
+                "tags": [
+                    "Cadastres"
+                ],
+                "summary": "Get a cadastre by ID",
+                "description": "Retrieve the cadastre details by providing its ID.",
+                "operationId": "352e9ff2c2a8d955e86a9823325f140b",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the cadastre to be retrieved",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation. Returns the cadastre data.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CadastreRequest"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Cadastre not found.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": {
+                                    "error": "Cadastre not found"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Cadastres"
+                ],
+                "summary": "Update a cadastre by ID",
+                "description": "Update the information of a cadastre by providing its ID.",
+                "operationId": "d001717f88199d9daec35dae78e35be6",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the cadastre to be updated",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Updated cadastre data",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CadastreRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation. Returns the updated cadastre data.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CadastreRequest"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Cadastre not found.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": {
+                                    "error": "Cadastre not found"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Cadastres"
+                ],
+                "summary": "Delete a cadastre by ID",
+                "description": "Delete a cadastre from the database by providing its ID.",
+                "operationId": "ee147b43cd688671ec68a49bc764e437",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the cadastre to be deleted",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Successful operation. No content."
+                    },
+                    "404": {
+                        "description": "Cadastre not found.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": {
+                                    "error": "Cadastre not found"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/invoice": {
+            "get": {
+                "tags": [
+                    "Invoices"
+                ],
+                "summary": "Exibe uma lista dos recursos de faturas.",
+                "operationId": "def0c3217a818e2d400c45cece79781c",
+                "responses": {
+                    "200": {
+                        "description": "Retorna a lista de faturas com sucesso."
+                    },
+                    "400": {
+                        "description": "Retorna um erro se ocorrer um problema durante a busca das faturas."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Invoices"
+                ],
+                "summary": "Armazena um novo recurso de fatura.",
+                "operationId": "5419d250afff57c940145ce442f3cc57",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/InvoiceRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Retorna os dados da nova fatura criada com sucesso."
+                    },
+                    "400": {
+                        "description": "Retorna um erro se ocorrer um problema durante a criação da fatura."
+                    }
+                }
+            }
+        },
+        "/api/invoice/{id}": {
+            "get": {
+                "tags": [
+                    "Invoices"
+                ],
+                "summary": "Exibe o recurso de fatura especificado.",
+                "operationId": "37401f316ec16144ce12c3c441b8083d",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID da fatura a ser recuperada",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retorna os detalhes da fatura encontrada com sucesso."
+                    },
+                    "400": {
+                        "description": "Retorna um erro se a fatura não for encontrada."
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Invoices"
+                ],
+                "summary": "Atualiza o recurso de fatura especificado.",
+                "operationId": "9a050ae92eaf55696d2ec4225feed57a",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID da fatura a ser atualizada",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/InvoiceRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Retorna os detalhes da fatura atualizada com sucesso."
+                    },
+                    "400": {
+                        "description": "Retorna um erro se a fatura não for encontrada."
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Invoices"
+                ],
+                "summary": "Exclui o recurso de fatura especificado.",
+                "operationId": "697dce9813c3870ea6d416d2a82f5290",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID da fatura a ser excluída",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "force",
+                        "in": "query",
+                        "description": "Força a deleção",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retorna uma mensagem de sucesso após a exclusão."
+                    },
+                    "400": {
+                        "description": "Retorna um erro se a fatura não for encontrada."
+                    }
+                }
+            }
+        },
+        "/api/signature": {
+            "get": {
+                "tags": [
+                    "Signatures"
+                ],
+                "summary": "Exibe uma lista dos recursos de assinatura.",
+                "operationId": "8f40e92c51a4e10e6bc4f906b0cb1393",
+                "responses": {
+                    "200": {
+                        "description": "Retorna a lista de assinaturas com sucesso."
+                    },
+                    "400": {
+                        "description": "Retorna um erro se ocorrer um problema durante a busca das assinaturas."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Signatures"
+                ],
+                "summary": "Armazena um novo recurso de assinatura.",
+                "operationId": "65f6c4465b51f4296abdd8a4d7e8efd6",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SignatureRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Retorna os dados da nova assinatura criada com sucesso."
+                    },
+                    "400": {
+                        "description": "Retorna um erro se ocorrer um problema durante a criação da assinatura."
+                    }
+                }
+            }
+        },
+        "/api/signature/{id}": {
+            "get": {
+                "tags": [
+                    "Signatures"
+                ],
+                "summary": "Exibe o recurso de assinatura especificado.",
+                "operationId": "6a17388c026d20166c9eb232cc4fc384",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID da assinatura a ser recuperada",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retorna os detalhes da assinatura encontrada com sucesso."
+                    },
+                    "400": {
+                        "description": "Retorna um erro se a assinatura não for encontrada."
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Signatures"
+                ],
+                "summary": "Atualiza o recurso de assinatura especificado.",
+                "operationId": "bed9dc54866c2e0a9568feefe93bcfe8",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID da assinatura a ser atualizada",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SignatureRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Retorna os detalhes da assinatura atualizada com sucesso."
+                    },
+                    "400": {
+                        "description": "Retorna um erro se a assinatura não for encontrada."
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Signatures"
+                ],
+                "summary": "Exclui o recurso de assinatura especificado.",
+                "operationId": "0663d3e44b4a00842afa8b8ab15eba65",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID da assinatura a ser excluída",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retorna uma mensagem de sucesso após a exclusão."
+                    },
+                    "400": {
+                        "description": "Retorna um erro se a assinatura não for encontrada."
+                    }
+                }
+            }
+        },
+        "/api/verification_of_signatures": {
+            "get": {
+                "tags": [
+                    "Signatures"
+                ],
+                "summary": "Função para gerar as faturas.",
+                "operationId": "fae467bbadcbe95d2a9b7dc68157e15f",
+                "responses": {
+                    "200": {
+                        "description": "Função para gerar as faturas."
+                    },
+                    "400": {
+                        "description": "Retorna um erro se ocorrer um problema durante a busca das assinaturas."
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "CadastreRequest": {
+                "title": "CadastreRequest",
+                "description": "Request schema for Cadastre",
+                "required": [
+                    "name",
+                    "email",
+                    "phone"
+                ],
+                "properties": {
+                    "name": {
+                        "description": "Name of the user",
+                        "type": "string",
+                        "example": "John Doe"
+                    },
+                    "email": {
+                        "description": "Email of the user",
+                        "type": "string",
+                        "format": "email",
+                        "example": "john@example.com"
+                    },
+                    "phone": {
+                        "description": "Phone number of the user",
+                        "type": "string",
+                        "example": "1234567890"
+                    }
+                },
+                "type": "object"
+            },
+            "InvoiceRequest": {
+                "title": "InvoiceRequest",
+                "description": "Request schema for Invoice",
+                "required": [
+                    "cadastre_id",
+                    "signature_id",
+                    "describe",
+                    "value",
+                    "expiration"
+                ],
+                "properties": {
+                    "cadastre_id": {
+                        "description": "ID of the related cadastre",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "signature_id": {
+                        "description": "ID of the related signature",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "describe": {
+                        "description": "Description of the invoice",
+                        "type": "string",
+                        "example": "Invoice description"
+                    },
+                    "value": {
+                        "description": "Value of the signature",
+                        "type": "string",
+                        "example": "Signature value"
+                    },
+                    "expiration": {
+                        "description": "Expiration of the signature",
+                        "type": "string",
+                        "format": "date",
+                        "example": "2024-01-01"
+                    }
+                },
+                "type": "object"
+            },
+            "SignatureRequest": {
+                "title": "SignatureRequest",
+                "description": "Request schema for Signature",
+                "required": [
+                    "cadastre_id",
+                    "describe",
+                    "value"
+                ],
+                "properties": {
+                    "cadastre_id": {
+                        "description": "ID of the related cadastre",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "describe": {
+                        "description": "Description of the signature",
+                        "type": "string",
+                        "example": "Signature description"
+                    },
+                    "value": {
+                        "description": "Value of the signature",
+                        "type": "string",
+                        "example": "Signature value"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+}

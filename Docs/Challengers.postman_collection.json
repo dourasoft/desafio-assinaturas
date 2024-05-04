@@ -1,0 +1,408 @@
+{
+	"info": {
+		"_postman_id": "9188ef4c-2802-40ab-8bde-d564b4c19875",
+		"name": "Challengers",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8212927"
+	},
+	"item": [
+		{
+			"name": "cadastre",
+			"item": [
+				{
+					"name": "get cadastres",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/cadastre",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cadastre"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get cadastres byID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/cadastre/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cadastre",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add cadastre",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Markus Lima2\",\r\n    \"email\": \"markus2@gmail.com\",\r\n    \"phone\": \"552198765321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/cadastre",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cadastre"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "up cadastre",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Markus Lima01\",\r\n    \"email\": \"markus01@gmail.com\",\r\n    \"phone\": \"552198765321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/cadastre/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cadastre",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "del cadastre",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Markus Lima01\",\r\n    \"email\": \"markus01@gmail.com\",\r\n    \"phone\": \"552198765321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/cadastre/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cadastre",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "signature",
+			"item": [
+				{
+					"name": "get signature",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/cadastre",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cadastre"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get signature byID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/cadastre/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cadastre",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add signature",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Markus Lima2\",\r\n    \"email\": \"markus2@gmail.com\",\r\n    \"phone\": \"552198765321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/cadastre",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cadastre"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "up signature",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Markus Lima01\",\r\n    \"email\": \"markus01@gmail.com\",\r\n    \"phone\": \"552198765321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/cadastre/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cadastre",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "del signature",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Markus Lima01\",\r\n    \"email\": \"markus01@gmail.com\",\r\n    \"phone\": \"552198765321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/cadastre/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cadastre",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verificationOfSignatures",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "invoice",
+			"item": [
+				{
+					"name": "get invoice",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/cadastre",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cadastre"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get invoice byID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/cadastre/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cadastre",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add invoice",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Markus Lima2\",\r\n    \"email\": \"markus2@gmail.com\",\r\n    \"phone\": \"552198765321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/cadastre",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cadastre"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "up invoice",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Markus Lima01\",\r\n    \"email\": \"markus01@gmail.com\",\r\n    \"phone\": \"552198765321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/cadastre/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cadastre",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "del invoice",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Markus Lima01\",\r\n    \"email\": \"markus01@gmail.com\",\r\n    \"phone\": \"552198765321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/cadastre/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cadastre",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
