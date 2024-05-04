@@ -16,6 +16,6 @@ class Assinatura extends Model
         'descricao',
         'vencimento',
         'valor',
-        'status',
+        'status_fatura',
     ];
 }

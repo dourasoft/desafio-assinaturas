@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class cadastro extends Authenticatable
+class Cadastro extends Authenticatable
 {
     use HasFactory, Notifiable, SoftDeletes;
 

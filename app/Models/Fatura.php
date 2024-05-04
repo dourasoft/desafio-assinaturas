@@ -13,7 +13,7 @@ class Fatura extends Model
     protected $fillable = [
         'cadastro',
         'assinatura',
-        'descrição',
+        'descricao',
         'vencimento',
         'valor',
         'status',

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('assinaturas', function (Blueprint $table) {
             $table->id();
             $table->string('cadastro');
-            $table->string('status');
+            $table->string('status_fatura');
             $table->string('descricao');
             $table->string('valor');
             $table->timestamp('vencimento');

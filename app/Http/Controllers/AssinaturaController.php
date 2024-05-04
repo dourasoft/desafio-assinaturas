@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Assinatura;
-use App\Models\cadastro;
+use App\Models\Cadastro;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
@@ -88,7 +88,7 @@ class AssinaturaController extends Controller
             $assinaturaExist = Assinatura::where('cadastro', $request->cadastro)
                 ->exists();
 
-            $cadastroExist = cadastro::where('codigo', $request->cadastro)
+            $cadastroExist = Cadastro::where('codigo', $request->cadastro)
                 ->exists();
 
              if (!$cadastroExist)
@@ -102,7 +102,7 @@ class AssinaturaController extends Controller
                 'cadastro'=> $request->cadastro,
                 'descricao' => $request->descricao,
                 'valor' => $request->valor,
-                'status'=> $request->status,
+                'status_fatura'=> $request->status_fatura,
             ]);
 
             return response()->json([
@@ -155,7 +155,7 @@ class AssinaturaController extends Controller
                 'cadastro'=> $request->cadastro,
                 'descricao' => $request->descricao,
                 'valor' => $request->valor,
-                'status'=> $request->status,
+                'status_fatura'=> $request->status_fatura,
             ]);
 
             return response()->json([
@@ -204,7 +204,7 @@ class AssinaturaController extends Controller
 
     function validateEmptyField($request)
     {
-        if (!isset($request->cadastro) || !isset($request->descricao) || !isset($request->valor) || !isset($request->status)) {
+        if (!isset($request->cadastro) || !isset($request->descricao) || !isset($request->valor) || !isset($request->status_fatura)) {
             return true;
         } else {
             return false;
@@ -217,7 +217,7 @@ class AssinaturaController extends Controller
             'cadastro' => 'required|string|min:4',
             'descricao' => 'required|string',
             'valor' => 'required|integer',
-            'status' => 'required|string|in:emitido,aguardando',
+            'status_fatura' => 'required|string|in:emitido,aguardando',
         ]);
 
         return $validator->fails() ? $validator : false;
