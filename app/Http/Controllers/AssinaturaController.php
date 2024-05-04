@@ -40,7 +40,7 @@ class AssinaturaController extends Controller
     {
         if (!is_numeric($id)) return response()->json(['message' => 'O ID deve ser um número inteiro', 'code' => 400], 400);
 
-        if(is_null($id)) return response()->json(['message' => 'Você esqueceu de informar o ID da assinatura', 'code' => 400], 400);
+        if (is_null($id)) return response()->json(['message' => 'Você esqueceu de informar o ID da assinatura', 'code' => 400], 400);
 
         try {
             $assinaturaExist = Assinatura::where('id', $id)
@@ -81,7 +81,8 @@ class AssinaturaController extends Controller
         if ($this->validatorFields($request) !== false) {
             return response()->json([
                 'errors' => $this->validatorFields($request)->errors(),
-                'code' => 422], 422);
+                'code' => 422
+            ], 422);
         }
 
         try {
@@ -91,7 +92,7 @@ class AssinaturaController extends Controller
             $cadastroExist = Cadastro::where('codigo', $request->cadastro)
                 ->exists();
 
-             if (!$cadastroExist)
+            if (!$cadastroExist)
                 return response()->json(['message' => 'O cadastro informado não é um código válido, favor informe um código de cadastro válido', 'code' => 406], 406);
 
             $message = ($assinaturaExist)
@@ -99,18 +100,17 @@ class AssinaturaController extends Controller
                 : 'A assinatura foi inserida com sucesso!';
 
             $assinatura = Assinatura::create([
-                'cadastro'=> $request->cadastro,
+                'cadastro' => $request->cadastro,
                 'descricao' => $request->descricao,
                 'valor' => $request->valor,
-                'status_fatura'=> $request->status_fatura,
+                'status_fatura' => $request->status_fatura,
             ]);
 
             return response()->json([
-                'message'=> $message,
+                'message' => $message,
                 'data' => $assinatura,
                 'code' => 201
             ], 201);
-
         } catch (\Exception $e) {
             return response()->json([
                 'message' => 'Ocorreu um erro ao realizar a inserção',
@@ -133,11 +133,12 @@ class AssinaturaController extends Controller
         if ($this->validatorFields($request) !== false) {
             return response()->json([
                 'errors' => $this->validatorFields($request)->errors(),
-                'code' => 422], 422);
+                'code' => 422
+            ], 422);
         }
 
         try {
-            if(is_null($id)) return response()->json(['message' => 'Você esqueceu de informar o ID da assinatura'], 400);
+            if (is_null($id)) return response()->json(['message' => 'Você esqueceu de informar o ID da assinatura'], 400);
 
             $assinaturaExist = Assinatura::where('id', $id)
                 ->exists();
@@ -147,23 +148,22 @@ class AssinaturaController extends Controller
             $cadastroExist = Cadastro::where('codigo', $request->cadastro)
                 ->exists();
 
-             if (!$cadastroExist)
+            if (!$cadastroExist)
                 return response()->json(['message' => 'O cadastro informado não é um código válido, favor informe um código de cadastro válido', 'code' => 406], 406);
 
             Assinatura::where('id', $id)
-              ->update([
-                'cadastro'=> $request->cadastro,
-                'descricao' => $request->descricao,
-                'valor' => $request->valor,
-                'status_fatura'=> $request->status_fatura,
-            ]);
+                ->update([
+                    'cadastro' => $request->cadastro,
+                    'descricao' => $request->descricao,
+                    'valor' => $request->valor,
+                    'status_fatura' => $request->status_fatura,
+                ]);
 
             return response()->json([
-                'message'=> 'A assinatura foi atualizada com sucesso!',
+                'message' => 'A assinatura foi atualizada com sucesso!',
                 'data' => Assinatura::find($id),
                 'code' => 201
             ], 201);
-
         } catch (\Exception $e) {
             return response()->json([
                 'message' => 'Ocorreu um erro ao realizar a atualização',
@@ -178,18 +178,18 @@ class AssinaturaController extends Controller
     {
         if (!is_numeric($id)) return response()->json(['message' => 'O ID deve ser um número inteiro', 'code' => 400], 400);
 
-        if(is_null($id)) return response()->json(['message' => 'Você esqueceu de informar o ID da assinatura', 'code' => 400], 400);
+        if (is_null($id)) return response()->json(['message' => 'Você esqueceu de informar o ID da assinatura', 'code' => 400], 400);
 
         try {
             $assinaturaExist = Assinatura::where('id', $id)
-                    ->exists();
+                ->exists();
 
             if (!$assinaturaExist) return response()->json(['message' => 'O ID informado não é de uma assinatura válida', 'code' => 406], 406);
 
             Assinatura::where('id', $id)->delete();
 
             return response()->json([
-                'message'=> 'A assinatura com ID '. $id .' foi deletada com sucesso!',
+                'message' => 'A assinatura com ID ' . $id . ' foi deletada com sucesso!',
                 'data' => Assinatura::all(),
                 'code' => 200
             ], 200);

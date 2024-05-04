@@ -43,7 +43,7 @@ class FaturaController extends Controller
     {
         if (!is_numeric($id)) return response()->json(['message' => 'O ID deve ser um número inteiro', 'code' => 400], 400);
 
-        if(is_null($id)) return response()->json(['message' => 'Você esqueceu de informar o ID da fatura', 'code' => 400], 400);
+        if (is_null($id)) return response()->json(['message' => 'Você esqueceu de informar o ID da fatura', 'code' => 400], 400);
 
         try {
             $faturaExist = Fatura::where('id', $id)
@@ -85,16 +85,17 @@ class FaturaController extends Controller
         if ($this->validatorFields($request) !== false) {
             return response()->json([
                 'errors' => $this->validatorFields($request)->errors(),
-                'code' => 422], 422);
+                'code' => 422
+            ], 422);
         }
 
-    //    $diffEmDias = Carbon::parse('2024-05-14 09:53:41')->diffInDays($request->vencimento);
+        //    $diffEmDias = Carbon::parse('2024-05-14 09:53:41')->diffInDays($request->vencimento);
 
-    //    if ($diffEmDias > 30) {
-    //     return 'maior que 30 dias: ' . $diffEmDias;
-    //    } else {
-    //     return 'menor que 30 dias: '. $diffEmDias;
-    //    }
+        //    if ($diffEmDias > 30) {
+        //     return 'maior que 30 dias: ' . $diffEmDias;
+        //    } else {
+        //     return 'menor que 30 dias: '. $diffEmDias;
+        //    }
 
         try {
             if (!$this->validatorCadastroAndAssinatura($request)) {
@@ -116,7 +117,7 @@ class FaturaController extends Controller
             }
 
             $fatura = Fatura::create([
-                'cadastro'=> $request->cadastro,
+                'cadastro' => $request->cadastro,
                 'assinatura' => $request->assinatura,
                 'descricao' => $request->descricao,
                 'vencimento' => $request->vencimento,
@@ -125,16 +126,15 @@ class FaturaController extends Controller
             ]);
 
             Assinatura::where('id', $request->assinatura)
-              ->update([
-                'status_fatura'=> 'emitido',
-            ]);
+                ->update([
+                    'status_fatura' => 'emitido',
+                ]);
 
             return response()->json([
-                'message'=> 'A fatura foi inserida com sucesso!',
+                'message' => 'A fatura foi inserida com sucesso!',
                 'data' => $fatura,
                 'code' => 201
             ], 201);
-
         } catch (\Exception $e) {
             return response()->json([
                 'message' => 'Ocorreu um erro ao realizar a inserção',
@@ -157,11 +157,12 @@ class FaturaController extends Controller
         if ($this->validatorFields($request) !== false) {
             return response()->json([
                 'errors' => $this->validatorFields($request)->errors(),
-                'code' => 422], 422);
+                'code' => 422
+            ], 422);
         }
 
         try {
-            if(is_null($id)) return response()->json(['message' => 'Você esqueceu de informar o ID da fatura'], 400);
+            if (is_null($id)) return response()->json(['message' => 'Você esqueceu de informar o ID da fatura'], 400);
 
             $faturaExist = Fatura::where('id', $id)
                 ->exists();
@@ -176,21 +177,20 @@ class FaturaController extends Controller
             }
 
             Fatura::where('id', $id)
-              ->update([
-                'cadastro'=> $request->cadastro,
-                'assinatura' => $request->assinatura,
-                'descricao'=> $request->descricao,
-                'vencimento'=> $request->vencimento,
-                'valor'=> $request->valor,
-                'status'=> $request->status,
-            ]);
+                ->update([
+                    'cadastro' => $request->cadastro,
+                    'assinatura' => $request->assinatura,
+                    'descricao' => $request->descricao,
+                    'vencimento' => $request->vencimento,
+                    'valor' => $request->valor,
+                    'status' => $request->status,
+                ]);
 
             return response()->json([
-                'message'=> 'O fatura foi atualizado com sucesso!',
+                'message' => 'O fatura foi atualizado com sucesso!',
                 'data' => Fatura::find($id),
                 'code' => 201
             ], 201);
-
         } catch (\Exception $e) {
             return response()->json([
                 'message' => 'Ocorreu um erro ao realizar a atualização',
@@ -205,18 +205,18 @@ class FaturaController extends Controller
     {
         if (!is_numeric($id)) return response()->json(['message' => 'O ID deve ser um número inteiro', 'code' => 400], 400);
 
-        if(is_null($id)) return response()->json(['message' => 'Você esqueceu de informar o ID da fatura', 'code' => 400], 400);
+        if (is_null($id)) return response()->json(['message' => 'Você esqueceu de informar o ID da fatura', 'code' => 400], 400);
 
         try {
             $faturaExist = Fatura::where('id', $id)
-                    ->exists();
+                ->exists();
 
             if (!$faturaExist) return response()->json(['message' => 'O ID informado não é de uma fatura válida', 'code' => 406], 406);
 
             Fatura::where('id', $id)->delete();
 
             return response()->json([
-                'message'=> 'A fatura com ID '. $id .' foi deletada com sucesso!',
+                'message' => 'A fatura com ID ' . $id . ' foi deletada com sucesso!',
                 'data' => Fatura::all(),
                 'code' => 200
             ], 200);
@@ -252,7 +252,8 @@ class FaturaController extends Controller
         return $validator->fails() ? $validator : false;
     }
 
-    function validatorCadastroAndAssinatura($request) {
+    function validatorCadastroAndAssinatura($request)
+    {
         $cadastroExist = Cadastro::where('codigo', $request->cadastro)
             ->exists();
 
