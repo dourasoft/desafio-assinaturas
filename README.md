@@ -15,7 +15,8 @@
 
 ## Rodar cenários de testes
  - Rodar todos os testes `php artisan test`
- - Rodar um cenário específico `php artisan test --filter` + nome da classe Ex: `test_the_application_returns_valid_cadastros_in_getall_route`
+
+ - Rodar um cenário específico, exemplo: `php artisan test --filter test_donnot_creating_a_new_fatura_without_a_required_field`
 
 <hr>
 
