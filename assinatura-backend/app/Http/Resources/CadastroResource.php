@@ -16,10 +16,12 @@ class CadastroResource extends JsonResource
     {
 
         return [
+            'id'        => $this->id,
             'codigo'    => $this->codigo,
             'nome'      => $this->nome,
             'email'     => $this->email,
             'telefone'  => $this->telefone,
+            'ativo'     => $this->ativo
         ];
     }
 }

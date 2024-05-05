@@ -22,6 +22,7 @@ class CadastroFactory extends Factory
             'nome'      => $this->faker->name(),
             'email'     => $this->faker->unique()->email(),
             'telefone'  => $this->faker->phoneNumber(),
+            'ativo'     => $this->faker->boolean(50)
         ];
     }
 }

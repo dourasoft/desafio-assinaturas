@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class CreateCadastroFormRequest extends FormRequest
+class UpdateOrDeleteCadastroFormRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,22 +22,20 @@ class CreateCadastroFormRequest extends FormRequest
      */
     public function rules(): array
     {
-
         return [
+            'id' => 'required|integer|min:1|not_in:0',
             'email' => [
-                'required',
                 'email',
                 Rule::unique('cadastros')->where('ativo', 1)
             ],
             'codigo' => [
-                'required',
                 'string',
                 Rule::unique('cadastros')->where('ativo', 1),
                 'min:1',
                 'max:255'
             ],
-            'nome'      => 'required|string|min:1|max:255',
-            'telefone'  => 'required|string|min:11|max:255',
+            'nome'      => 'string|min:1|max:255',
+            'telefone'  => 'string|min:11|max:255',
         ];
     }
 
@@ -50,7 +48,6 @@ class CreateCadastroFormRequest extends FormRequest
     {
         return [
             'required'  => 'O campo :attribute precisa ser informado.',
-            'unique'    => 'O :attribute já está sendo utilizado em outro cadastro.',
             'email'     => 'O campo :attribute precisa ser um email válido.'
         ];
     }

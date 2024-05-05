@@ -26,7 +26,7 @@ class CadastroControllerTest extends TestCase
         $this->assertEquals(20, count($response->json(['data'])));
     }
 
-    public function test_buscar_cadastros_inativos(): void 
+    public function test_buscar_cadastros_inativos(): void
     {
         Cadastro::factory(10)->create(['ativo' => false]);
 
