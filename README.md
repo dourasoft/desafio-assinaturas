@@ -1,3 +1,20 @@
+## Rodar o projeto
+- Clone o projeto com `git clone`  
+- Adicione as dependencias do projeto com `composer install`
+- Com servidor de banco de dados rodando e configurado execute as migrations com `php artisan migrate`
+- Popule as tabelas executando as seeds a baixo:
+    - `php artisan db:seed --class=CadastroSeeder`
+    - `php artisan db:seed --class=AssinaturaSeeder`
+    - `php artisan db:seed --class=FaturaSeeder`
+- Execute o servidor de API com `php artisan serve`   
+
+## Task que converte assinatura com vencimento igual ou inferior a 10 dias em fatura
+- Listar as tasks que podem ser agendadas `php artisan schedule:list`
+- Iniciar o trabalho das tasks `php artisan schedule:work`
+- Executar diretamente o command da task para testes `php artisan app:verificar-assinaturas`
+
+<hr>
+
 # DouraSoft
 
 Desafio Assinaturas

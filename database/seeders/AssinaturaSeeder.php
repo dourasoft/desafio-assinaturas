@@ -15,7 +15,7 @@ class AssinaturaSeeder extends Seeder
     public function run(): void
     {
         $cadastros = [
-            'XYZKVT',
+            'XYZKXX',
             'PUIOST',
             'TYVMSD',
             'HHDZXC',
@@ -24,10 +24,11 @@ class AssinaturaSeeder extends Seeder
             'ADMSKK',
             'IOESDS',
             'PPASDM',
-            'AYDERF',
+            'XYZKVT',
         ];
 
         $statusFatura = [
+            'emitido ',
             'aguardando',
             'aguardando',
             'aguardando',
@@ -36,8 +37,7 @@ class AssinaturaSeeder extends Seeder
             'aguardando',
             'aguardando',
             'aguardando',
-            'pendente',
-            'pendente',
+            'aguardando ',
         ];
 
         $descricao = [

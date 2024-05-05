@@ -18,11 +18,11 @@ class FaturaSeeder extends Seeder
         try {
             Fatura::create([
                 'cadastro' => 'XYZKVT',
-                'assinatura'=> 6,
-                'descricao' => 'netflix',
-                'vencimento' => Carbon::now()->addDays(10),
+                'assinatura'=> 10,
+                'descricao' => 'youtube',
+                'vencimento' => Carbon::now()->addDays(1),
                 'valor' => 22,
-                'status' => 'pendente',
+                'status' => 'pago',
             ]);
 
             dd('Os cadastros foram inseridos com sucesso!');
