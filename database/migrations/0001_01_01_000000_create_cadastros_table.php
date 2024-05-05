@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('codigo')->unique();
             $table->string('nome', 100);
             $table->string('email')->unique();
-            $table->integer('telefone');
+            $table->bigInteger('telefone');
             $table->rememberToken();
             $table->timestamps();
             $table->timestamp('deleted_at')->nullable();
