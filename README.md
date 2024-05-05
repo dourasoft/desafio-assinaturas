@@ -13,6 +13,10 @@
 - Iniciar o trabalho das tasks `php artisan schedule:work`
 - Executar diretamente o command da task para testes `php artisan app:verificar-assinaturas`
 
+## Rodar cenários de testes
+ - Rodar todos os testes `php artisan test`
+ - Rodar um cenário específico `php artisan test --filter` + nome da classe Ex: `test_the_application_returns_valid_cadastros_in_getall_route`
+
 <hr>
 
 # DouraSoft

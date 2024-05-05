@@ -54,7 +54,7 @@ class AssinaturaSeeder extends Seeder
         ];
 
         $valor = [
-            '22',
+            '42',
             '55',
             '14',
             '96',
@@ -63,7 +63,7 @@ class AssinaturaSeeder extends Seeder
             '24',
             '95',
             '79',
-            '94',
+            '22',
         ];
 
         try {
