@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Requests\Assinatura;
+namespace App\Http\Requests\Fatura;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class CreateAssinaturaRequest extends FormRequest
+class UpdateOrDeleteFaturaRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -15,7 +15,7 @@ class CreateAssinaturaRequest extends FormRequest
         return true;
     }
 
-    /**
+   /**
      * Get the validation rules that apply to the request.
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
@@ -23,21 +23,24 @@ class CreateAssinaturaRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'id' => 'required|integer|min:1',
             'cadastro_id' => [
-                'required',
                 'int',
-                Rule::exists('cadastros', 'id'),
-                Rule::unique('assinaturas')->where('ativo', 1)
+                'min:1',
+                Rule::exists('cadastros', 'id')->where('ativo', 1),
+            ],
+            'assinatura_id' => [
+                'int',
+                'min:1',
+                Rule::exists('assinaturas', 'id')->where('ativo', 1),
             ],
             'descricao' => [
-                'required',
                 'string',
                 'min:1',
                 'max:255'
             ],
-            'valor'                 => 'required|numeric|between:0,2000',
-            'dia_fechamento_fatura' => 'required|integer|min:1|max:31',
-            'ativo'                 => 'boolean'
+            'vencimento'    => 'date',
+            'valor'         => 'numeric|between:0,2000',
         ];
     }
 
@@ -50,7 +53,7 @@ class CreateAssinaturaRequest extends FormRequest
     {
         return [
             'required'  => 'O campo :attribute precisa ser informado.',
-            'unique'    => 'O :attribute já está sendo utilizado em outra assinatura ativa.',
+            'unique'    => 'O :attribute já está sendo utilizado em uma assinatura ativa.',
             'email'     => 'O campo :attribute precisa ser um email válido.',
             'exists'    => 'O :attribute não existe na base de dados.',
             'min'       => 'O campo :attribute não antingiu o valor minimo de :min',

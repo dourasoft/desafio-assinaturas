@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Requests\Assinatura;
+namespace App\Http\Requests\Fatura;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class CreateAssinaturaRequest extends FormRequest
+class CreateFaturaRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,20 +24,20 @@ class CreateAssinaturaRequest extends FormRequest
     {
         return [
             'cadastro_id' => [
-                'required',
                 'int',
-                Rule::exists('cadastros', 'id'),
-                Rule::unique('assinaturas')->where('ativo', 1)
-            ],
-            'descricao' => [
-                'required',
-                'string',
                 'min:1',
-                'max:255'
+                'required',
+                Rule::exists('cadastros', 'id')->where('ativo', 1),
             ],
-            'valor'                 => 'required|numeric|between:0,2000',
-            'dia_fechamento_fatura' => 'required|integer|min:1|max:31',
-            'ativo'                 => 'boolean'
+            'assinatura_id' => [
+                'int',
+                'min:1',
+                'required',
+                Rule::exists('assinaturas', 'id')->where('ativo', 1),
+            ],
+            'descricao'     => 'required|string|min:1|max:255',
+            'vencimento'    => 'required|date',
+            'valor'         => 'required|numeric|between:0,2000',
         ];
     }
 
@@ -50,7 +50,7 @@ class CreateAssinaturaRequest extends FormRequest
     {
         return [
             'required'  => 'O campo :attribute precisa ser informado.',
-            'unique'    => 'O :attribute já está sendo utilizado em outra assinatura ativa.',
+            'unique'    => 'O :attribute já está sendo utilizado em uma assinatura ativa.',
             'email'     => 'O campo :attribute precisa ser um email válido.',
             'exists'    => 'O :attribute não existe na base de dados.',
             'min'       => 'O campo :attribute não antingiu o valor minimo de :min',

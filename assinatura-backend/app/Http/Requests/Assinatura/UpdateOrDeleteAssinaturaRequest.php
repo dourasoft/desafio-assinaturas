@@ -34,7 +34,7 @@ class UpdateOrDeleteAssinaturaRequest extends FormRequest
                 'min:1',
                 'max:255'
             ],
-            'valor'                 => 'string|min:1|max:255',
+            'valor'                 => 'numeric|between:0,2000',
             'dia_fechamento_fatura' => 'integer|min:1|max:31',
             'ativo'                 => 'boolean'
         ];
@@ -53,7 +53,8 @@ class UpdateOrDeleteAssinaturaRequest extends FormRequest
             'email'     => 'O campo :attribute precisa ser um email válido.',
             'exists'    => 'O :attribute não existe na base de dados.',
             'min'       => 'O campo :attribute não antingiu o valor minimo de :min',
-            'max'       => 'O campo :attribute ultrapassou o valor maximo de :max'
+            'max'       => 'O campo :attribute ultrapassou o valor maximo de :max',
+            'between'   => 'O campo :attribute deve ter o valor entre :min e :max'
         ];
     }
 }
