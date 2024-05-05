@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Assinatura;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class CreateCadastroFormRequest extends FormRequest
+class CreateAssinaturaRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,22 +22,22 @@ class CreateCadastroFormRequest extends FormRequest
      */
     public function rules(): array
     {
-
         return [
-            'email' => [
+            'cadastro_id' => [
                 'required',
-                'email',
-                Rule::unique('cadastros')->where('ativo', 1)
+                'int',
+                Rule::exists('cadastros', 'id'),
+                Rule::unique('assinaturas')->where('ativo', 1)
             ],
-            'codigo' => [
+            'descricao' => [
                 'required',
                 'string',
-                Rule::unique('cadastros')->where('ativo', 1),
                 'min:1',
                 'max:255'
             ],
-            'nome'      => 'required|string|min:1|max:255',
-            'telefone'  => 'required|string|min:11|max:255',
+            'valor'                 => 'required|string|min:1|max:255',
+            'dia_fechamento_fatura' => 'required|integer|min:1|max:31',
+            'ativo'                 => 'boolean'
         ];
     }
 
@@ -50,8 +50,11 @@ class CreateCadastroFormRequest extends FormRequest
     {
         return [
             'required'  => 'O campo :attribute precisa ser informado.',
-            'unique'    => 'O :attribute já está sendo utilizado em outro cadastro.',
-            'email'     => 'O campo :attribute precisa ser um email válido.'
+            'unique'    => 'O :attribute já está sendo utilizado em outra assinatura ativa.',
+            'email'     => 'O campo :attribute precisa ser um email válido.',
+            'exists'    => 'O :attribute não existe na base de dados.',
+            'min'       => 'O campo :attribute não antingiu o valor minimo de :min',
+            'max'       => 'O campo :attribute ultrapassou o valor maximo de :max'
         ];
     }
 }

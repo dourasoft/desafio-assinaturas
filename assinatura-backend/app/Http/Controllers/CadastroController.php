@@ -2,21 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreateCadastroFormRequest;
-use App\Http\Requests\UpdateOrDeleteCadastroFormRequest;
+use App\Http\Requests\Cadastro\CreateCadastroFormRequest;
+use App\Http\Requests\Cadastro\UpdateOrDeleteCadastroFormRequest;
 use App\Http\Resources\CadastroResource;
 use App\Models\Cadastro;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
 use Throwable;
 
 class CadastroController extends Controller
 {
-    public static function getAll()
+    public static function index()
     {
         return CadastroResource::collection(Cadastro::all());
     }
 
-    public static function getById(UpdateOrDeleteCadastroFormRequest $request)
+    public static function show(UpdateOrDeleteCadastroFormRequest $request)
     {
         return CadastroResource::make(Cadastro::find($request->id));
     }
@@ -26,22 +27,25 @@ class CadastroController extends Controller
 
         try {
 
+            DB::beginTransaction();
+
             $cadastro = Cadastro::create([
                 'codigo'    => $request->codigo,
                 'nome'      => $request->nome,
                 'email'     => $request->email,
-                'telefone'  => $request->telefone,
-                'ativo'     => isset($request->ativo) ?? true
+                'telefone'  => $request->telefone
             ]);
+
+            DB::commit();
         } catch (Throwable $th) {
+            DB::rollBack();
             return response()->json(['data' => ['error' =>  'Erro ao inserir o cadastro: ' . $th->getMessage()]]);
         }
-
 
         return response()->json(['sucess' => true, 'message' => 'Cadastro inserido com sucesso.', 'data' =>  CadastroResource::make($cadastro)], Response::HTTP_OK);
     }
 
-    public static function edit(UpdateOrDeleteCadastroFormRequest $request)
+    public static function update(UpdateOrDeleteCadastroFormRequest $request)
     {
         $cadastro = Cadastro::find($request->id);
 
@@ -59,7 +63,7 @@ class CadastroController extends Controller
         return response()->json(['sucess' => true, 'message' => 'Cadastro atualizado com sucesso.', 'data' =>  CadastroResource::make($cadastro)], Response::HTTP_OK);
     }
 
-    public static function delete(UpdateOrDeleteCadastroFormRequest $request)
+    public static function destroy(UpdateOrDeleteCadastroFormRequest $request)
     {
         $cadastro = Cadastro::find($request->id);
 

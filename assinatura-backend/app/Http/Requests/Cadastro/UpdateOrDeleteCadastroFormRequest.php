@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Cadastro;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
@@ -48,7 +48,8 @@ class UpdateOrDeleteCadastroFormRequest extends FormRequest
     {
         return [
             'required'  => 'O campo :attribute precisa ser informado.',
-            'email'     => 'O campo :attribute precisa ser um email válido.'
+            'email'     => 'O campo :attribute precisa ser um email válido.',
+            'unique'    => 'O :attribute informado já está sendo utilizado em outro cadastro.'
         ];
     }
 }

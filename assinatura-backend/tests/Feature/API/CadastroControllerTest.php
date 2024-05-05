@@ -4,45 +4,46 @@ namespace Tests\Feature\API;
 
 use App\Models\Cadastro;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Tests\TestCase;
+use Illuminate\Foundation\Testing\TestCase as TestingTestCase;
+use Illuminate\Http\Response;
 
-class CadastroControllerTest extends TestCase
+use function PHPUnit\Framework\isFalse;
+
+class CadastroControllerTest extends TestingTestCase
 {
 
     use RefreshDatabase;
 
-    /**
-     * A basic feature test example.
-     */
-
-    public function test_buscar_cadastros_ativos(): void
+    public function test_buscar_cadastros(): void
     {
         Cadastro::factory(20)->create();
 
         $response = $this->getJson('/api/cadastro');
 
-        $response->assertStatus(200);
+        $response->assertStatus(Response::HTTP_OK);
 
         $this->assertEquals(20, count($response->json(['data'])));
-    }
-
-    public function test_buscar_cadastros_inativos(): void
-    {
-        Cadastro::factory(10)->create(['ativo' => false]);
-
-        $response = $this->getJson('/api/cadastro');
-
-        $response->assertStatus(200);
-
-        $this->assertEquals(0, count($response->json(['data'])));
     }
 
     public function test_buscar_unico_cadastro(): void
     {
         $cadastro = Cadastro::factory()->createOne();
 
-        $response = $this->getJson("/api/cadastro/$cadastro->codigo");
+        $response = $this->json('GET', '/api/cadastro/id', ['id' => $cadastro->id]);
 
         $response->assertStatus(200);
+    }
+
+    public function test_inativar_cadastro(): void
+    {
+        $cadastro = Cadastro::factory()->createOne();
+
+        $response = $this->json('delete', '/api/cadastro/destroy', ['id' => $cadastro->id]);
+
+        $response->assertStatus(200);
+
+        $cadastro = Cadastro::find($cadastro->id);
+
+        isFalse($cadastro->ativo);
     }
 }

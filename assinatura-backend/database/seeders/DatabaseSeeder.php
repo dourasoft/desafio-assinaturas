@@ -2,9 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Assinaturas;
 use App\Models\Cadastro;
-use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,6 +13,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Cadastro::factory(50)->create();
+        $numeroRegistros = 30;
+        
+        Cadastro::factory($numeroRegistros)->create();
+        Assinaturas::factory($numeroRegistros)->create();
     }
 }

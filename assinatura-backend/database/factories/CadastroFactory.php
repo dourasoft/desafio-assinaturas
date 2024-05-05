@@ -16,7 +16,6 @@ class CadastroFactory extends Factory
      */
     public function definition(): array
     {
-
         return [
             'codigo'    => $this->faker->unique()->randomNumber(),
             'nome'      => $this->faker->name(),
