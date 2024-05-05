@@ -7,15 +7,20 @@ use App\Http\Requests\UpdateRegisterRequest;
 use App\Http\Resources\RegisterCollection;
 use App\Http\Resources\RegisterResource;
 use App\Models\Register;
+use App\Traits\ApiResponser;
+use Illuminate\Http\Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class RegisterController extends Controller
 {
+    use ApiResponser;
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return new RegisterCollection(Register::all());
+        return new RegisterCollection(Register::with('subscriptions.invoice')->get());
     }
 
     /**
@@ -31,7 +36,7 @@ class RegisterController extends Controller
      */
     public function show(Register $register)
     {
-        return new RegisterResource($register);
+        return new RegisterResource($register->load('subscriptions.invoice'));
     }
 
     /**
@@ -41,7 +46,7 @@ class RegisterController extends Controller
     {
         $register->fill($request->validated());
         $register->save();
-        return new RegisterResource($register);
+        return new RegisterResource($register->load('subscriptions.invoice'));
     }
 
     /**
@@ -49,7 +54,11 @@ class RegisterController extends Controller
      */
     public function destroy(Register $register)
     {
-        $register->delete();
-        return response()->noContent();
+        try {
+            $register->deleteOrFail();
+        } catch (NotFoundHttpException $th) {
+            return $this->errorResponse(Response::$statusTexts[Response::HTTP_NOT_FOUND], Response::HTTP_NOT_FOUND);
+        }
+        return response()->json(['data' => ["message" => "Register successfully deleted."]], Response::HTTP_OK);
     }
 }
