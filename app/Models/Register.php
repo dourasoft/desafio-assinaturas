@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Register extends Model
@@ -26,7 +25,7 @@ class Register extends Model
      */
     protected $fillable = ['code', 'name', 'email', 'phone'];
 
-    public function subscription(): HasMany
+    public function subscriptions(): HasMany
     {
         return $this->hasMany(Subscription::class);
     }
