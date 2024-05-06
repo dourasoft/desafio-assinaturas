@@ -1,0 +1,1082 @@
+{
+	"info": {
+		"_postman_id": "79753130-9f15-4cea-a049-6535c32bec58",
+		"name": "Assinatura",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2103973"
+	},
+	"item": [
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-back}}/users",
+							"host": [
+								"{{url-back}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Usuários",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8888/api/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8888"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 06 May 2024 14:01:10 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 149,\n        \"codigo\": \"6703964638\",\n        \"name\": \"Mr. Ransom Kling\",\n        \"email\": \"rhomenick@example.org\",\n        \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"telefone\": \"5296874455\"\n    },\n    {\n        \"id\": 148,\n        \"codigo\": \"7113307089\",\n        \"name\": \"Marcelo Prosacco\",\n        \"email\": \"osbaldo15@example.org\",\n        \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"telefone\": \"8467448928\"\n    },\n    {\n        \"id\": 147,\n        \"codigo\": \"9788244614\",\n        \"name\": \"Ms. Precious Zemlak\",\n        \"email\": \"marlee.howe@example.com\",\n        \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"telefone\": \"9834620492\"\n    },\n    {\n        \"id\": 146,\n        \"codigo\": \"6981885595\",\n        \"name\": \"Bradford Schiller\",\n        \"email\": \"wisoky.leon@example.org\",\n        \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"telefone\": \"3218964774\"\n    },\n    {\n        \"id\": 145,\n        \"codigo\": \"9260879307\",\n        \"name\": \"Mrs. Shirley Conn\",\n        \"email\": \"fisher.denis@example.org\",\n        \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"telefone\": \"3926193475\"\n    },\n    {\n        \"id\": 144,\n        \"codigo\": \"3663207746\",\n        \"name\": \"Cheyenne Johns\",\n        \"email\": \"tdaniel@example.org\",\n        \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"telefone\": \"8236709612\"\n    },\n    {\n        \"id\": 143,\n        \"codigo\": \"1995413876\",\n        \"name\": \"Dora Kessler\",\n        \"email\": \"marty.gottlieb@example.com\",\n        \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"telefone\": \"6950502958\"\n    },\n    {\n        \"id\": 142,\n        \"codigo\": \"0447118417\",\n        \"name\": \"Chelsie Welch\",\n        \"email\": \"eleanora.connelly@example.net\",\n        \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"telefone\": \"7306868322\"\n    },\n    {\n        \"id\": 141,\n        \"codigo\": \"4680608329\",\n        \"name\": \"Sunny Smitham V\",\n        \"email\": \"pmraz@example.net\",\n        \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"telefone\": \"5061213339\"\n    },\n    {\n        \"id\": 140,\n        \"codigo\": \"4241488748\",\n        \"name\": \"Ms. Nyasia Gusikowski IV\",\n        \"email\": \"akub@example.org\",\n        \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"telefone\": \"2968587433\"\n    },\n    {\n        \"id\": 139,\n        \"codigo\": \"5901145829\",\n        \"name\": \"Kaleigh Hackett\",\n        \"email\": \"mckenzie.genoveva@example.com\",\n        \"email_verified_at\": \"2024-05-05T15:00:03.000000Z\",\n        \"created_at\": \"2024-05-05T15:00:03.000000Z\",\n        \"updated_at\": \"2024-05-05T15:00:03.000000Z\",\n        \"telefone\": \"0565159155\"\n    },\n    {\n        \"id\": 138,\n        \"codigo\": \"3205975725\",\n        \"name\": \"Miss Janice Bruen\",\n        \"email\": \"caroline64@example.org\",\n        \"email_verified_at\": \"2024-05-05T15:00:03.000000Z\",\n        \"created_at\": \"2024-05-05T15:00:03.000000Z\",\n        \"updated_at\": \"2024-05-05T15:00:03.000000Z\",\n        \"telefone\": \"2471406471\"\n    },\n    {\n        \"id\": 137,\n        \"codigo\": \"3225270894\",\n        \"name\": \"Leo Botsford\",\n        \"email\": \"ycole@example.net\",\n        \"email_verified_at\": \"2024-05-05T15:00:03.000000Z\",\n        \"created_at\": \"2024-05-05T15:00:03.000000Z\",\n        \"updated_at\": \"2024-05-05T15:00:03.000000Z\",\n        \"telefone\": \"9564296595\"\n    },\n    {\n        \"id\": 136,\n        \"codigo\": \"6019804683\",\n        \"name\": \"Cameron Leannon\",\n        \"email\": \"mariela.schmitt@example.com\",\n        \"email_verified_at\": \"2024-05-05T15:00:03.000000Z\",\n        \"created_at\": \"2024-05-05T15:00:03.000000Z\",\n        \"updated_at\": \"2024-05-05T15:00:03.000000Z\",\n        \"telefone\": \"2933501019\"\n    },\n    {\n        \"id\": 135,\n        \"codigo\": \"6062208638\",\n        \"name\": \"Prof. Frederick Harber\",\n        \"email\": \"rippin.susan@example.net\",\n        \"email_verified_at\": \"2024-05-05T15:00:03.000000Z\",\n        \"created_at\": \"2024-05-05T15:00:03.000000Z\",\n        \"updated_at\": \"2024-05-05T15:00:03.000000Z\",\n        \"telefone\": \"0289761979\"\n    },\n    {\n        \"id\": 134,\n        \"codigo\": \"0399689494\",\n        \"name\": \"Dr. Claudia Robel\",\n        \"email\": \"royce44@example.com\",\n        \"email_verified_at\": \"2024-05-05T15:00:03.000000Z\",\n        \"created_at\": \"2024-05-05T15:00:03.000000Z\",\n        \"updated_at\": \"2024-05-05T15:00:03.000000Z\",\n        \"telefone\": \"8522403169\"\n    },\n    {\n        \"id\": 133,\n        \"codigo\": \"1054042971\",\n        \"name\": \"Dr. Aurore Jacobi\",\n        \"email\": \"dorothea64@example.net\",\n        \"email_verified_at\": \"2024-05-05T15:00:03.000000Z\",\n        \"created_at\": \"2024-05-05T15:00:03.000000Z\",\n        \"updated_at\": \"2024-05-05T15:00:03.000000Z\",\n        \"telefone\": \"3637662010\"\n    },\n    {\n        \"id\": 132,\n        \"codigo\": \"1663304971\",\n        \"name\": \"Phoebe Murray\",\n        \"email\": \"liana95@example.org\",\n        \"email_verified_at\": \"2024-05-05T15:00:03.000000Z\",\n        \"created_at\": \"2024-05-05T15:00:03.000000Z\",\n        \"updated_at\": \"2024-05-05T15:00:03.000000Z\",\n        \"telefone\": \"3382642218\"\n    },\n    {\n        \"id\": 131,\n        \"codigo\": \"1794174848\",\n        \"name\": \"Christy Hackett PhD\",\n        \"email\": \"price.alisha@example.org\",\n        \"email_verified_at\": \"2024-05-05T15:00:03.000000Z\",\n        \"created_at\": \"2024-05-05T15:00:03.000000Z\",\n        \"updated_at\": \"2024-05-05T15:00:03.000000Z\",\n        \"telefone\": \"8014193599\"\n    },\n    {\n        \"id\": 130,\n        \"codigo\": \"3085465716\",\n        \"name\": \"Prof. Arturo Jerde PhD\",\n        \"email\": \"callie20@example.org\",\n        \"email_verified_at\": \"2024-05-05T15:00:02.000000Z\",\n        \"created_at\": \"2024-05-05T15:00:03.000000Z\",\n        \"updated_at\": \"2024-05-05T15:00:03.000000Z\",\n        \"telefone\": \"9156120982\"\n    },\n    {\n        \"id\": 129,\n        \"codigo\": \"0351429277\",\n        \"name\": \"Tessie Auer DVM\",\n        \"email\": \"zkohler@example.org\",\n        \"email_verified_at\": \"2024-05-05T14:55:15.000000Z\",\n        \"created_at\": \"2024-05-05T14:55:15.000000Z\",\n        \"updated_at\": \"2024-05-05T14:55:15.000000Z\",\n        \"telefone\": \"6284062747\"\n    },\n    {\n        \"id\": 128,\n        \"codigo\": \"4821292879\",\n        \"name\": \"Kristin Walker MD\",\n        \"email\": \"lonnie03@example.com\",\n        \"email_verified_at\": \"2024-05-05T14:55:15.000000Z\",\n        \"created_at\": \"2024-05-05T14:55:15.000000Z\",\n        \"updated_at\": \"2024-05-05T14:55:15.000000Z\",\n        \"telefone\": \"4403701538\"\n    },\n    {\n        \"id\": 127,\n        \"codigo\": \"9203835478\",\n        \"name\": \"Mckayla Hirthe\",\n        \"email\": \"florence56@example.com\",\n        \"email_verified_at\": \"2024-05-05T14:55:15.000000Z\",\n        \"created_at\": \"2024-05-05T14:55:15.000000Z\",\n        \"updated_at\": \"2024-05-05T14:55:15.000000Z\",\n        \"telefone\": \"7756139009\"\n    },\n    {\n        \"id\": 126,\n        \"codigo\": \"7439627942\",\n        \"name\": \"Dr. Kyle Rolfson MD\",\n        \"email\": \"hershel94@example.com\",\n        \"email_verified_at\": \"2024-05-05T14:55:15.000000Z\",\n        \"created_at\": \"2024-05-05T14:55:15.000000Z\",\n        \"updated_at\": \"2024-05-05T14:55:15.000000Z\",\n        \"telefone\": \"8125471075\"\n    },\n    {\n        \"id\": 125,\n        \"codigo\": \"5684988570\",\n        \"name\": \"Fanny Botsford PhD\",\n        \"email\": \"ewell.bauch@example.net\",\n        \"email_verified_at\": \"2024-05-05T14:55:15.000000Z\",\n        \"created_at\": \"2024-05-05T14:55:15.000000Z\",\n        \"updated_at\": \"2024-05-05T14:55:15.000000Z\",\n        \"telefone\": \"8083674362\"\n    },\n    {\n        \"id\": 124,\n        \"codigo\": \"5904833295\",\n        \"name\": \"Ciara Cummerata\",\n        \"email\": \"erwin66@example.com\",\n        \"email_verified_at\": \"2024-05-05T14:55:15.000000Z\",\n        \"created_at\": \"2024-05-05T14:55:15.000000Z\",\n        \"updated_at\": \"2024-05-05T14:55:15.000000Z\",\n        \"telefone\": \"0271580536\"\n    },\n    {\n        \"id\": 123,\n        \"codigo\": \"0423010421\",\n        \"name\": \"Prof. Armando Dickens\",\n        \"email\": \"jakubowski.monica@example.net\",\n        \"email_verified_at\": \"2024-05-05T14:55:15.000000Z\",\n        \"created_at\": \"2024-05-05T14:55:15.000000Z\",\n        \"updated_at\": \"2024-05-05T14:55:15.000000Z\",\n        \"telefone\": \"0047475783\"\n    },\n    {\n        \"id\": 122,\n        \"codigo\": \"5935985728\",\n        \"name\": \"Bertram Jacobs Sr.\",\n        \"email\": \"qweber@example.com\",\n        \"email_verified_at\": \"2024-05-05T14:55:15.000000Z\",\n        \"created_at\": \"2024-05-05T14:55:15.000000Z\",\n        \"updated_at\": \"2024-05-05T14:55:15.000000Z\",\n        \"telefone\": \"9904995417\"\n    },\n    {\n        \"id\": 121,\n        \"codigo\": \"2634908635\",\n        \"name\": \"Columbus Schmeler\",\n        \"email\": \"eshields@example.org\",\n        \"email_verified_at\": \"2024-05-05T14:55:15.000000Z\",\n        \"created_at\": \"2024-05-05T14:55:15.000000Z\",\n        \"updated_at\": \"2024-05-05T14:55:15.000000Z\",\n        \"telefone\": \"9131635464\"\n    },\n    {\n        \"id\": 120,\n        \"codigo\": \"4943465652\",\n        \"name\": \"Cleta Hudson\",\n        \"email\": \"howe.kristian@example.com\",\n        \"email_verified_at\": \"2024-05-05T14:55:14.000000Z\",\n        \"created_at\": \"2024-05-05T14:55:15.000000Z\",\n        \"updated_at\": \"2024-05-05T14:55:15.000000Z\",\n        \"telefone\": \"3740729903\"\n    },\n    {\n        \"id\": 119,\n        \"codigo\": \"6536436887\",\n        \"name\": \"Zetta Eichmann\",\n        \"email\": \"lehner.jane@example.net\",\n        \"email_verified_at\": \"2024-05-05T14:55:03.000000Z\",\n        \"created_at\": \"2024-05-05T14:55:03.000000Z\",\n        \"updated_at\": \"2024-05-05T14:55:03.000000Z\",\n        \"telefone\": \"7885542345\"\n    },\n    {\n        \"id\": 118,\n        \"codigo\": \"9309912144\",\n        \"name\": \"Stacy Barrows\",\n        \"email\": \"clementina28@example.org\",\n        \"email_verified_at\": \"2024-05-05T14:55:03.000000Z\",\n        \"created_at\": \"2024-05-05T14:55:03.000000Z\",\n        \"updated_at\": \"2024-05-05T14:55:03.000000Z\",\n        \"telefone\": \"3024097460\"\n    },\n    {\n        \"id\": 117,\n        \"codigo\": \"5066703100\",\n        \"name\": \"Alexa Wolf\",\n        \"email\": \"chris34@example.com\",\n        \"email_verified_at\": \"2024-05-05T14:55:03.000000Z\",\n        \"created_at\": \"2024-05-05T14:55:03.000000Z\",\n        \"updated_at\": \"2024-05-05T14:55:03.000000Z\",\n        \"telefone\": \"4768883754\"\n    },\n    {\n        \"id\": 116,\n        \"codigo\": \"8830546714\",\n        \"name\": \"Miss Clara Cartwright\",\n        \"email\": \"watson75@example.org\",\n        \"email_verified_at\": \"2024-05-05T14:55:03.000000Z\",\n        \"created_at\": \"2024-05-05T14:55:03.000000Z\",\n        \"updated_at\": \"2024-05-05T14:55:03.000000Z\",\n        \"telefone\": \"4402394887\"\n    },\n    {\n        \"id\": 115,\n        \"codigo\": \"8913934122\",\n        \"name\": \"Clare Hilpert I\",\n        \"email\": \"russel.javonte@example.net\",\n        \"email_verified_at\": \"2024-05-05T14:55:03.000000Z\",\n        \"created_at\": \"2024-05-05T14:55:03.000000Z\",\n        \"updated_at\": \"2024-05-05T14:55:03.000000Z\",\n        \"telefone\": \"9847134571\"\n    },\n    {\n        \"id\": 114,\n        \"codigo\": \"7305566649\",\n        \"name\": \"Hosea Willms\",\n        \"email\": \"ellen.leuschke@example.org\",\n        \"email_verified_at\": \"2024-05-05T14:55:03.000000Z\",\n        \"created_at\": \"2024-05-05T14:55:03.000000Z\",\n        \"updated_at\": \"2024-05-05T14:55:03.000000Z\",\n        \"telefone\": \"0267324302\"\n    },\n    {\n        \"id\": 113,\n        \"codigo\": \"0734989833\",\n        \"name\": \"Mr. Guiseppe Treutel\",\n        \"email\": \"brakus.santiago@example.net\",\n        \"email_verified_at\": \"2024-05-05T14:55:03.000000Z\",\n        \"created_at\": \"2024-05-05T14:55:03.000000Z\",\n        \"updated_at\": \"2024-05-05T14:55:03.000000Z\",\n        \"telefone\": \"9302548732\"\n    },\n    {\n        \"id\": 112,\n        \"codigo\": \"1165157919\",\n        \"name\": \"Mr. Chaim Rolfson\",\n        \"email\": \"hoeger.abdullah@example.net\",\n        \"email_verified_at\": \"2024-05-05T14:55:03.000000Z\",\n        \"created_at\": \"2024-05-05T14:55:03.000000Z\",\n        \"updated_at\": \"2024-05-05T14:55:03.000000Z\",\n        \"telefone\": \"8184753718\"\n    },\n    {\n        \"id\": 111,\n        \"codigo\": \"9752514147\",\n        \"name\": \"Delta Kutch\",\n        \"email\": \"davonte58@example.net\",\n        \"email_verified_at\": \"2024-05-05T14:55:03.000000Z\",\n        \"created_at\": \"2024-05-05T14:55:03.000000Z\",\n        \"updated_at\": \"2024-05-05T14:55:03.000000Z\",\n        \"telefone\": \"8741427351\"\n    },\n    {\n        \"id\": 110,\n        \"codigo\": \"2112471123\",\n        \"name\": \"Krystal Brakus\",\n        \"email\": \"lhermiston@example.net\",\n        \"email_verified_at\": \"2024-05-05T14:55:03.000000Z\",\n        \"created_at\": \"2024-05-05T14:55:03.000000Z\",\n        \"updated_at\": \"2024-05-05T14:55:03.000000Z\",\n        \"telefone\": \"6585167700\"\n    },\n    {\n        \"id\": 109,\n        \"codigo\": \"5205599982\",\n        \"name\": \"Quincy Renner\",\n        \"email\": \"miller.vincenza@example.com\",\n        \"email_verified_at\": \"2024-05-05T14:54:53.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:53.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:53.000000Z\",\n        \"telefone\": \"8161153396\"\n    },\n    {\n        \"id\": 108,\n        \"codigo\": \"7308837020\",\n        \"name\": \"Morton Will\",\n        \"email\": \"eunice.schoen@example.com\",\n        \"email_verified_at\": \"2024-05-05T14:54:53.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:53.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:53.000000Z\",\n        \"telefone\": \"8343427603\"\n    },\n    {\n        \"id\": 107,\n        \"codigo\": \"9415743911\",\n        \"name\": \"Tabitha Pouros\",\n        \"email\": \"mfeeney@example.com\",\n        \"email_verified_at\": \"2024-05-05T14:54:53.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:53.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:53.000000Z\",\n        \"telefone\": \"0873253293\"\n    },\n    {\n        \"id\": 106,\n        \"codigo\": \"5728899297\",\n        \"name\": \"Mona Jast\",\n        \"email\": \"theresia.koss@example.org\",\n        \"email_verified_at\": \"2024-05-05T14:54:53.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:53.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:53.000000Z\",\n        \"telefone\": \"6154109813\"\n    },\n    {\n        \"id\": 105,\n        \"codigo\": \"8282547751\",\n        \"name\": \"Deion Rempel\",\n        \"email\": \"bill.bayer@example.net\",\n        \"email_verified_at\": \"2024-05-05T14:54:53.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:53.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:53.000000Z\",\n        \"telefone\": \"5272385058\"\n    },\n    {\n        \"id\": 104,\n        \"codigo\": \"1263245048\",\n        \"name\": \"Prof. Cassidy Zemlak\",\n        \"email\": \"monique95@example.com\",\n        \"email_verified_at\": \"2024-05-05T14:54:53.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:53.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:53.000000Z\",\n        \"telefone\": \"7513735796\"\n    },\n    {\n        \"id\": 103,\n        \"codigo\": \"6209174544\",\n        \"name\": \"Jennings Lakin\",\n        \"email\": \"uwill@example.com\",\n        \"email_verified_at\": \"2024-05-05T14:54:53.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:53.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:53.000000Z\",\n        \"telefone\": \"6655972018\"\n    },\n    {\n        \"id\": 102,\n        \"codigo\": \"0351733212\",\n        \"name\": \"Mrs. Colleen Macejkovic Sr.\",\n        \"email\": \"bheaney@example.net\",\n        \"email_verified_at\": \"2024-05-05T14:54:53.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:53.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:53.000000Z\",\n        \"telefone\": \"6686799558\"\n    },\n    {\n        \"id\": 101,\n        \"codigo\": \"2048675684\",\n        \"name\": \"Mr. Giles Stokes V\",\n        \"email\": \"anita47@example.com\",\n        \"email_verified_at\": \"2024-05-05T14:54:53.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:53.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:53.000000Z\",\n        \"telefone\": \"7127503854\"\n    },\n    {\n        \"id\": 100,\n        \"codigo\": \"7664904727\",\n        \"name\": \"Kenyon O'Kon\",\n        \"email\": \"mgleason@example.net\",\n        \"email_verified_at\": \"2024-05-05T14:54:53.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:53.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:53.000000Z\",\n        \"telefone\": \"1179423227\"\n    },\n    {\n        \"id\": 99,\n        \"codigo\": \"6936083873\",\n        \"name\": \"Clinton Upton\",\n        \"email\": \"zgulgowski@example.com\",\n        \"email_verified_at\": \"2024-05-05T14:54:44.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:44.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:44.000000Z\",\n        \"telefone\": \"0890620823\"\n    },\n    {\n        \"id\": 98,\n        \"codigo\": \"1176358119\",\n        \"name\": \"Vincent Kassulke\",\n        \"email\": \"gberge@example.org\",\n        \"email_verified_at\": \"2024-05-05T14:54:44.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:44.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:44.000000Z\",\n        \"telefone\": \"7951038262\"\n    },\n    {\n        \"id\": 97,\n        \"codigo\": \"5618666324\",\n        \"name\": \"Prof. Loren Veum\",\n        \"email\": \"tstreich@example.net\",\n        \"email_verified_at\": \"2024-05-05T14:54:44.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:44.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:44.000000Z\",\n        \"telefone\": \"9944181987\"\n    },\n    {\n        \"id\": 96,\n        \"codigo\": \"9159973173\",\n        \"name\": \"Timothy Auer\",\n        \"email\": \"imann@example.org\",\n        \"email_verified_at\": \"2024-05-05T14:54:44.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:44.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:44.000000Z\",\n        \"telefone\": \"2155394690\"\n    },\n    {\n        \"id\": 95,\n        \"codigo\": \"8533015781\",\n        \"name\": \"Fatima Farrell\",\n        \"email\": \"freddy.vonrueden@example.net\",\n        \"email_verified_at\": \"2024-05-05T14:54:44.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:44.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:44.000000Z\",\n        \"telefone\": \"6707009540\"\n    },\n    {\n        \"id\": 94,\n        \"codigo\": \"7278100392\",\n        \"name\": \"Philip Hamill\",\n        \"email\": \"fzboncak@example.org\",\n        \"email_verified_at\": \"2024-05-05T14:54:44.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:44.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:44.000000Z\",\n        \"telefone\": \"9627691019\"\n    },\n    {\n        \"id\": 93,\n        \"codigo\": \"4272557893\",\n        \"name\": \"Garland West\",\n        \"email\": \"smcclure@example.org\",\n        \"email_verified_at\": \"2024-05-05T14:54:44.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:44.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:44.000000Z\",\n        \"telefone\": \"7084144237\"\n    },\n    {\n        \"id\": 92,\n        \"codigo\": \"1471439032\",\n        \"name\": \"Brenden Gerhold\",\n        \"email\": \"coleman95@example.com\",\n        \"email_verified_at\": \"2024-05-05T14:54:44.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:44.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:44.000000Z\",\n        \"telefone\": \"8622547603\"\n    },\n    {\n        \"id\": 91,\n        \"codigo\": \"8915390729\",\n        \"name\": \"Willie Dicki\",\n        \"email\": \"harber.raoul@example.org\",\n        \"email_verified_at\": \"2024-05-05T14:54:44.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:44.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:44.000000Z\",\n        \"telefone\": \"2624603889\"\n    },\n    {\n        \"id\": 90,\n        \"codigo\": \"5762779102\",\n        \"name\": \"Athena Muller\",\n        \"email\": \"linwood.osinski@example.org\",\n        \"email_verified_at\": \"2024-05-05T14:54:44.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:44.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:44.000000Z\",\n        \"telefone\": \"7734340332\"\n    },\n    {\n        \"id\": 89,\n        \"codigo\": \"2393241898\",\n        \"name\": \"Tomas Langworth DDS\",\n        \"email\": \"wunsch.terrence@example.com\",\n        \"email_verified_at\": \"2024-05-05T14:54:35.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:35.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:35.000000Z\",\n        \"telefone\": \"4963978741\"\n    },\n    {\n        \"id\": 88,\n        \"codigo\": \"9460894132\",\n        \"name\": \"Miss Darby Nader\",\n        \"email\": \"belle59@example.org\",\n        \"email_verified_at\": \"2024-05-05T14:54:35.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:35.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:35.000000Z\",\n        \"telefone\": \"3747003084\"\n    },\n    {\n        \"id\": 87,\n        \"codigo\": \"4854457198\",\n        \"name\": \"Marguerite Aufderhar\",\n        \"email\": \"sgutkowski@example.org\",\n        \"email_verified_at\": \"2024-05-05T14:54:35.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:35.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:35.000000Z\",\n        \"telefone\": \"6972032792\"\n    },\n    {\n        \"id\": 86,\n        \"codigo\": \"4056088148\",\n        \"name\": \"Jana Green\",\n        \"email\": \"hschmidt@example.com\",\n        \"email_verified_at\": \"2024-05-05T14:54:35.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:35.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:35.000000Z\",\n        \"telefone\": \"5223697956\"\n    },\n    {\n        \"id\": 85,\n        \"codigo\": \"8268226579\",\n        \"name\": \"Kristoffer Tromp\",\n        \"email\": \"clementine50@example.org\",\n        \"email_verified_at\": \"2024-05-05T14:54:35.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:35.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:35.000000Z\",\n        \"telefone\": \"5749809159\"\n    },\n    {\n        \"id\": 84,\n        \"codigo\": \"2690448960\",\n        \"name\": \"Aryanna Osinski III\",\n        \"email\": \"prince.roberts@example.com\",\n        \"email_verified_at\": \"2024-05-05T14:54:35.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:35.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:35.000000Z\",\n        \"telefone\": \"5195269368\"\n    },\n    {\n        \"id\": 83,\n        \"codigo\": \"5790374380\",\n        \"name\": \"Ms. Kassandra Raynor\",\n        \"email\": \"moses.braun@example.org\",\n        \"email_verified_at\": \"2024-05-05T14:54:35.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:35.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:35.000000Z\",\n        \"telefone\": \"8595749911\"\n    },\n    {\n        \"id\": 82,\n        \"codigo\": \"5677467189\",\n        \"name\": \"Ms. Lila Kris MD\",\n        \"email\": \"schulist.julia@example.org\",\n        \"email_verified_at\": \"2024-05-05T14:54:35.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:35.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:35.000000Z\",\n        \"telefone\": \"9454617545\"\n    },\n    {\n        \"id\": 81,\n        \"codigo\": \"8681574529\",\n        \"name\": \"Mrs. Verdie Lynch\",\n        \"email\": \"torphy.madalyn@example.org\",\n        \"email_verified_at\": \"2024-05-05T14:54:35.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:35.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:35.000000Z\",\n        \"telefone\": \"7814680566\"\n    },\n    {\n        \"id\": 80,\n        \"codigo\": \"8151091750\",\n        \"name\": \"Dawson D'Amore\",\n        \"email\": \"rosemarie.lemke@example.net\",\n        \"email_verified_at\": \"2024-05-05T14:54:35.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:35.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:35.000000Z\",\n        \"telefone\": \"7177248273\"\n    },\n    {\n        \"id\": 79,\n        \"codigo\": \"5505527665\",\n        \"name\": \"Dr. Dewayne Gleichner\",\n        \"email\": \"dgaylord@example.net\",\n        \"email_verified_at\": \"2024-05-05T14:54:27.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:27.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:27.000000Z\",\n        \"telefone\": \"9393456686\"\n    },\n    {\n        \"id\": 78,\n        \"codigo\": \"8033402231\",\n        \"name\": \"Franco Russel\",\n        \"email\": \"leila.okon@example.net\",\n        \"email_verified_at\": \"2024-05-05T14:54:27.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:27.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:27.000000Z\",\n        \"telefone\": \"2829085673\"\n    },\n    {\n        \"id\": 77,\n        \"codigo\": \"1443413195\",\n        \"name\": \"Gene O'Hara\",\n        \"email\": \"charles44@example.net\",\n        \"email_verified_at\": \"2024-05-05T14:54:27.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:27.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:27.000000Z\",\n        \"telefone\": \"9895977718\"\n    },\n    {\n        \"id\": 76,\n        \"codigo\": \"1274852391\",\n        \"name\": \"Adan Grady\",\n        \"email\": \"gladyce.moen@example.net\",\n        \"email_verified_at\": \"2024-05-05T14:54:27.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:27.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:27.000000Z\",\n        \"telefone\": \"8126380713\"\n    },\n    {\n        \"id\": 75,\n        \"codigo\": \"6408518004\",\n        \"name\": \"Alverta Feeney II\",\n        \"email\": \"patsy.wiegand@example.org\",\n        \"email_verified_at\": \"2024-05-05T14:54:27.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:27.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:27.000000Z\",\n        \"telefone\": \"0923165385\"\n    },\n    {\n        \"id\": 74,\n        \"codigo\": \"2062045227\",\n        \"name\": \"Dallin Kerluke\",\n        \"email\": \"hansen.rosella@example.com\",\n        \"email_verified_at\": \"2024-05-05T14:54:27.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:27.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:27.000000Z\",\n        \"telefone\": \"0582181139\"\n    },\n    {\n        \"id\": 73,\n        \"codigo\": \"2564718684\",\n        \"name\": \"Dion Williamson\",\n        \"email\": \"jeffry.hessel@example.com\",\n        \"email_verified_at\": \"2024-05-05T14:54:27.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:27.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:27.000000Z\",\n        \"telefone\": \"9720090007\"\n    },\n    {\n        \"id\": 72,\n        \"codigo\": \"7312892282\",\n        \"name\": \"Torrey D'Amore\",\n        \"email\": \"hilpert.brenden@example.net\",\n        \"email_verified_at\": \"2024-05-05T14:54:27.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:27.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:27.000000Z\",\n        \"telefone\": \"7476374830\"\n    },\n    {\n        \"id\": 71,\n        \"codigo\": \"2078286898\",\n        \"name\": \"Myron Leuschke\",\n        \"email\": \"yhickle@example.com\",\n        \"email_verified_at\": \"2024-05-05T14:54:27.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:27.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:27.000000Z\",\n        \"telefone\": \"9702575320\"\n    },\n    {\n        \"id\": 70,\n        \"codigo\": \"2872459813\",\n        \"name\": \"Dr. Beau Legros IV\",\n        \"email\": \"davis.jadyn@example.net\",\n        \"email_verified_at\": \"2024-05-05T14:54:27.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:27.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:27.000000Z\",\n        \"telefone\": \"2110573836\"\n    },\n    {\n        \"id\": 69,\n        \"codigo\": \"5559735998\",\n        \"name\": \"Verdie Schulist\",\n        \"email\": \"emile.braun@example.com\",\n        \"email_verified_at\": \"2024-05-05T14:54:18.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:18.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:18.000000Z\",\n        \"telefone\": \"2240332022\"\n    },\n    {\n        \"id\": 68,\n        \"codigo\": \"0906391520\",\n        \"name\": \"Kraig Russel II\",\n        \"email\": \"nprice@example.com\",\n        \"email_verified_at\": \"2024-05-05T14:54:18.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:18.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:18.000000Z\",\n        \"telefone\": \"9213757267\"\n    },\n    {\n        \"id\": 67,\n        \"codigo\": \"8625913144\",\n        \"name\": \"Adaline Morar II\",\n        \"email\": \"srenner@example.net\",\n        \"email_verified_at\": \"2024-05-05T14:54:18.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:18.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:18.000000Z\",\n        \"telefone\": \"6925580832\"\n    },\n    {\n        \"id\": 66,\n        \"codigo\": \"9788187197\",\n        \"name\": \"Roger Quitzon DVM\",\n        \"email\": \"bobbie.ryan@example.net\",\n        \"email_verified_at\": \"2024-05-05T14:54:18.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:18.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:18.000000Z\",\n        \"telefone\": \"8826109925\"\n    },\n    {\n        \"id\": 65,\n        \"codigo\": \"8782862590\",\n        \"name\": \"Janelle Dooley\",\n        \"email\": \"alejandra78@example.net\",\n        \"email_verified_at\": \"2024-05-05T14:54:18.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:18.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:18.000000Z\",\n        \"telefone\": \"0422670906\"\n    },\n    {\n        \"id\": 64,\n        \"codigo\": \"8421498778\",\n        \"name\": \"Ms. Lenna Kemmer\",\n        \"email\": \"gaylord.makenzie@example.org\",\n        \"email_verified_at\": \"2024-05-05T14:54:18.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:18.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:18.000000Z\",\n        \"telefone\": \"0765443284\"\n    },\n    {\n        \"id\": 63,\n        \"codigo\": \"6366139175\",\n        \"name\": \"Kim Koch\",\n        \"email\": \"tsteuber@example.org\",\n        \"email_verified_at\": \"2024-05-05T14:54:18.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:18.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:18.000000Z\",\n        \"telefone\": \"7523104077\"\n    },\n    {\n        \"id\": 62,\n        \"codigo\": \"5500716839\",\n        \"name\": \"Derek White\",\n        \"email\": \"fondricka@example.com\",\n        \"email_verified_at\": \"2024-05-05T14:54:18.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:18.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:18.000000Z\",\n        \"telefone\": \"4315002786\"\n    },\n    {\n        \"id\": 61,\n        \"codigo\": \"5613329567\",\n        \"name\": \"Kaela Thiel\",\n        \"email\": \"stoltenberg.aron@example.net\",\n        \"email_verified_at\": \"2024-05-05T14:54:18.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:18.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:18.000000Z\",\n        \"telefone\": \"7253776620\"\n    },\n    {\n        \"id\": 60,\n        \"codigo\": \"0253344409\",\n        \"name\": \"Janis McDermott\",\n        \"email\": \"lmetz@example.org\",\n        \"email_verified_at\": \"2024-05-05T14:54:18.000000Z\",\n        \"created_at\": \"2024-05-05T14:54:18.000000Z\",\n        \"updated_at\": \"2024-05-05T14:54:18.000000Z\",\n        \"telefone\": \"2489908497\"\n    },\n    {\n        \"id\": 59,\n        \"codigo\": \"4760883\",\n        \"name\": \"ANDERSON BARROS COIMBRA\",\n        \"email\": \"andersonmegax@gmail.com\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2024-05-05T05:54:50.000000Z\",\n        \"updated_at\": \"2024-05-05T05:54:50.000000Z\",\n        \"telefone\": \"91991322651\"\n    },\n    {\n        \"id\": 58,\n        \"codigo\": \"5787292\",\n        \"name\": \"teste23\",\n        \"email\": \"teste23@teste23.com\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2024-05-05T03:25:08.000000Z\",\n        \"updated_at\": \"2024-05-05T03:25:08.000000Z\",\n        \"telefone\": \"91991322651\"\n    },\n    {\n        \"id\": 57,\n        \"codigo\": \"8789181\",\n        \"name\": \"teste22\",\n        \"email\": \"teste22@teste.com\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2024-05-05T03:22:38.000000Z\",\n        \"updated_at\": \"2024-05-05T03:22:38.000000Z\",\n        \"telefone\": \"91991322651\"\n    },\n    {\n        \"id\": 52,\n        \"codigo\": \"6935961\",\n        \"name\": \"test18\",\n        \"email\": \"teste18@email.com\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2024-05-05T00:23:00.000000Z\",\n        \"updated_at\": \"2024-05-05T00:23:00.000000Z\",\n        \"telefone\": \"91991322651\"\n    },\n    {\n        \"id\": 50,\n        \"codigo\": \"4657491\",\n        \"name\": \"teste16\",\n        \"email\": \"teste16@teste.com\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2024-05-04T23:45:07.000000Z\",\n        \"updated_at\": \"2024-05-04T23:45:07.000000Z\",\n        \"telefone\": \"91991322651\"\n    },\n    {\n        \"id\": 48,\n        \"codigo\": \"4853453\",\n        \"name\": \"teste14\",\n        \"email\": \"teste14@email.com\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2024-05-04T23:43:36.000000Z\",\n        \"updated_at\": \"2024-05-04T23:43:36.000000Z\",\n        \"telefone\": \"91991322651\"\n    },\n    {\n        \"id\": 46,\n        \"codigo\": \"3740729\",\n        \"name\": \"teste12\",\n        \"email\": \"teste12@teste.com\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2024-05-04T23:24:23.000000Z\",\n        \"updated_at\": \"2024-05-04T23:24:23.000000Z\",\n        \"telefone\": \"91991322651\"\n    },\n    {\n        \"id\": 44,\n        \"codigo\": \"8042586\",\n        \"name\": \"teste10\",\n        \"email\": \"teste10@teste.com\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2024-05-04T23:15:15.000000Z\",\n        \"updated_at\": \"2024-05-04T23:15:15.000000Z\",\n        \"telefone\": \"91991322651\"\n    },\n    {\n        \"id\": 43,\n        \"codigo\": \"5819363\",\n        \"name\": \"teste9\",\n        \"email\": \"teste9@teste.com\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2024-05-04T23:09:36.000000Z\",\n        \"updated_at\": \"2024-05-04T23:09:36.000000Z\",\n        \"telefone\": \"91991322651\"\n    },\n    {\n        \"id\": 42,\n        \"codigo\": \"9165361\",\n        \"name\": \"teste8\",\n        \"email\": \"teste8@teste.com\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2024-05-04T23:07:56.000000Z\",\n        \"updated_at\": \"2024-05-04T23:07:56.000000Z\",\n        \"telefone\": \"91991322651\"\n    },\n    {\n        \"id\": 40,\n        \"codigo\": \"9190961\",\n        \"name\": \"teste 6\",\n        \"email\": \"teste6@teste.com\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2024-05-04T22:59:15.000000Z\",\n        \"updated_at\": \"2024-05-04T22:59:15.000000Z\",\n        \"telefone\": \"91991322651\"\n    },\n    {\n        \"id\": 38,\n        \"codigo\": \"6998490\",\n        \"name\": \"TEST 4\",\n        \"email\": \"TEST24@TESTE4.COM\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2024-05-04T22:54:14.000000Z\",\n        \"updated_at\": \"2024-05-04T22:54:14.000000Z\",\n        \"telefone\": \"91991322651\"\n    },\n    {\n        \"id\": 36,\n        \"codigo\": \"9045614\",\n        \"name\": \"Test 43\",\n        \"email\": \"test@test1.com\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2024-05-04T21:45:34.000000Z\",\n        \"updated_at\": \"2024-05-04T21:45:34.000000Z\",\n        \"telefone\": \"91991322651\"\n    },\n    {\n        \"id\": 27,\n        \"codigo\": \"9523941254\",\n        \"name\": \"Prof. Vada Kunze\",\n        \"email\": \"cruz.trantow@example.net\",\n        \"email_verified_at\": \"2024-05-04T14:29:44.000000Z\",\n        \"created_at\": \"2024-05-04T14:29:44.000000Z\",\n        \"updated_at\": \"2024-05-04T14:29:44.000000Z\",\n        \"telefone\": \"5497442255\"\n    },\n    {\n        \"id\": 26,\n        \"codigo\": \"6668537852\",\n        \"name\": \"Mr. Marvin Walsh\",\n        \"email\": \"nweissnat@example.org\",\n        \"email_verified_at\": \"2024-05-04T14:29:44.000000Z\",\n        \"created_at\": \"2024-05-04T14:29:44.000000Z\",\n        \"updated_at\": \"2024-05-04T14:29:44.000000Z\",\n        \"telefone\": \"7055695070\"\n    },\n    {\n        \"id\": 25,\n        \"codigo\": \"7532577984\",\n        \"name\": \"Gregory Reynolds\",\n        \"email\": \"nella71@example.com\",\n        \"email_verified_at\": \"2024-05-04T14:29:44.000000Z\",\n        \"created_at\": \"2024-05-04T14:29:44.000000Z\",\n        \"updated_at\": \"2024-05-04T14:29:44.000000Z\",\n        \"telefone\": \"3288419021\"\n    },\n    {\n        \"id\": 24,\n        \"codigo\": \"6885442182\",\n        \"name\": \"Vivianne Kozey\",\n        \"email\": \"ycummerata@example.com\",\n        \"email_verified_at\": \"2024-05-04T14:29:44.000000Z\",\n        \"created_at\": \"2024-05-04T14:29:44.000000Z\",\n        \"updated_at\": \"2024-05-04T14:29:44.000000Z\",\n        \"telefone\": \"3165508395\"\n    },\n    {\n        \"id\": 23,\n        \"codigo\": \"8729971662\",\n        \"name\": \"Sophie Stracke\",\n        \"email\": \"hunter94@example.com\",\n        \"email_verified_at\": \"2024-05-04T14:29:44.000000Z\",\n        \"created_at\": \"2024-05-04T14:29:44.000000Z\",\n        \"updated_at\": \"2024-05-04T14:29:44.000000Z\",\n        \"telefone\": \"2408111148\"\n    },\n    {\n        \"id\": 22,\n        \"codigo\": \"4807535382\",\n        \"name\": \"Dr. Ericka Gerlach\",\n        \"email\": \"roob.hayden@example.org\",\n        \"email_verified_at\": \"2024-05-04T14:29:44.000000Z\",\n        \"created_at\": \"2024-05-04T14:29:44.000000Z\",\n        \"updated_at\": \"2024-05-04T14:29:44.000000Z\",\n        \"telefone\": \"7294044249\"\n    },\n    {\n        \"id\": 21,\n        \"codigo\": \"1440104181\",\n        \"name\": \"Emil Bednar\",\n        \"email\": \"jayce91@example.net\",\n        \"email_verified_at\": \"2024-05-04T14:29:44.000000Z\",\n        \"created_at\": \"2024-05-04T14:29:44.000000Z\",\n        \"updated_at\": \"2024-05-04T14:29:44.000000Z\",\n        \"telefone\": \"8342631111\"\n    },\n    {\n        \"id\": 20,\n        \"codigo\": \"2221109203\",\n        \"name\": \"Judy Rempel IV\",\n        \"email\": \"oconnell.easter@example.com\",\n        \"email_verified_at\": \"2024-05-04T14:29:44.000000Z\",\n        \"created_at\": \"2024-05-04T14:29:44.000000Z\",\n        \"updated_at\": \"2024-05-04T14:29:44.000000Z\",\n        \"telefone\": \"3123034739\"\n    },\n    {\n        \"id\": 19,\n        \"codigo\": \"4646305155\",\n        \"name\": \"Chloe O'Reilly Jr.\",\n        \"email\": \"brendon.wunsch@example.net\",\n        \"email_verified_at\": \"2024-05-04T14:29:44.000000Z\",\n        \"created_at\": \"2024-05-04T14:29:44.000000Z\",\n        \"updated_at\": \"2024-05-04T14:29:44.000000Z\",\n        \"telefone\": \"9855483407\"\n    },\n    {\n        \"id\": 18,\n        \"codigo\": \"8766665565\",\n        \"name\": \"Prof. Naomi Kassulke MD\",\n        \"email\": \"carrie.jast@example.com\",\n        \"email_verified_at\": \"2024-05-04T14:29:43.000000Z\",\n        \"created_at\": \"2024-05-04T14:29:44.000000Z\",\n        \"updated_at\": \"2024-05-04T14:29:44.000000Z\",\n        \"telefone\": \"8016032600\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Atualiza Usuario",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 149,\r\n    \"name\": \"teste12 Atualizado\",\r\n    \"email\": \"teste12@teste.com\",\r\n    \"telefone\": \"91991322651\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-back}}/users/149",
+							"host": [
+								"{{url-back}}"
+							],
+							"path": [
+								"users",
+								"149"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Atualiza Usuario",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 149,\r\n    \"name\": \"teste12 Atualizado\",\r\n    \"telefone\": \"91991322651\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url-back}}/users/149",
+									"host": [
+										"{{url-back}}"
+									],
+									"path": [
+										"users",
+										"149"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8888"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 06 May 2024 14:21:18 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 149,\n    \"codigo\": \"6703964638\",\n    \"name\": \"teste12 Atualizado\",\n    \"email\": \"rhomenick@example.org\",\n    \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n    \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n    \"updated_at\": \"2024-05-06T14:20:28.000000Z\",\n    \"telefone\": \"91991322651\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Novo Usuário",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"teste30\",\r\n    \"email\": \"teste30@teste.com\",\r\n    \"telefone\": \"91991322651\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-back}}/users",
+							"host": [
+								"{{url-back}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Novo Usuário",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"teste30\",\r\n    \"email\": \"teste30@teste.com\",\r\n    \"telefone\": \"91991322651\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url-back}}/users",
+									"host": [
+										"{{url-back}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8888"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 06 May 2024 14:21:59 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"teste30\",\n    \"codigo\": 7844083,\n    \"email\": \"teste30@teste.com\",\n    \"telefone\": \"91991322651\",\n    \"updated_at\": \"2024-05-06T14:21:59.000000Z\",\n    \"created_at\": \"2024-05-06T14:21:59.000000Z\",\n    \"id\": 150\n}"
+						}
+					]
+				},
+				{
+					"name": "Remove Usuário",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url-back}}/users/149",
+							"host": [
+								"{{url-back}}"
+							],
+							"path": [
+								"users",
+								"149"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Remove Usuário",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url-back}}/users/149",
+									"host": [
+										"{{url-back}}"
+									],
+									"path": [
+										"users",
+										"149"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8888"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 06 May 2024 14:31:07 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Assinaturas",
+			"item": [
+				{
+					"name": "Assinaturas",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "Assinaturas",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url-back}}/assinaturas",
+									"host": [
+										"{{url-back}}"
+									],
+									"path": [
+										"assinaturas"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8888"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 06 May 2024 14:32:44 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 31,\n        \"descricao\": \"ut\",\n        \"valor\": \"289.10\",\n        \"dia_vencimento\": 19,\n        \"user_id\": 148,\n        \"ativo\": false,\n        \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"user\": {\n            \"id\": 148,\n            \"codigo\": \"7113307089\",\n            \"name\": \"Marcelo Prosacco\",\n            \"email\": \"osbaldo15@example.org\",\n            \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"telefone\": \"8467448928\"\n        }\n    },\n    {\n        \"id\": 30,\n        \"descricao\": \"facere\",\n        \"valor\": \"224.61\",\n        \"dia_vencimento\": 27,\n        \"user_id\": 147,\n        \"ativo\": false,\n        \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"user\": {\n            \"id\": 147,\n            \"codigo\": \"9788244614\",\n            \"name\": \"Ms. Precious Zemlak\",\n            \"email\": \"marlee.howe@example.com\",\n            \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"telefone\": \"9834620492\"\n        }\n    },\n    {\n        \"id\": 29,\n        \"descricao\": \"voluptas\",\n        \"valor\": \"401.11\",\n        \"dia_vencimento\": 18,\n        \"user_id\": 146,\n        \"ativo\": false,\n        \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"user\": {\n            \"id\": 146,\n            \"codigo\": \"6981885595\",\n            \"name\": \"Bradford Schiller\",\n            \"email\": \"wisoky.leon@example.org\",\n            \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"telefone\": \"3218964774\"\n        }\n    },\n    {\n        \"id\": 28,\n        \"descricao\": \"vel\",\n        \"valor\": \"950.36\",\n        \"dia_vencimento\": 10,\n        \"user_id\": 145,\n        \"ativo\": false,\n        \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"user\": {\n            \"id\": 145,\n            \"codigo\": \"9260879307\",\n            \"name\": \"Mrs. Shirley Conn\",\n            \"email\": \"fisher.denis@example.org\",\n            \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"telefone\": \"3926193475\"\n        }\n    },\n    {\n        \"id\": 27,\n        \"descricao\": \"nam\",\n        \"valor\": \"984.19\",\n        \"dia_vencimento\": 7,\n        \"user_id\": 144,\n        \"ativo\": false,\n        \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"user\": {\n            \"id\": 144,\n            \"codigo\": \"3663207746\",\n            \"name\": \"Cheyenne Johns\",\n            \"email\": \"tdaniel@example.org\",\n            \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"telefone\": \"8236709612\"\n        }\n    },\n    {\n        \"id\": 26,\n        \"descricao\": \"totam\",\n        \"valor\": \"663.98\",\n        \"dia_vencimento\": 25,\n        \"user_id\": 143,\n        \"ativo\": true,\n        \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"user\": {\n            \"id\": 143,\n            \"codigo\": \"1995413876\",\n            \"name\": \"Dora Kessler\",\n            \"email\": \"marty.gottlieb@example.com\",\n            \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"telefone\": \"6950502958\"\n        }\n    },\n    {\n        \"id\": 25,\n        \"descricao\": \"illo\",\n        \"valor\": \"888.98\",\n        \"dia_vencimento\": 15,\n        \"user_id\": 142,\n        \"ativo\": false,\n        \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"user\": {\n            \"id\": 142,\n            \"codigo\": \"0447118417\",\n            \"name\": \"Chelsie Welch\",\n            \"email\": \"eleanora.connelly@example.net\",\n            \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"telefone\": \"7306868322\"\n        }\n    },\n    {\n        \"id\": 24,\n        \"descricao\": \"necessitatibus\",\n        \"valor\": \"98.39\",\n        \"dia_vencimento\": 16,\n        \"user_id\": 141,\n        \"ativo\": true,\n        \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"user\": {\n            \"id\": 141,\n            \"codigo\": \"4680608329\",\n            \"name\": \"Sunny Smitham V\",\n            \"email\": \"pmraz@example.net\",\n            \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"telefone\": \"5061213339\"\n        }\n    },\n    {\n        \"id\": 23,\n        \"descricao\": \"accusamus\",\n        \"valor\": \"75.62\",\n        \"dia_vencimento\": 3,\n        \"user_id\": 140,\n        \"ativo\": true,\n        \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"user\": {\n            \"id\": 140,\n            \"codigo\": \"4241488748\",\n            \"name\": \"Ms. Nyasia Gusikowski IV\",\n            \"email\": \"akub@example.org\",\n            \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"telefone\": \"2968587433\"\n        }\n    },\n    {\n        \"id\": 22,\n        \"descricao\": \"teste ativo\",\n        \"valor\": \"123.00\",\n        \"dia_vencimento\": 1,\n        \"user_id\": 138,\n        \"ativo\": true,\n        \"created_at\": \"2024-05-06T03:13:51.000000Z\",\n        \"updated_at\": \"2024-05-06T03:13:51.000000Z\",\n        \"user\": {\n            \"id\": 138,\n            \"codigo\": \"3205975725\",\n            \"name\": \"Miss Janice Bruen\",\n            \"email\": \"caroline64@example.org\",\n            \"email_verified_at\": \"2024-05-05T15:00:03.000000Z\",\n            \"created_at\": \"2024-05-05T15:00:03.000000Z\",\n            \"updated_at\": \"2024-05-05T15:00:03.000000Z\",\n            \"telefone\": \"2471406471\"\n        }\n    },\n    {\n        \"id\": 21,\n        \"descricao\": \"teste 15\",\n        \"valor\": \"135.00\",\n        \"dia_vencimento\": 15,\n        \"user_id\": 137,\n        \"ativo\": true,\n        \"created_at\": \"2024-05-06T03:05:52.000000Z\",\n        \"updated_at\": \"2024-05-06T03:05:52.000000Z\",\n        \"user\": {\n            \"id\": 137,\n            \"codigo\": \"3225270894\",\n            \"name\": \"Leo Botsford\",\n            \"email\": \"ycole@example.net\",\n            \"email_verified_at\": \"2024-05-05T15:00:03.000000Z\",\n            \"created_at\": \"2024-05-05T15:00:03.000000Z\",\n            \"updated_at\": \"2024-05-05T15:00:03.000000Z\",\n            \"telefone\": \"9564296595\"\n        }\n    },\n    {\n        \"id\": 13,\n        \"descricao\": \"teste 4\",\n        \"valor\": \"126.00\",\n        \"dia_vencimento\": 1,\n        \"user_id\": 130,\n        \"ativo\": true,\n        \"created_at\": \"2024-05-06T01:29:45.000000Z\",\n        \"updated_at\": \"2024-05-06T02:53:17.000000Z\",\n        \"user\": {\n            \"id\": 130,\n            \"codigo\": \"3085465716\",\n            \"name\": \"Prof. Arturo Jerde PhD\",\n            \"email\": \"callie20@example.org\",\n            \"email_verified_at\": \"2024-05-05T15:00:02.000000Z\",\n            \"created_at\": \"2024-05-05T15:00:03.000000Z\",\n            \"updated_at\": \"2024-05-05T15:00:03.000000Z\",\n            \"telefone\": \"9156120982\"\n        }\n    },\n    {\n        \"id\": 6,\n        \"descricao\": \"saepe\",\n        \"valor\": \"140.21\",\n        \"dia_vencimento\": 17,\n        \"user_id\": 135,\n        \"ativo\": true,\n        \"created_at\": \"2024-05-05T15:00:03.000000Z\",\n        \"updated_at\": \"2024-05-05T15:00:03.000000Z\",\n        \"user\": {\n            \"id\": 135,\n            \"codigo\": \"6062208638\",\n            \"name\": \"Prof. Frederick Harber\",\n            \"email\": \"rippin.susan@example.net\",\n            \"email_verified_at\": \"2024-05-05T15:00:03.000000Z\",\n            \"created_at\": \"2024-05-05T15:00:03.000000Z\",\n            \"updated_at\": \"2024-05-05T15:00:03.000000Z\",\n            \"telefone\": \"0289761979\"\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Nova Assinatura",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": 147,\r\n    \"descricao\": \"Premio 2\",\r\n    \"dia_vencimento\": \"16\",\r\n    \"valor\": \"130\",\r\n    \"ativo\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-back}}/assinaturas",
+							"host": [
+								"{{url-back}}"
+							],
+							"path": [
+								"assinaturas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Nova Assinatura",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id\": 147,\r\n    \"descricao\": \"Premio 2\",\r\n    \"dia_vencimento\": \"16\",\r\n    \"valor\": \"130\",\r\n    \"ativo\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url-back}}/assinaturas",
+									"host": [
+										"{{url-back}}"
+									],
+									"path": [
+										"assinaturas"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8888"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 06 May 2024 14:37:05 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"descricao\": \"Premio 2\",\n    \"valor\": \"130\",\n    \"dia_vencimento\": \"16\",\n    \"user_id\": 147,\n    \"ativo\": 1,\n    \"updated_at\": \"2024-05-06T14:37:05.000000Z\",\n    \"created_at\": \"2024-05-06T14:37:05.000000Z\",\n    \"id\": 36,\n    \"user\": {\n        \"id\": 147,\n        \"codigo\": \"9788244614\",\n        \"name\": \"Ms. Precious Zemlak\",\n        \"email\": \"marlee.howe@example.com\",\n        \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"telefone\": \"9834620492\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Atualiza Assinatura",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 36,\r\n    \"descricao\": \"Premio 2 atualizado\",\r\n    \"valor\": \"130.00\",\r\n    \"dia_vencimento\": \"17\",\r\n    \"user_id\": 147,\r\n    \"ativo\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-back}}/assinaturas/36",
+							"host": [
+								"{{url-back}}"
+							],
+							"path": [
+								"assinaturas",
+								"36"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Assinatura atualizada",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 36,\r\n    \"descricao\": \"Premio 2 atualizado\",\r\n    \"valor\": \"130.00\",\r\n    \"dia_vencimento\": \"17\",\r\n    \"user_id\": 147,\r\n    \"ativo\": false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url-back}}/assinaturas/36",
+									"host": [
+										"{{url-back}}"
+									],
+									"path": [
+										"assinaturas",
+										"36"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8888"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 06 May 2024 14:39:35 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 36,\n    \"descricao\": \"Premio 2 atualizado\",\n    \"valor\": \"130.00\",\n    \"dia_vencimento\": \"17\",\n    \"user_id\": 147,\n    \"ativo\": false,\n    \"created_at\": \"2024-05-06T14:37:05.000000Z\",\n    \"updated_at\": \"2024-05-06T14:39:35.000000Z\",\n    \"user\": {\n        \"id\": 147,\n        \"codigo\": \"9788244614\",\n        \"name\": \"Ms. Precious Zemlak\",\n        \"email\": \"marlee.howe@example.com\",\n        \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"telefone\": \"9834620492\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Remove Assinatura",
+					"request": {
+						"method": "DELETE",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "Assinatura removida",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url-back}}/assinaturas/33",
+									"host": [
+										"{{url-back}}"
+									],
+									"path": [
+										"assinaturas",
+										"33"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8888"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 06 May 2024 14:42:30 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Faturas",
+			"item": [
+				{
+					"name": "Faturas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-back}}/Faturas",
+							"host": [
+								"{{url-back}}"
+							],
+							"path": [
+								"Faturas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Faturas",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8888/api/faturas",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"faturas"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8888"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 06 May 2024 14:44:59 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 181,\n        \"descricao\": \"Fatura do mes 05 Assinatura:Premio 2\",\n        \"assinatura_id\": 35,\n        \"data_vencimento\": \"16/05/2024\",\n        \"data_pagamento\": \"01/01/1970\",\n        \"valor\": \"130.00\",\n        \"created_at\": \"2024-05-06T14:44:00.000000Z\",\n        \"updated_at\": \"2024-05-06T14:44:00.000000Z\",\n        \"status\": \"aberta\",\n        \"assinatura\": {\n            \"id\": 35,\n            \"descricao\": \"Premio 2\",\n            \"valor\": \"130.00\",\n            \"dia_vencimento\": 16,\n            \"user_id\": 147,\n            \"ativo\": true,\n            \"created_at\": \"2024-05-06T14:36:19.000000Z\",\n            \"updated_at\": \"2024-05-06T14:36:19.000000Z\",\n            \"user\": {\n                \"id\": 147,\n                \"codigo\": \"9788244614\",\n                \"name\": \"Ms. Precious Zemlak\",\n                \"email\": \"marlee.howe@example.com\",\n                \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"telefone\": \"9834620492\"\n            }\n        }\n    },\n    {\n        \"id\": 180,\n        \"descricao\": \"Fatura do mes 05 Assinatura:Premio 2\",\n        \"assinatura_id\": 35,\n        \"data_vencimento\": \"16/05/2024\",\n        \"data_pagamento\": \"01/01/1970\",\n        \"valor\": \"130.00\",\n        \"created_at\": \"2024-05-06T14:43:00.000000Z\",\n        \"updated_at\": \"2024-05-06T14:43:00.000000Z\",\n        \"status\": \"aberta\",\n        \"assinatura\": {\n            \"id\": 35,\n            \"descricao\": \"Premio 2\",\n            \"valor\": \"130.00\",\n            \"dia_vencimento\": 16,\n            \"user_id\": 147,\n            \"ativo\": true,\n            \"created_at\": \"2024-05-06T14:36:19.000000Z\",\n            \"updated_at\": \"2024-05-06T14:36:19.000000Z\",\n            \"user\": {\n                \"id\": 147,\n                \"codigo\": \"9788244614\",\n                \"name\": \"Ms. Precious Zemlak\",\n                \"email\": \"marlee.howe@example.com\",\n                \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"telefone\": \"9834620492\"\n            }\n        }\n    },\n    {\n        \"id\": 178,\n        \"descricao\": \"Fatura do mes 05 Assinatura:Premio 2\",\n        \"assinatura_id\": 35,\n        \"data_vencimento\": \"16/05/2024\",\n        \"data_pagamento\": \"01/01/1970\",\n        \"valor\": \"130.00\",\n        \"created_at\": \"2024-05-06T14:42:00.000000Z\",\n        \"updated_at\": \"2024-05-06T14:42:00.000000Z\",\n        \"status\": \"aberta\",\n        \"assinatura\": {\n            \"id\": 35,\n            \"descricao\": \"Premio 2\",\n            \"valor\": \"130.00\",\n            \"dia_vencimento\": 16,\n            \"user_id\": 147,\n            \"ativo\": true,\n            \"created_at\": \"2024-05-06T14:36:19.000000Z\",\n            \"updated_at\": \"2024-05-06T14:36:19.000000Z\",\n            \"user\": {\n                \"id\": 147,\n                \"codigo\": \"9788244614\",\n                \"name\": \"Ms. Precious Zemlak\",\n                \"email\": \"marlee.howe@example.com\",\n                \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"telefone\": \"9834620492\"\n            }\n        }\n    },\n    {\n        \"id\": 175,\n        \"descricao\": \"Fatura do mes 05 Assinatura:Premio 2\",\n        \"assinatura_id\": 35,\n        \"data_vencimento\": \"16/05/2024\",\n        \"data_pagamento\": \"01/01/1970\",\n        \"valor\": \"130.00\",\n        \"created_at\": \"2024-05-06T14:41:00.000000Z\",\n        \"updated_at\": \"2024-05-06T14:41:00.000000Z\",\n        \"status\": \"aberta\",\n        \"assinatura\": {\n            \"id\": 35,\n            \"descricao\": \"Premio 2\",\n            \"valor\": \"130.00\",\n            \"dia_vencimento\": 16,\n            \"user_id\": 147,\n            \"ativo\": true,\n            \"created_at\": \"2024-05-06T14:36:19.000000Z\",\n            \"updated_at\": \"2024-05-06T14:36:19.000000Z\",\n            \"user\": {\n                \"id\": 147,\n                \"codigo\": \"9788244614\",\n                \"name\": \"Ms. Precious Zemlak\",\n                \"email\": \"marlee.howe@example.com\",\n                \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"telefone\": \"9834620492\"\n            }\n        }\n    },\n    {\n        \"id\": 172,\n        \"descricao\": \"Fatura do mes 05 Assinatura:Premio 2\",\n        \"assinatura_id\": 35,\n        \"data_vencimento\": \"16/05/2024\",\n        \"data_pagamento\": \"01/01/1970\",\n        \"valor\": \"130.00\",\n        \"created_at\": \"2024-05-06T14:40:00.000000Z\",\n        \"updated_at\": \"2024-05-06T14:40:00.000000Z\",\n        \"status\": \"aberta\",\n        \"assinatura\": {\n            \"id\": 35,\n            \"descricao\": \"Premio 2\",\n            \"valor\": \"130.00\",\n            \"dia_vencimento\": 16,\n            \"user_id\": 147,\n            \"ativo\": true,\n            \"created_at\": \"2024-05-06T14:36:19.000000Z\",\n            \"updated_at\": \"2024-05-06T14:36:19.000000Z\",\n            \"user\": {\n                \"id\": 147,\n                \"codigo\": \"9788244614\",\n                \"name\": \"Ms. Precious Zemlak\",\n                \"email\": \"marlee.howe@example.com\",\n                \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"telefone\": \"9834620492\"\n            }\n        }\n    },\n    {\n        \"id\": 169,\n        \"descricao\": \"Fatura do mes 05 Assinatura:Premio 2\",\n        \"assinatura_id\": 35,\n        \"data_vencimento\": \"16/05/2024\",\n        \"data_pagamento\": \"01/01/1970\",\n        \"valor\": \"130.00\",\n        \"created_at\": \"2024-05-06T14:39:00.000000Z\",\n        \"updated_at\": \"2024-05-06T14:39:00.000000Z\",\n        \"status\": \"aberta\",\n        \"assinatura\": {\n            \"id\": 35,\n            \"descricao\": \"Premio 2\",\n            \"valor\": \"130.00\",\n            \"dia_vencimento\": 16,\n            \"user_id\": 147,\n            \"ativo\": true,\n            \"created_at\": \"2024-05-06T14:36:19.000000Z\",\n            \"updated_at\": \"2024-05-06T14:36:19.000000Z\",\n            \"user\": {\n                \"id\": 147,\n                \"codigo\": \"9788244614\",\n                \"name\": \"Ms. Precious Zemlak\",\n                \"email\": \"marlee.howe@example.com\",\n                \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"telefone\": \"9834620492\"\n            }\n        }\n    },\n    {\n        \"id\": 166,\n        \"descricao\": \"Fatura do mes 05 Assinatura:Premio 2\",\n        \"assinatura_id\": 36,\n        \"data_vencimento\": \"16/05/2024\",\n        \"data_pagamento\": \"01/01/1970\",\n        \"valor\": \"130.00\",\n        \"created_at\": \"2024-05-06T14:38:00.000000Z\",\n        \"updated_at\": \"2024-05-06T14:38:00.000000Z\",\n        \"status\": \"aberta\",\n        \"assinatura\": {\n            \"id\": 36,\n            \"descricao\": \"Premio 2 atualizado\",\n            \"valor\": \"130.00\",\n            \"dia_vencimento\": 17,\n            \"user_id\": 147,\n            \"ativo\": false,\n            \"created_at\": \"2024-05-06T14:37:05.000000Z\",\n            \"updated_at\": \"2024-05-06T14:39:35.000000Z\",\n            \"user\": {\n                \"id\": 147,\n                \"codigo\": \"9788244614\",\n                \"name\": \"Ms. Precious Zemlak\",\n                \"email\": \"marlee.howe@example.com\",\n                \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"telefone\": \"9834620492\"\n            }\n        }\n    },\n    {\n        \"id\": 165,\n        \"descricao\": \"Fatura do mes 05 Assinatura:Premio 2\",\n        \"assinatura_id\": 35,\n        \"data_vencimento\": \"16/05/2024\",\n        \"data_pagamento\": \"01/01/1970\",\n        \"valor\": \"130.00\",\n        \"created_at\": \"2024-05-06T14:38:00.000000Z\",\n        \"updated_at\": \"2024-05-06T14:38:00.000000Z\",\n        \"status\": \"aberta\",\n        \"assinatura\": {\n            \"id\": 35,\n            \"descricao\": \"Premio 2\",\n            \"valor\": \"130.00\",\n            \"dia_vencimento\": 16,\n            \"user_id\": 147,\n            \"ativo\": true,\n            \"created_at\": \"2024-05-06T14:36:19.000000Z\",\n            \"updated_at\": \"2024-05-06T14:36:19.000000Z\",\n            \"user\": {\n                \"id\": 147,\n                \"codigo\": \"9788244614\",\n                \"name\": \"Ms. Precious Zemlak\",\n                \"email\": \"marlee.howe@example.com\",\n                \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"telefone\": \"9834620492\"\n            }\n        }\n    },\n    {\n        \"id\": 162,\n        \"descricao\": \"Fatura do mes 05 Assinatura:Premio 2\",\n        \"assinatura_id\": 35,\n        \"data_vencimento\": \"16/05/2024\",\n        \"data_pagamento\": \"01/01/1970\",\n        \"valor\": \"130.00\",\n        \"created_at\": \"2024-05-06T14:37:00.000000Z\",\n        \"updated_at\": \"2024-05-06T14:37:00.000000Z\",\n        \"status\": \"aberta\",\n        \"assinatura\": {\n            \"id\": 35,\n            \"descricao\": \"Premio 2\",\n            \"valor\": \"130.00\",\n            \"dia_vencimento\": 16,\n            \"user_id\": 147,\n            \"ativo\": true,\n            \"created_at\": \"2024-05-06T14:36:19.000000Z\",\n            \"updated_at\": \"2024-05-06T14:36:19.000000Z\",\n            \"user\": {\n                \"id\": 147,\n                \"codigo\": \"9788244614\",\n                \"name\": \"Ms. Precious Zemlak\",\n                \"email\": \"marlee.howe@example.com\",\n                \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"telefone\": \"9834620492\"\n            }\n        }\n    },\n    {\n        \"id\": 56,\n        \"descricao\": \"teste 7\",\n        \"assinatura_id\": 28,\n        \"data_vencimento\": \"10/05/2024\",\n        \"data_pagamento\": \"01/01/1970\",\n        \"valor\": \"123.00\",\n        \"created_at\": \"2024-05-06T06:54:47.000000Z\",\n        \"updated_at\": \"2024-05-06T06:55:48.000000Z\",\n        \"status\": \"cancelada\",\n        \"assinatura\": {\n            \"id\": 28,\n            \"descricao\": \"vel\",\n            \"valor\": \"950.36\",\n            \"dia_vencimento\": 10,\n            \"user_id\": 145,\n            \"ativo\": false,\n            \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"user\": {\n                \"id\": 145,\n                \"codigo\": \"9260879307\",\n                \"name\": \"Mrs. Shirley Conn\",\n                \"email\": \"fisher.denis@example.org\",\n                \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"telefone\": \"3926193475\"\n            }\n        }\n    },\n    {\n        \"id\": 55,\n        \"descricao\": \"teste 6\",\n        \"assinatura_id\": 30,\n        \"data_vencimento\": \"10/05/2024\",\n        \"data_pagamento\": \"05/10/2024\",\n        \"valor\": \"123.00\",\n        \"created_at\": \"2024-05-06T06:51:30.000000Z\",\n        \"updated_at\": \"2024-05-06T06:59:40.000000Z\",\n        \"status\": \"paga\",\n        \"assinatura\": {\n            \"id\": 30,\n            \"descricao\": \"facere\",\n            \"valor\": \"224.61\",\n            \"dia_vencimento\": 27,\n            \"user_id\": 147,\n            \"ativo\": false,\n            \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"user\": {\n                \"id\": 147,\n                \"codigo\": \"9788244614\",\n                \"name\": \"Ms. Precious Zemlak\",\n                \"email\": \"marlee.howe@example.com\",\n                \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"telefone\": \"9834620492\"\n            }\n        }\n    },\n    {\n        \"id\": 54,\n        \"descricao\": \"teste 6\",\n        \"assinatura_id\": 30,\n        \"data_vencimento\": \"05/10/2024\",\n        \"data_pagamento\": \"01/01/1970\",\n        \"valor\": \"123.00\",\n        \"created_at\": \"2024-05-06T06:51:16.000000Z\",\n        \"updated_at\": \"2024-05-06T06:51:16.000000Z\",\n        \"status\": \"aberta\",\n        \"assinatura\": {\n            \"id\": 30,\n            \"descricao\": \"facere\",\n            \"valor\": \"224.61\",\n            \"dia_vencimento\": 27,\n            \"user_id\": 147,\n            \"ativo\": false,\n            \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"user\": {\n                \"id\": 147,\n                \"codigo\": \"9788244614\",\n                \"name\": \"Ms. Precious Zemlak\",\n                \"email\": \"marlee.howe@example.com\",\n                \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"telefone\": \"9834620492\"\n            }\n        }\n    },\n    {\n        \"id\": 51,\n        \"descricao\": \"teste 4\",\n        \"assinatura_id\": 31,\n        \"data_vencimento\": \"05/01/2024\",\n        \"data_pagamento\": \"01/01/1970\",\n        \"valor\": \"123.00\",\n        \"created_at\": \"2024-05-06T06:46:31.000000Z\",\n        \"updated_at\": \"2024-05-06T06:46:31.000000Z\",\n        \"status\": \"aberta\",\n        \"assinatura\": {\n            \"id\": 31,\n            \"descricao\": \"ut\",\n            \"valor\": \"289.10\",\n            \"dia_vencimento\": 19,\n            \"user_id\": 148,\n            \"ativo\": false,\n            \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"user\": {\n                \"id\": 148,\n                \"codigo\": \"7113307089\",\n                \"name\": \"Marcelo Prosacco\",\n                \"email\": \"osbaldo15@example.org\",\n                \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"telefone\": \"8467448928\"\n            }\n        }\n    },\n    {\n        \"id\": 49,\n        \"descricao\": \"teste 4\",\n        \"assinatura_id\": 6,\n        \"data_vencimento\": \"10/05/2024\",\n        \"data_pagamento\": \"10/10/2024\",\n        \"valor\": \"1230.00\",\n        \"created_at\": \"2024-05-06T06:41:06.000000Z\",\n        \"updated_at\": \"2024-05-06T06:56:36.000000Z\",\n        \"status\": \"paga\",\n        \"assinatura\": {\n            \"id\": 6,\n            \"descricao\": \"saepe\",\n            \"valor\": \"140.21\",\n            \"dia_vencimento\": 17,\n            \"user_id\": 135,\n            \"ativo\": true,\n            \"created_at\": \"2024-05-05T15:00:03.000000Z\",\n            \"updated_at\": \"2024-05-05T15:00:03.000000Z\",\n            \"user\": {\n                \"id\": 135,\n                \"codigo\": \"6062208638\",\n                \"name\": \"Prof. Frederick Harber\",\n                \"email\": \"rippin.susan@example.net\",\n                \"email_verified_at\": \"2024-05-05T15:00:03.000000Z\",\n                \"created_at\": \"2024-05-05T15:00:03.000000Z\",\n                \"updated_at\": \"2024-05-05T15:00:03.000000Z\",\n                \"telefone\": \"0289761979\"\n            }\n        }\n    },\n    {\n        \"id\": 48,\n        \"descricao\": \"teste 3\",\n        \"assinatura_id\": 6,\n        \"data_vencimento\": \"05/10/0204\",\n        \"data_pagamento\": \"01/01/1970\",\n        \"valor\": \"123.00\",\n        \"created_at\": \"2024-05-06T06:39:25.000000Z\",\n        \"updated_at\": \"2024-05-06T06:39:25.000000Z\",\n        \"status\": \"aberta\",\n        \"assinatura\": {\n            \"id\": 6,\n            \"descricao\": \"saepe\",\n            \"valor\": \"140.21\",\n            \"dia_vencimento\": 17,\n            \"user_id\": 135,\n            \"ativo\": true,\n            \"created_at\": \"2024-05-05T15:00:03.000000Z\",\n            \"updated_at\": \"2024-05-05T15:00:03.000000Z\",\n            \"user\": {\n                \"id\": 135,\n                \"codigo\": \"6062208638\",\n                \"name\": \"Prof. Frederick Harber\",\n                \"email\": \"rippin.susan@example.net\",\n                \"email_verified_at\": \"2024-05-05T15:00:03.000000Z\",\n                \"created_at\": \"2024-05-05T15:00:03.000000Z\",\n                \"updated_at\": \"2024-05-05T15:00:03.000000Z\",\n                \"telefone\": \"0289761979\"\n            }\n        }\n    },\n    {\n        \"id\": 47,\n        \"descricao\": \"test2\",\n        \"assinatura_id\": 31,\n        \"data_vencimento\": \"10/05/2024\",\n        \"data_pagamento\": \"01/01/1970\",\n        \"valor\": \"123.00\",\n        \"created_at\": \"2024-05-06T06:35:40.000000Z\",\n        \"updated_at\": \"2024-05-06T06:35:40.000000Z\",\n        \"status\": \"aberta\",\n        \"assinatura\": {\n            \"id\": 31,\n            \"descricao\": \"ut\",\n            \"valor\": \"289.10\",\n            \"dia_vencimento\": 19,\n            \"user_id\": 148,\n            \"ativo\": false,\n            \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"user\": {\n                \"id\": 148,\n                \"codigo\": \"7113307089\",\n                \"name\": \"Marcelo Prosacco\",\n                \"email\": \"osbaldo15@example.org\",\n                \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"telefone\": \"8467448928\"\n            }\n        }\n    },\n    {\n        \"id\": 43,\n        \"descricao\": \"Maxime ad eligendi.\",\n        \"assinatura_id\": 31,\n        \"data_vencimento\": \"11/04/2024\",\n        \"data_pagamento\": \"03/06/2024\",\n        \"valor\": \"417.24\",\n        \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"status\": \"aberta\",\n        \"assinatura\": {\n            \"id\": 31,\n            \"descricao\": \"ut\",\n            \"valor\": \"289.10\",\n            \"dia_vencimento\": 19,\n            \"user_id\": 148,\n            \"ativo\": false,\n            \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"user\": {\n                \"id\": 148,\n                \"codigo\": \"7113307089\",\n                \"name\": \"Marcelo Prosacco\",\n                \"email\": \"osbaldo15@example.org\",\n                \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"telefone\": \"8467448928\"\n            }\n        }\n    },\n    {\n        \"id\": 42,\n        \"descricao\": \"Iusto libero.\",\n        \"assinatura_id\": 30,\n        \"data_vencimento\": \"29/04/2024\",\n        \"data_pagamento\": \"10/05/2024\",\n        \"valor\": \"527.51\",\n        \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"status\": \"aberta\",\n        \"assinatura\": {\n            \"id\": 30,\n            \"descricao\": \"facere\",\n            \"valor\": \"224.61\",\n            \"dia_vencimento\": 27,\n            \"user_id\": 147,\n            \"ativo\": false,\n            \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"user\": {\n                \"id\": 147,\n                \"codigo\": \"9788244614\",\n                \"name\": \"Ms. Precious Zemlak\",\n                \"email\": \"marlee.howe@example.com\",\n                \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"telefone\": \"9834620492\"\n            }\n        }\n    },\n    {\n        \"id\": 41,\n        \"descricao\": \"Deserunt consequatur rem.\",\n        \"assinatura_id\": 29,\n        \"data_vencimento\": \"30/04/2024\",\n        \"data_pagamento\": \"13/05/2024\",\n        \"valor\": \"815.87\",\n        \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"status\": \"aberta\",\n        \"assinatura\": {\n            \"id\": 29,\n            \"descricao\": \"voluptas\",\n            \"valor\": \"401.11\",\n            \"dia_vencimento\": 18,\n            \"user_id\": 146,\n            \"ativo\": false,\n            \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"user\": {\n                \"id\": 146,\n                \"codigo\": \"6981885595\",\n                \"name\": \"Bradford Schiller\",\n                \"email\": \"wisoky.leon@example.org\",\n                \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"telefone\": \"3218964774\"\n            }\n        }\n    },\n    {\n        \"id\": 40,\n        \"descricao\": \"Dolorem voluptatem eum nihil.\",\n        \"assinatura_id\": 28,\n        \"data_vencimento\": \"04/05/2024\",\n        \"data_pagamento\": \"14/05/2024\",\n        \"valor\": \"317.36\",\n        \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"status\": \"aberta\",\n        \"assinatura\": {\n            \"id\": 28,\n            \"descricao\": \"vel\",\n            \"valor\": \"950.36\",\n            \"dia_vencimento\": 10,\n            \"user_id\": 145,\n            \"ativo\": false,\n            \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"user\": {\n                \"id\": 145,\n                \"codigo\": \"9260879307\",\n                \"name\": \"Mrs. Shirley Conn\",\n                \"email\": \"fisher.denis@example.org\",\n                \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"telefone\": \"3926193475\"\n            }\n        }\n    },\n    {\n        \"id\": 39,\n        \"descricao\": \"Ducimus maxime voluptates ratione.\",\n        \"assinatura_id\": 27,\n        \"data_vencimento\": \"19/05/2024\",\n        \"data_pagamento\": \"15/05/2024\",\n        \"valor\": \"868.82\",\n        \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"status\": \"aberta\",\n        \"assinatura\": {\n            \"id\": 27,\n            \"descricao\": \"nam\",\n            \"valor\": \"984.19\",\n            \"dia_vencimento\": 7,\n            \"user_id\": 144,\n            \"ativo\": false,\n            \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"user\": {\n                \"id\": 144,\n                \"codigo\": \"3663207746\",\n                \"name\": \"Cheyenne Johns\",\n                \"email\": \"tdaniel@example.org\",\n                \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"telefone\": \"8236709612\"\n            }\n        }\n    },\n    {\n        \"id\": 38,\n        \"descricao\": \"Repellendus omnis necessitatibus.\",\n        \"assinatura_id\": 26,\n        \"data_vencimento\": \"15/05/2024\",\n        \"data_pagamento\": \"14/05/2024\",\n        \"valor\": \"285.12\",\n        \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"status\": \"aberta\",\n        \"assinatura\": {\n            \"id\": 26,\n            \"descricao\": \"totam\",\n            \"valor\": \"663.98\",\n            \"dia_vencimento\": 25,\n            \"user_id\": 143,\n            \"ativo\": true,\n            \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"user\": {\n                \"id\": 143,\n                \"codigo\": \"1995413876\",\n                \"name\": \"Dora Kessler\",\n                \"email\": \"marty.gottlieb@example.com\",\n                \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"telefone\": \"6950502958\"\n            }\n        }\n    },\n    {\n        \"id\": 37,\n        \"descricao\": \"Reprehenderit veniam soluta.\",\n        \"assinatura_id\": 25,\n        \"data_vencimento\": \"04/06/2024\",\n        \"data_pagamento\": \"26/05/2024\",\n        \"valor\": \"710.23\",\n        \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"status\": \"aberta\",\n        \"assinatura\": {\n            \"id\": 25,\n            \"descricao\": \"illo\",\n            \"valor\": \"888.98\",\n            \"dia_vencimento\": 15,\n            \"user_id\": 142,\n            \"ativo\": false,\n            \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"user\": {\n                \"id\": 142,\n                \"codigo\": \"0447118417\",\n                \"name\": \"Chelsie Welch\",\n                \"email\": \"eleanora.connelly@example.net\",\n                \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"telefone\": \"7306868322\"\n            }\n        }\n    },\n    {\n        \"id\": 35,\n        \"descricao\": \"Quasi vel nulla enim.\",\n        \"assinatura_id\": 23,\n        \"data_vencimento\": \"06/04/2024\",\n        \"data_pagamento\": \"21/04/2024\",\n        \"valor\": \"955.74\",\n        \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n        \"status\": \"aberta\",\n        \"assinatura\": {\n            \"id\": 23,\n            \"descricao\": \"accusamus\",\n            \"valor\": \"75.62\",\n            \"dia_vencimento\": 3,\n            \"user_id\": 140,\n            \"ativo\": true,\n            \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"user\": {\n                \"id\": 140,\n                \"codigo\": \"4241488748\",\n                \"name\": \"Ms. Nyasia Gusikowski IV\",\n                \"email\": \"akub@example.org\",\n                \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n                \"telefone\": \"2968587433\"\n            }\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Nova Fatura",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"assinatura_id\": 36,\r\n    \"descricao\": \"Fatura teste 16\",\r\n    \"data_vencimento\": \"10/05/2024\",\r\n    \"valor\": \"125\"    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-back}}/faturas",
+							"host": [
+								"{{url-back}}"
+							],
+							"path": [
+								"faturas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Nova Fatura",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"assinatura_id\": 36,\r\n    \"descricao\": \"Fatura teste 16\",\r\n    \"data_vencimento\": \"10/05/2024\",\r\n    \"valor\": \"125\"    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8888/api/faturas",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"faturas"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8888"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 06 May 2024 14:47:21 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 186,\n    \"descricao\": \"Fatura teste 16\",\n    \"assinatura_id\": 36,\n    \"data_vencimento\": \"05/10/2024\",\n    \"data_pagamento\": \"01/01/1970\",\n    \"valor\": \"125.00\",\n    \"created_at\": \"2024-05-06T14:47:21.000000Z\",\n    \"updated_at\": \"2024-05-06T14:47:21.000000Z\",\n    \"status\": \"aberta\",\n    \"assinatura\": {\n        \"id\": 36,\n        \"descricao\": \"Premio 2 atualizado\",\n        \"valor\": \"130.00\",\n        \"dia_vencimento\": 17,\n        \"user_id\": 147,\n        \"ativo\": false,\n        \"created_at\": \"2024-05-06T14:37:05.000000Z\",\n        \"updated_at\": \"2024-05-06T14:39:35.000000Z\",\n        \"user\": {\n            \"id\": 147,\n            \"codigo\": \"9788244614\",\n            \"name\": \"Ms. Precious Zemlak\",\n            \"email\": \"marlee.howe@example.com\",\n            \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"telefone\": \"9834620492\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Atualiza fatura",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 186,\r\n    \"descricao\": \"Fatura teste 16\",\r\n    \"assinatura_id\": 36,\r\n    \"data_vencimento\": \"05/10/2024\",\r\n    \"data_pagamento\": \"10/05/2024\",\r\n    \"valor\": \"125.00\",\r\n    \"status\": \"paga\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-back}}/faturas/186",
+							"host": [
+								"{{url-back}}"
+							],
+							"path": [
+								"faturas",
+								"186"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Atualiza Fatura",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 186,\r\n    \"descricao\": \"Fatura teste 17\",\r\n    \"assinatura_id\": 36,\r\n    \"data_vencimento\": \"05/10/2024\",\r\n    \"data_pagamento\": \"10/05/2024\",\r\n    \"valor\": \"125.00\",\r\n    \"status\": \"paga\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8888/api/faturas/186",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"faturas",
+										"186"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8888"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 06 May 2024 14:50:25 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "60"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 186,\n    \"descricao\": \"Fatura teste 17\",\n    \"assinatura_id\": 36,\n    \"data_vencimento\": \"10/05/2024\",\n    \"data_pagamento\": \"05/10/2024\",\n    \"valor\": \"125.00\",\n    \"created_at\": \"2024-05-06T14:47:21.000000Z\",\n    \"updated_at\": \"2024-05-06T14:50:25.000000Z\",\n    \"status\": \"paga\",\n    \"assinatura\": {\n        \"id\": 36,\n        \"descricao\": \"Premio 2 atualizado\",\n        \"valor\": \"130.00\",\n        \"dia_vencimento\": 17,\n        \"user_id\": 147,\n        \"ativo\": false,\n        \"created_at\": \"2024-05-06T14:37:05.000000Z\",\n        \"updated_at\": \"2024-05-06T14:39:35.000000Z\",\n        \"user\": {\n            \"id\": 147,\n            \"codigo\": \"9788244614\",\n            \"name\": \"Ms. Precious Zemlak\",\n            \"email\": \"marlee.howe@example.com\",\n            \"email_verified_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"created_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"updated_at\": \"2024-05-06T04:56:12.000000Z\",\n            \"telefone\": \"9834620492\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Remove Fatura",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url-back}}/faturas/185",
+							"host": [
+								"{{url-back}}"
+							],
+							"path": [
+								"faturas",
+								"185"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Remove Fatura",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8888/api/faturas/185",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"faturas",
+										"185"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8888"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 06 May 2024 14:51:36 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url-back",
+			"value": "http://localhost:8888/api",
+			"type": "string"
+		}
+	]
+}

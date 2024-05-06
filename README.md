@@ -1,49 +1,34 @@
-# DouraSoft
+# Assinaturas
+Sistema de assinaturas
 
-Desafio Assinaturas
+## Tecnologias
+- Laravel 10
+- PHP 8
+- MySQL 8
+- Docker
+- Node 18
+- Vue 3
 
-Desenvolvimento de uma API para cobrar assinaturas de seus cadastros em **PHP** e **PostgreSQL**
+## Requisitos
 
-## Deverá conter
-**Cadastros**: ID, Codigo, Nome, Email e Telefone
+- Docker Compose
 
-**Assinaturas**: ID, Cadastro, Descrição, Valor
+## Instalação
 
-**Faturas**: ID, Cadastro, Assinatura, Descrição, Vencimento, Valor.
+1. Clone o repositório:
 
-#### Atenção 🚨 Os campos Cadastro e Assinatura são chaves extrangeiras de Cadastros e Assinaturas respectivamente.
+   ```shell
+   git clone https://github.com/andersoncoimbra/desafio-andersoncoimbra
+2. Entre no diretorio do projeto CadEletro
+   ```shell
+   cd desafio-andersoncoimbra
+3. Ative os containers via docker-compose
+   ```shell
+   docker compose up
 
-## Instruções 🌄
+    Aguarde ate finalizar o proceso de instalação (composer, npm, migrations, seeders)
+4. Acesse a url http://localhost:8080
 
-1. Faça um fork do projeto para sua conta pessoal
-2. Crie uma branch com o padrão: `desafio-seu-nome`
-3. Submeta seu código criando um Pull Request
-4. Estão faltando alguns campos propositalmente, você deve criá-los
+## Documentação
 
-## Como o Sistema Deve Funcionar ⚙️
- - Deve possuir um CRUD Listagem/Inclusão/Edição/Exclusão de Cadastros
- - Deve possuir um CRUD Listagem/Inclusão/Edição/Exclusão de Assinaturas
- - Deve possuir um CRUD Listagem/Inclusão/Edição/Exclusão de Faturas
- - Deve possuir uma Task que verifica uma vez ao dia todas as assinaturas que vencem daqui a 10 dias e converta elas em faturas.
- - A Task não pode converter faturas já convertidas hoje.
- 
-## Você deve 🧯
-- Utilizar composer
-- Utilizar qualquer Framework PHP. Caso opte por não utilizar, desenvolver nos padrões de projeto MVC.
-- Utilizar o Postman para documentar a API. Exporte a documentação junto ao projeto na pasta docs.
-
-## Não esqueça de 📆
-- Criar as Migrations
-- Criar os Seeds
-
-## Pontos Extras ⏭️
-- Criar os casos de testes utilizando PHPUnit
-- Criar o frontend em um projeto separado com o framework de sua preferência.
-
-## Dúvidas ❓
-
-Abra uma [issue](https://github.com/dourasoft/desafio-assinaturas/issues/new)
-
-Ou envie um email para: **paulo@dourasoft.com.br**
-
-Boa sorte! 💪
+- [Documentação da API](https://documenter.getpostman.com/view/2103973/2sA3JJ82nS)

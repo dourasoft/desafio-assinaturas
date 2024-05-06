@@ -1,0 +1,56 @@
+version: '3'
+services:
+  front:
+      container_name: front
+      build:
+        context: .dockerfiles
+        dockerfile: DockerfileFront
+      ports:
+        - 8080:5173
+      volumes:
+        - ./front:/app
+      command: 'npm run dev'
+      depends_on:
+        - back
+  back:
+      container_name: back
+      build:
+        context: .dockerfiles
+        dockerfile: DockerfileBack
+      ports:
+        - 8888:8888
+      volumes:
+        - ./back:/app
+      command: 'composer startup'
+      restart: always
+      networks:
+        - assinaturas
+      depends_on:
+        - postgres
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: assinaturas
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    networks:
+      - assinaturas
+    ports:
+      - 5432:5432
+  worker:
+    container_name: worker
+    build:
+      context: .dockerfiles
+      dockerfile: DockerfileBack
+    volumes:
+      - ./back:/app
+    command: 'php artisan schedule:work'
+    restart: always
+    networks:
+      - assinaturas
+    depends_on:
+      - back
+networks:
+  assinaturas:
+    driver: bridge

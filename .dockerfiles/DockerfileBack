@@ -1,0 +1,14 @@
+FROM php:8.2-apache
+WORKDIR /app
+
+#instalando o pdo_pgsql
+RUN apt update \
+    && apt install -y libpq-dev cron \
+    && docker-php-ext-install pdo pdo_pgsql
+
+#instal o composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
+ docker-php-ext-install pdo_mysql
+
+
+
