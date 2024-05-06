@@ -28,7 +28,7 @@ class UpdateInvoiceRequest extends FormRequest
             'subscription_id' => ['required', 'exists:subscriptions,id'],
             'description' => ['required'],
             'due_date' => ['required', 'date'],
-            'value' => ['required', 'decimal:2']
+            'value' => ['required', 'numeric']
         ];
     }
 

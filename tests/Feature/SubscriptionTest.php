@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use App\Models\Register;
 use App\Models\Subscription;
+use Database\Seeders\SubscriptionSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Artisan;
@@ -17,6 +18,12 @@ class SubscriptionTest extends TestCase
     {
         parent::setUp();
         Artisan::call('migrate');
+    }
+
+    public function test_seed_10_subscriptions()
+    {
+        $this->seed(SubscriptionSeeder::class);
+        $this->assertDatabaseCount('subscriptions', 10);
     }
 
     /**
