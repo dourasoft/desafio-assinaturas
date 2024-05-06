@@ -21,6 +21,12 @@
 ## Front-end para mostrar informações do projeto
 Siga as instruções no [reposiório](https://github.com/skymarkos7/front-assinatura-marcos-lourenco-desafio): `https://github.com/skymarkos7/front-assinatura-marcos-lourenco-desafio`
 
+## Collection para o postman
+A colleciton está na pasta [docs](docs\desafio-api-de-assinaturas-jobs-assincrôno.postman_collection.json)
+
+Na mesma pasta deixei um arquivo [swagger](docs\swagger.yaml) para uma conferência visual das rotas, fique a vontade para visualizar colando o conteúdo do arquivo no editor online [swagger.editor](https://editor.swagger.io/)
+ 
+
 <hr>
 
 # DouraSoft

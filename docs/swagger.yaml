@@ -1,0 +1,252 @@
+openapi: 3.0.0
+info:
+  title: Laravel API Documentation
+  description: Documentação das APIs do Laravel
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000/api
+tags:
+  - name: Cadastro
+    description: Cadastro workflow
+  - name: Assinatura
+    description: Assinatura workflow
+  - name: Fatura
+    description: Fatura workflow
+paths:
+  /cadastro/getall:
+    get:
+      summary: Lista todos os cadastros
+      responses:
+        '200':
+          description: Sucesso
+      tags:
+        - Cadastro
+  /cadastro/get/{id}:
+    get:
+      summary: Obtém um cadastro pelo ID
+      parameters:
+        - name: id
+          in: path
+          description: ID do cadastro a ser obtido
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Sucesso
+        '404':
+          description: Cadastro não encontrado
+      tags:
+        - Cadastro
+  /cadastro/insert:
+    post:
+      summary: Insere um novo cadastro
+      # requestBody:
+      #   required: true
+      #   content:
+      #     application/json:
+      #       schema:
+      #         $ref: '#/components/schemas/Cadastro'
+      responses:
+        '201':
+          description: Cadastro criado com sucesso
+      tags:
+        - Cadastro
+  /cadastro/update/{id}:
+    put:
+      summary: Atualiza um cadastro existente pelo ID
+      parameters:
+        - name: id
+          in: path
+          description: ID do cadastro a ser atualizado
+          required: true
+          schema:
+            type: integer
+      # requestBody:
+      #   required: true
+      #   content:
+      #     application/json:
+      #       schema:
+      #         $ref: '#/components/schemas/Cadastro'
+      responses:
+        '200':
+          description: Cadastro atualizado com sucesso
+        '404':
+          description: Cadastro não encontrado
+      tags:
+        - Cadastro
+  /cadastro/delete/{id}:
+    delete:
+      summary: Exclui um cadastro pelo ID
+      parameters:
+        - name: id
+          in: path
+          description: ID do cadastro a ser excluído
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Cadastro excluído com sucesso
+        '404':
+          description: Cadastro não encontrado
+      tags:
+        - Cadastro
+  /assinatura/getall:
+    get:
+      summary: Lista todas as assinaturas
+      responses:
+        '200':
+          description: Sucesso
+      tags:
+        - Assinatura
+  /assinatura/get/{id}:
+    get:
+      summary: Obtém uma assinatura pelo ID
+      parameters:
+        - name: id
+          in: path
+          description: ID da assinatura a ser obtida
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Sucesso
+        '404':
+          description: Assinatura não encontrada
+      tags:
+        - Assinatura
+  /assinatura/insert:
+    post:
+      summary: Insere uma nova assinatura
+      # requestBody:
+      #   required: true
+      #   content:
+      #     application/json:
+      #       schema:
+      #         $ref: '#/components/schemas/Assinatura'
+      responses:
+        '201':
+          description: Assinatura criada com sucesso
+      tags:
+        - Assinatura
+  /assinatura/update/{id}:
+    put:
+      summary: Atualiza uma assinatura existente pelo ID
+      parameters:
+        - name: id
+          in: path
+          description: ID da assinatura a ser atualizada
+          required: true
+          schema:
+            type: integer
+      # requestBody:
+      #   required: true
+      #   content:
+      #     application/json:
+      #       schema:
+      #         $ref: '#/components/schemas/Assinatura'
+      responses:
+        '200':
+          description: Assinatura atualizada com sucesso
+        '404':
+          description: Assinatura não encontrada
+      tags:
+        - Assinatura
+  /assinatura/delete/{id}:
+    delete:
+      summary: Exclui uma assinatura pelo ID
+      parameters:
+        - name: id
+          in: path
+          description: ID da assinatura a ser excluída
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Assinatura excluída com sucesso
+        '404':
+          description: Assinatura não encontrada
+      tags:
+        - Assinatura
+  /fatura/getall:
+    get:
+      summary: Lista todas as faturas
+      responses:
+        '200':
+          description: Sucesso
+      tags:
+        - Fatura
+  /fatura/get/{id}:
+    get:
+      summary: Obtém uma fatura pelo ID
+      parameters:
+        - name: id
+          in: path
+          description: ID da fatura a ser obtida
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Sucesso
+        '404':
+          description: Fatura não encontrada
+      tags:
+        - Fatura
+  /fatura/insert:
+    post:
+      summary: Insere uma nova fatura
+      # requestBody:
+      #   required: true
+      #   content:
+      #     application/json:
+      #       schema:
+      #         $ref: '#/components/schemas/Fatura'
+      responses:
+        '201':
+          description: Fatura criada com sucesso
+      tags:
+        - Fatura
+  /fatura/update/{id}:
+    put:
+      summary: Atualiza uma fatura existente pelo ID
+      parameters:
+        - name: id
+          in: path
+          description: ID da fatura a ser atualizada
+          required: true
+          schema:
+            type: integer
+      # requestBody:
+        # required: true
+        # content:
+          # application/json:
+            # schema:
+              # $ref: '#/components/schemas/Fatura'
+      responses:
+        '200':
+          description: Fatura atualizada com sucesso
+        '404':
+          description: Fatura não encontrada
+      tags:
+        - Fatura
+  /fatura/delete/{id}:
+    delete:
+      summary: Exclui uma fatura pelo ID
+      parameters:
+        - name: id
+          in: path
+          description: ID da fatura a ser excluída
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Fatura excluída com sucesso
+        '404':
+          description: Fatura não encontrada
+      tags:
+        - Fatura
