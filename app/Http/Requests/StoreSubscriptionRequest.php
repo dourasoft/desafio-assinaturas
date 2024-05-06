@@ -26,8 +26,8 @@ class StoreSubscriptionRequest extends FormRequest
         return [
             'register_id' => ['required', 'exists:registers,id'],
             'description' => ['required'],
-            'due_date' => ['required', 'date', 'future_date:15'],
-            'value' => ['required', 'decimal:2']
+            'due_date' => ['required', 'date'],
+            'value' => ['required', 'numeric']
         ];
     }
 

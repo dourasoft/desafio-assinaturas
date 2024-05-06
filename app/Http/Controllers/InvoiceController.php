@@ -20,7 +20,7 @@ class InvoiceController extends Controller
      */
     public function index()
     {
-        $subscriptions = Invoice::with('register', 'subscription')->get();
+        $subscriptions = Invoice::with('register', 'subscription')->paginate(10);
         return new InvoiceCollection($subscriptions);
     }
 

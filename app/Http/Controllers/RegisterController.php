@@ -20,7 +20,7 @@ class RegisterController extends Controller
      */
     public function index()
     {
-        return new RegisterCollection(Register::with('subscriptions.invoice')->get());
+        return new RegisterCollection(Register::with('subscriptions.invoice')->paginate());
     }
 
     /**
