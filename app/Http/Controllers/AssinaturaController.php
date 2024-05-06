@@ -127,7 +127,7 @@ class AssinaturaController extends Controller
         if (!is_numeric($id)) return response()->json(['message' => 'O ID deve ser um número inteiro', 'code' => 400], 400);
 
         if ($this->validateEmptyField($request)) return response()->json([
-            'message' => 'os campos: codigo, vencimento, nome, email e telefone são obrigatórios',
+            'message' => 'os campos: cadastro, descricao, vencimento, nome, email e telefone são obrigatórios',
             'code' => 400
         ], 400);
 
