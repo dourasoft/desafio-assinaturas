@@ -28,10 +28,11 @@ class GenerateInvoicesTask extends Command
      */
     public function handle()
     {
-        $subscriptions = Subscription::with('register')->whereDate('due_date', now()->addDays(10))
+        $subscriptions = Subscription::with('register', 'invoice')
+            ->whereDate('due_date', '<=', now()->addDays(10))
             ->whereDoesntHave('invoice')
             ->get();
-        dd($subscriptions);
+
         foreach ($subscriptions as $subscription) {
             $invoice = new Invoice();
             $invoice->subscription_id = $subscription->id;
