@@ -1,0 +1,20 @@
+{
+    "name": "assinaturas",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "npm install && vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "axios": "^1.4.0",
+        "vue": "^3.4.26",
+        "vuetify": "^3.6.3"
+    },
+    "devDependencies": {
+        "@mdi/font": "^7.4.47",
+        "@vitejs/plugin-vue": "^4.2.3",
+        "vite": "^4.3.5"
+    }
+}
