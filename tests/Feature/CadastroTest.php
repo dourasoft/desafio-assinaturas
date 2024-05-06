@@ -32,8 +32,8 @@ class CadastroTest extends TestCase
     {
         $data = [
             "codigo" => "XYBBTT", // sending without code
-            "nome" => "usuario sera repetido",
-            "email" => "usuario@repetido.com",
+            "nome" => "ana maria",
+            "email" => "ana@hotmail.com",
             "telefone" => "82954666"
         ];
 

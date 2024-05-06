@@ -20,17 +20,17 @@
 							"formdata": [
 								{
 									"key": "codigo",
-									"value": "XHSTJYYT",
+									"value": "XHTAGFS",
 									"type": "text"
 								},
 								{
 									"key": "nome",
-									"value": "joana",
+									"value": "lucas montano",
 									"type": "text"
 								},
 								{
 									"key": "email",
-									"value": "emsail@host.com",
+									"value": "lucas@host.com",
 									"type": "text"
 								},
 								{
@@ -106,7 +106,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"codigo\": \"XYYYx\",\r\n    \"nome\": \"juca gomes\",\r\n    \"email\": \"deltan@semLanhou.com\",\r\n    \"telefone\": \"82954655\"\r\n}",
+							"raw": "{\r\n    \"codigo\": \"XYYYTT\",\r\n    \"nome\": \"deltan beltrão\",\r\n    \"email\": \"deltan@beltrao.com\",\r\n    \"telefone\": \"82954655\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -114,7 +114,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/cadastro/update/12",
+							"raw": "http://localhost:8000/api/cadastro/update/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -124,7 +124,7 @@
 								"api",
 								"cadastro",
 								"update",
-								"12"
+								"1"
 							]
 						}
 					},
@@ -136,7 +136,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/cadastro/delete/10",
+							"raw": "http://localhost:8000/api/cadastro/delete/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -146,7 +146,7 @@
 								"api",
 								"cadastro",
 								"delete",
-								"10"
+								"1"
 							]
 						}
 					},
@@ -167,7 +167,7 @@
 							"formdata": [
 								{
 									"key": "cadastro",
-									"value": "XHSTJYY",
+									"value": "XHTAGFS",
 									"description": "string | código infromado durante a criação de um cadastro",
 									"type": "text"
 								},
@@ -262,7 +262,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"cadastro\" : \"XHSTJ\",\r\n    \"descricao\" : \"mercado libre\",\r\n    \"valor\" : 15,\r\n    \"status\" : \"ativo\"\r\n}",
+							"raw": "{\r\n    \"cadastro\" : \"XHTAGFS\",\r\n    \"descricao\" : \"amazon prime\",\r\n    \"vencimento\" : \"2024-06-20 11:59:49\",\r\n    \"valor\" : 15,\r\n    \"status_fatura\" : \"emitido\"  // emitido ou aguardando\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -270,7 +270,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/assinatura/update/12",
+							"raw": "http://localhost:8000/api/assinatura/update/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -280,7 +280,7 @@
 								"api",
 								"assinatura",
 								"update",
-								"12"
+								"2"
 							]
 						}
 					},
@@ -323,13 +323,13 @@
 							"formdata": [
 								{
 									"key": "cadastro",
-									"value": "XHSTJYY",
+									"value": "XHTAGFS",
 									"description": "string | código infromado durante a criação de um cadastro",
 									"type": "text"
 								},
 								{
 									"key": "assinatura",
-									"value": "1",
+									"value": "8",
 									"description": "integer | id",
 									"type": "text"
 								},
@@ -425,7 +425,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"cadastro\" : \"XHSTJYY\",\r\n    \"assinatura\" : \"2\",\r\n    \"descricao\" : \"mercado libre\",\r\n    \"vencimento\" : \"2024-06-20 11:59:49\",\r\n    \"valor\" : 15,\r\n    \"status\" : \"pago\"\r\n}",
+							"raw": "{\r\n    \"cadastro\" : \"XHSTJYYTT\",\r\n    \"assinatura\" : \"2\",\r\n    \"descricao\" : \"mercado libre\",\r\n    \"vencimento\" : \"2024-06-20 11:59:49\",\r\n    \"valor\" : 15,\r\n    \"status\" : \"pago\" // pago ou pendente\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -472,6 +472,14 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
 		}
 	]
 }
