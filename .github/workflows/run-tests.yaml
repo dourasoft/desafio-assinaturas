@@ -2,7 +2,7 @@ on:
   push:
   workflow_call:
 
-name: TESTS
+name: RUN-TESTS
 
 jobs:
   tests-suite:
