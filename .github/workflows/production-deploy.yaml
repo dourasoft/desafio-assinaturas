@@ -4,7 +4,7 @@ name: PRODUCTION-DEPLOY
 
 jobs:
   tests:
-    uses: .github/workflows/run-tests.yaml
+    uses: pl-90/desafio-pedro-lucas/.github/workflows/run-tests.yaml@desafio-pedro-lucas
 
   production-deploy:
     runs-on: ubuntu-latest
