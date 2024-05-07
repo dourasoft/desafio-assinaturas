@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run Testsuite
-        uses: ./.github/actions/run-tests.yaml
+        uses: ./.github/actions/run-tests/
