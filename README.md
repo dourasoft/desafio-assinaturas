@@ -1,47 +1,49 @@
-# DouraSoft
+# Sobre
+Neste projeto optei por utilizar Repositories, Services e Controllers para deixar o projeto limpo e escalável. Para gerar as faturas, utilizei um command do laravel que permite rodar tanto manualmente, quanto com shchedule 1x ao dia, utilizei jobs assincronos para processar a criação das faturas.
 
-Desafio Assinaturas
+Acho importante ressaltar que em um projeto real, melhorias de performance podem ser feitas, utilizando um banco de dados em memoria, como redis ou memcached, a execução dos jobs também pode ser feita de forma a aproveitar melhor todos os cores do processador utilizando o supervisor para executar os workers por exemplo.
 
-Desenvolvimento de uma API para cobrar assinaturas de seus cadastros em **PHP** e **PostgreSQL**
+Abri mão de algumas práticas recomendadas, como por exemplo não versionar credenciais do .env para que a execução se torne mais fácil na hora de testar.
 
-## Deverá conter
-**Cadastros**: ID, Codigo, Nome, Email e Telefone
+## Rodando o Projeto
 
-**Assinaturas**: ID, Cadastro, Descrição, Valor
+### Com Docker:
 
-**Faturas**: ID, Cadastro, Assinatura, Descrição, Vencimento, Valor.
+1. Navegue até a pasta `backend`.
+2. Execute o seguinte comando no terminal:
 
-## Instruções 🌄
+`docker compose up -d`
 
-1. Faça um fork do projeto para sua conta pessoal
-2. Crie uma branch com o padrão: `desafio-seu-nome`
-3. Submeta seu código criando um Pull Request
-4. Estão faltando alguns campos propositalmente, você deve criá-los
+### Sem Docker:
 
-## Como o Sistema Deve Funcionar ⚙️
- - Deve possuir um CRUD Listagem/Inclusão/Edição/Exclusão de Cadastros
- - Deve possuir um CRUD Listagem/Inclusão/Edição/Exclusão de Assinaturas
- - Deve possuir um CRUD Listagem/Inclusão/Edição/Exclusão de Faturas
- - Deve possuir uma Task que verifica uma vez ao dia todas as assinaturas que vencem daqui a 10 dias e converta elas em faturas.
- - A Task não pode converter faturas já convertidas hoje.
- 
-## Você deve 🧯
-- Utilizar composer
-- Utilizar qualquer Framework PHP. Caso opte por não utilizar, desenvolver nos padrões de projeto MVC.
-- Utilizar o Postman para documentar a API. Exporte a documentação junto ao projeto na pasta docs.
+1. Instale as dependências com o Composer:
 
-## Não esqueça de 📆
-- Criar as Migrations
-- Criar os Seeds
+`composer install`
 
-## Pontos Extras ⏭️
-- Criar os casos de testes utilizando PHPUnit
-- Criar o frontend em um projeto separado com o framework de sua preferência.
+2. Execute as migrações do banco de dados:
 
-## Dúvidas ❓
+`php artisan migrate`
 
-Abra uma [issue](https://github.com/dourasoft/desafio-assinaturas/issues/new)
+3. Execute o seeder para popular o banco de dados:
 
-Ou envie um email para: **paulo@dourasoft.com.br**
+`php artisan db:seed`
 
-Boa sorte! 💪
+4. Inicie o worker para processar as filas:
+
+`php artisan queue:work --tries=3`
+
+5. Inicie o worker para executar os agendamentos:
+
+`php artisan schedule:work`
+
+## Testando o Projeto
+
+### Com Postman:
+
+- Importe a documentação da API contida na pasta `docs` para o Postman.
+
+### Com PHPUnit:
+
+- Execute o seguinte comando no terminal:
+
+`php artisan test`
