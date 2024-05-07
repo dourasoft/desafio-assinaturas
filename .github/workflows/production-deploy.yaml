@@ -1,15 +1,16 @@
 on:
   workflow_run:
-    workflows: ["Tests"]
+    workflows: ["TESTS"]
     types:
       - completed
 
-name: Production deploy
+name: PRODUCTION-DEPLOY
 
 jobs:
   production-deploy:
     runs-on: ubuntu-latest
 
-    - name: Echo test
-      run: |
-        echo "hello"
+    steps:
+      - name: Echo test
+        run: |
+          echo "hello"

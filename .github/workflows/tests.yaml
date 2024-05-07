@@ -1,6 +1,6 @@
 on: push
 
-name: Tests
+name: TESTS
 
 jobs:
   tests-suite:
