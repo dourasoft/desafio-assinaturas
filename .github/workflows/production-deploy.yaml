@@ -1,8 +1,4 @@
-on:
-  workflow_run:
-    workflows: ["TESTS"]
-    types:
-      - completed
+on: push
 
 name: PRODUCTION-DEPLOY
 
