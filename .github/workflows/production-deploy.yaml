@@ -5,10 +5,13 @@ name: PRODUCTION-DEPLOY
 jobs:
   production-deploy:
     runs-on: ubuntu-latest
-    container:
-      image: kirschbaumdevelopment/laravel-test-runner:8.2
 
     steps:
-      - name: Echo test
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Deploy to Production
         run: |
-          echo "hello"
+          ssh user@your-server "echo 'Deployment successful!'"
