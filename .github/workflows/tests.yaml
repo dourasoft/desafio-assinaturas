@@ -27,6 +27,10 @@ jobs:
     - name: Install composer dependencies
       run: |
         composer install --no-scripts
+
+    - name: Run migrations
+      run: |
+        php artisan migrate
  
     # - name: Run Testsuite
     #   run: vendor/bin/phpunit tests/
