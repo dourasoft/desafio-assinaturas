@@ -1,7 +1,9 @@
 on:
   push:
   workflow_call:
-  
+
+name: TESTS
+
 jobs:
   tests-suite:
     runs-on: ubuntu-latest
