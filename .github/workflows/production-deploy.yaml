@@ -3,7 +3,8 @@ on: push
 name: PRODUCTION-DEPLOY
 
 jobs:
-  uses: pl-90/desafio-pedro-lucas/.github/workflows/tests.yaml@desafio-pedro-lucas
+  tests:
+    uses: .github/workflows/run-tests.yaml
 
   production-deploy:
     runs-on: ubuntu-latest
