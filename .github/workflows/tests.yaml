@@ -1,7 +1,0 @@
-on: push
-
-name: TESTS
-
-jobs:
-  tests-suite:
-    uses: pl-90/desafio-pedro-lucas/.github/workflows/run-tests.yaml@desafio-pedro-lucas

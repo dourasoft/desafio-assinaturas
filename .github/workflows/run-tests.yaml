@@ -1,5 +1,7 @@
-on: workflow_call
-
+on:
+  push:
+  workflow_call:
+  
 jobs:
   tests-suite:
     runs-on: ubuntu-latest
