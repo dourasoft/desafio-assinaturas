@@ -3,10 +3,45 @@ on: push
 name: PRODUCTION-DEPLOY
 
 jobs:
+  tests-suite:
+    runs-on: ubuntu-latest
+    container:
+      image: kirschbaumdevelopment/laravel-test-runner:8.2
+
+    services:
+      postgres:
+        image: postgres:latest
+        env:
+          POSTGRES_USER: user
+          POSTGRES_PASSWORD: password
+          POSTGRES_DB: subscriptions
+        ports:
+          - 5432:5432
+        options: --health-cmd="pg_isready" --health-interval=10s --health-timeout=5s --health-retries=3
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+
+      - name: Install composer dependencies
+        run: |
+          composer install --no-scripts
+
+      - name: Run migrations
+        run: |
+          php artisan migrate
+
+      - name: Seed database
+        run: |
+          php artisan db:seed
+
+      - name: Run Testsuite
+        run: vendor/bin/phpunit tests/
+
   production-deploy:
     runs-on: ubuntu-latest
     needs: tests-suite
-    if: ${{ needs.tests-suite.result == 'success' }}
 
     steps:
       - name: Set up SSH
@@ -17,9 +52,3 @@ jobs:
       - name: Deploy to Production
         run: |
           ssh user@your-server "echo 'Deployment successful!'"
-  
-  dummy-job:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Dummy Step
-        run: echo "This is a dummy job, it has no actual purpose."
