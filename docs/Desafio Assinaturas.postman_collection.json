@@ -50,7 +50,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "http://127.0.0.1:8000/api/v1/registers/1/subscriptions/1/invoices/11",
+											"raw": "http://127.0.0.1:8000/api/v1/registers/11/subscriptions/1/invoices/1",
 											"protocol": "http",
 											"host": [
 												"127",
@@ -63,11 +63,11 @@
 												"api",
 												"v1",
 												"registers",
-												"1",
+												"11",
 												"subscriptions",
 												"1",
 												"invoices",
-												"11"
+												"1"
 											]
 										}
 									},
@@ -80,7 +80,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"register_id\": 11,\r\n    \"subscription_id\": 1,\r\n    \"description\": \"Invoice for Neque non voluptatem aut molestias consequuntur.\",\r\n    \"due_date\": \"1996-07-30\",\r\n    \"value\": \"107.71\"\r\n}",
+											"raw": "{\r\n    \"register_id\":11,\r\n    \"subscription_id\": 1,\r\n    \"description\": \"Invoice for Neque non voluptatem aut molestias consequuntur.\",\r\n    \"due_date\": \"1996-07-30\",\r\n    \"value\": \"107.71\"\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -88,7 +88,7 @@
 											}
 										},
 										"url": {
-											"raw": "http://127.0.0.1:8000/api/v1/registers/1/subscriptions/1/invoices",
+											"raw": "http://127.0.0.1:8000/api/v1/registers/11/subscriptions/1/invoices",
 											"protocol": "http",
 											"host": [
 												"127",
@@ -101,7 +101,7 @@
 												"api",
 												"v1",
 												"registers",
-												"1",
+												"11",
 												"subscriptions",
 												"1",
 												"invoices"
@@ -125,7 +125,7 @@
 											}
 										},
 										"url": {
-											"raw": "http://127.0.0.1:8000/api/v1/registers/1/subscriptions/1/invoices/1",
+											"raw": "http://127.0.0.1:8000/api/v1/registers/11/subscriptions/1/invoices/1",
 											"protocol": "http",
 											"host": [
 												"127",
@@ -138,7 +138,7 @@
 												"api",
 												"v1",
 												"registers",
-												"1",
+												"11",
 												"subscriptions",
 												"1",
 												"invoices",
@@ -154,7 +154,7 @@
 										"method": "DELETE",
 										"header": [],
 										"url": {
-											"raw": "http://127.0.0.1:8000/api/v1/registers/1/subscriptions/1/invoices/1",
+											"raw": "http://127.0.0.1:8000/api/v1/registers/11/subscriptions/1/invoices/1",
 											"protocol": "http",
 											"host": [
 												"127",
@@ -167,7 +167,7 @@
 												"api",
 												"v1",
 												"registers",
-												"1",
+												"11",
 												"subscriptions",
 												"1",
 												"invoices",

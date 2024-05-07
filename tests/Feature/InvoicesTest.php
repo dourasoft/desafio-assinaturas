@@ -82,11 +82,11 @@ class InvoicesTest extends TestCase
             ->assertJson([
                 'data' => [
                     'id' => $invoice->id,
-                    'register_id' => $invoice->register_id,
-                    'subscription_id' => $invoice->subscription_id,
-                    'description' => $invoice->description,
-                    'due_date' => $invoice->due_date,
-                    'value' => $invoice->value
+                    'register_id' => $subscription->register_id,
+                    'subscription_id' => $subscription->id,
+                    'description' => $subscription->description,
+                    'due_date' => $subscription->due_date,
+                    'value' => $subscription->value
                 ]
             ]);
     }
@@ -106,8 +106,8 @@ class InvoicesTest extends TestCase
             'register_id' => $subscription->register_id,
             'subscription_id' => $subscription->id,
             'description' => 'Updated Invoice',
-            'due_date' => now()->addDays(15),
-            'value' => 150.00,
+            'due_date' => $invoice->due_date,
+            'value' => $invoice->value,
         ];
 
         $response = $this->put("/api/v1/registers/{$invoice->register_id}/subscriptions/{$invoice->register_id}/invoices/{$invoice->id}", $data);

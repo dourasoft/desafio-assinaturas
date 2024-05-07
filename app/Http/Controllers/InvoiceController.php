@@ -12,6 +12,7 @@ use App\Models\Subscription;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\Translation\Exception\NotFoundResourceException;
 
 class InvoiceController extends Controller
 {
@@ -31,9 +32,17 @@ class InvoiceController extends Controller
      */
     public function store(StoreInvoiceRequest $request, Register $register, Subscription $subscription)
     {
-        $invoice = Invoice::create($request->validated());
-        $invoice->load('register', 'subscription');
-        return new InvoiceResource($invoice);
+
+        try {
+            if ($request->validated('register_id') != $register->id || $request->validated('subscription_id') != $subscription->id) {
+                throw new NotFoundHttpException('Subscription does not belong to the specified register.');
+            }
+            $invoice = Invoice::create($request->validated());
+            $invoice->load('register', 'subscription');
+            return new InvoiceResource($invoice);
+        } catch (NotFoundHttpException $th) {
+            return $this->errorResponse($th->getMessage(), Response::HTTP_NOT_FOUND);
+        }
     }
 
     /**
@@ -41,7 +50,16 @@ class InvoiceController extends Controller
      */
     public function show(Register $register, Subscription $subscription, Invoice $invoice)
     {
-        return new InvoiceResource($invoice->load('register', 'subscription'));
+        try {
+            $invoice = Invoice::with('register', 'subscription')->where('register_id', '=', $invoice->register_id)->where('subscription_id', '=', $invoice->subscription_id)->where('id', '=', $invoice->id)->first();
+
+            if ($invoice->register_id !== $register->id || $invoice->subscription_id !== $subscription->id) {
+                throw new NotFoundHttpException('Subscription does not belong to the specified register.');
+            }
+            return new InvoiceResource($invoice);
+        } catch (NotFoundHttpException $th) {
+            return $this->errorResponse($th->getMessage(), Response::HTTP_NOT_FOUND);
+        }
     }
 
     /**
@@ -49,9 +67,19 @@ class InvoiceController extends Controller
      */
     public function update(UpdateInvoiceRequest $request, Register $register, Subscription $subscription, Invoice $invoice)
     {
-        $invoice->fill($request->validated());
-        $invoice->save();
-        return new InvoiceResource($invoice->load('register', 'subscription'));
+
+        try {
+            $invoice = Invoice::where('register_id', '=', $invoice->register_id)->where('subscription_id', '=', $invoice->subscription_id)->where('id', '=', $invoice->id)->first();
+
+            if ($invoice->register_id !== $register->id || $invoice->subscription_id !== $subscription->id) {
+                throw new NotFoundHttpException('Subscription does not belong to the specified register.');
+            }
+            $invoice->fill($request->validated());
+            $invoice->save();
+            return new InvoiceResource($invoice->load('register', 'subscription'));
+        } catch (NotFoundHttpException $th) {
+            return $this->errorResponse($th->getMessage(), Response::HTTP_NOT_FOUND);
+        }
     }
 
     /**
@@ -60,9 +88,13 @@ class InvoiceController extends Controller
     public function destroy(Register $register, Subscription $subscription, Invoice $invoice)
     {
         try {
+            $invoice = Invoice::where('register_id', '=', $invoice->register_id)->where('subscription_id', '=', $invoice->subscription_id)->where('id', '=', $invoice->id)->first();
+            if ($invoice->register_id !== $register->id || $invoice->subscription_id !== $subscription->id) {
+                throw new NotFoundHttpException('Subscription does not belong to the specified register.');
+            }
             $invoice->deleteOrFail();
         } catch (NotFoundHttpException $th) {
-            return $this->errorResponse(Response::$statusTexts[Response::HTTP_NOT_FOUND], Response::HTTP_NOT_FOUND);
+            return $this->errorResponse($th->getMessage(), Response::HTTP_NOT_FOUND);
         }
         return response()->json(['data' => ["message" => "Invoice successfully deleted."]], Response::HTTP_OK);
     }
