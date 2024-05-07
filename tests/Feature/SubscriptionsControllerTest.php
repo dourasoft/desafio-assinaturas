@@ -110,4 +110,10 @@ class SubscriptionsControllerTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    #[Test]
+    public function it_will_fail()
+    {
+        $this->assertTrue(false);
+    }
 }
