@@ -4,7 +4,4 @@ name: TESTS
 
 jobs:
   tests-suite:
-    runs-on: ubuntu-latest
-
-    - name: Run Testsuite
-      uses: pl-90/desafio-pedro-lucas/.github/workflows/workflow-templates/run-tests.yaml@desafio-pedro-lucas
+    uses: pl-90/desafio-pedro-lucas/.github/workflows/workflow-templates/run-tests.yaml@desafio-pedro-lucas
