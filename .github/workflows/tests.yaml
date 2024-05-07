@@ -6,5 +6,7 @@ jobs:
   tests-suite:
     runs-on: ubuntu-latest
     steps:
-      - name: Run Testsuite
-        uses: ./actions/run-tests
+    - uses: actions/checkout@v2
+
+    - name: Run Testsuite
+      uses: ./actions/run-tests
