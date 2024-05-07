@@ -16,3 +16,9 @@ jobs:
       - name: Deploy to Production
         run: |
           ssh user@your-server "echo 'Deployment successful!'"
+  
+  dummy-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dummy Step
+        run: echo "This is a dummy job, it has no actual purpose."
