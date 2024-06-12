@@ -1,0 +1,24 @@
+{
+    "name": "dourasoft/desafio",
+    "description": "Desafio da dourasoft para a criação de um sistema de assinaturas",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Dourasoft\\Desafio\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Dourasoft"
+        },
+        {
+            "name": "Jhefferson Marques de Brito"
+        }
+    ],
+    "require": {
+        "php": ">=8.2",
+        "robmorgan/phinx": "^0.16.1",
+        "ext-pdo": "*"
+    }
+}

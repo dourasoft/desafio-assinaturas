@@ -1,0 +1,551 @@
+{
+	"info": {
+		"_postman_id": "e7e0e3d3-08a5-4a27-8fd8-1ab799378e85",
+		"name": "Desafio",
+		"description": "Documentação da API desenvolvida no desafio de PHP da Dourasoft",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36229357"
+	},
+	"item": [
+		{
+			"name": "Assinatura",
+			"item": [
+				{
+					"name": "getById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/src/api/assinatura/?method=getById&id=1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"src",
+								"api",
+								"assinatura",
+								""
+							],
+							"query": [
+								{
+									"key": "method",
+									"value": "getById",
+									"description": "Metodo a ser executado pelo controller"
+								},
+								{
+									"key": "id",
+									"value": "1",
+									"description": "Paramentro de ID correspondente ao método chamado"
+								}
+							]
+						},
+						"description": "Busca uma assinatura pelo id"
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/src/api/assinatura/?method=getAll",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"src",
+								"api",
+								"assinatura",
+								""
+							],
+							"query": [
+								{
+									"key": "method",
+									"value": "getAll",
+									"description": "Metodo a ser executado pelo controller"
+								}
+							]
+						},
+						"description": "Busca todas as assinaturas"
+					},
+					"response": []
+				},
+				{
+					"name": "insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cadastro_id\": 1,\r\n    \"descricao\": \"Assinatura do Plano XYZ\",\r\n    \"valor\": 300.00,\r\n    \"vencimento\": \"2024-06-30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/src/api/assinatura/?method=insert",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"src",
+								"api",
+								"assinatura",
+								""
+							],
+							"query": [
+								{
+									"key": "method",
+									"value": "insert"
+								}
+							]
+						},
+						"description": "Insere uma nova assinatura"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/src/api/assinatura/?method=delete",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"src",
+								"api",
+								"assinatura",
+								""
+							],
+							"query": [
+								{
+									"key": "method",
+									"value": "delete"
+								}
+							]
+						},
+						"description": "Remove a assinatura com o id especificado"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"cadastro_id\": 1,\r\n    \"descricao\": \"Assinatura do Plano ZYX\",\r\n    \"valor\": 100.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/src/api/assinatura/?method=update",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"src",
+								"api",
+								"assinatura",
+								""
+							],
+							"query": [
+								{
+									"key": "method",
+									"value": "update"
+								}
+							]
+						},
+						"description": "Atualiza os dados da assinatura existentes no id especificado"
+					},
+					"response": []
+				}
+			],
+			"description": "Metodos referentes a assinaturas"
+		},
+		{
+			"name": "Cadastro",
+			"item": [
+				{
+					"name": "getById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/src/api/cadastro/?method=getById&id=1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"src",
+								"api",
+								"cadastro",
+								""
+							],
+							"query": [
+								{
+									"key": "method",
+									"value": "getById",
+									"description": "Metodo a ser executado pelo controller"
+								},
+								{
+									"key": "id",
+									"value": "1",
+									"description": "Paramentro de ID correspondente ao método chamado"
+								}
+							]
+						},
+						"description": "Busca um cadastro pelo id"
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/src/api/cadastro/?method=getAll",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"src",
+								"api",
+								"cadastro",
+								""
+							],
+							"query": [
+								{
+									"key": "method",
+									"value": "getAll",
+									"description": "Metodo a ser executado pelo controller"
+								}
+							]
+						},
+						"description": "Busca todos os cadastros"
+					},
+					"response": []
+				},
+				{
+					"name": "insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Josué da Silva\",\r\n    \"email\": \"josuesilva2000@example.com\",\r\n    \"telefone\": \"67987653421\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/src/api/cadastro/?method=insert",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"src",
+								"api",
+								"cadastro",
+								""
+							],
+							"query": [
+								{
+									"key": "method",
+									"value": "insert"
+								}
+							]
+						},
+						"description": "Insere um novo cadastro"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/src/api/cadastro/?method=delete",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"src",
+								"api",
+								"cadastro",
+								""
+							],
+							"query": [
+								{
+									"key": "method",
+									"value": "delete"
+								}
+							]
+						},
+						"description": "Remove o cadastro com o id especificado"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"nome\": \"Josué Silveira\",\r\n    \"email\": \"josuesilveira1980@example.com\",\r\n    \"telefone\": \"67987654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/src/api/cadastro/?method=update",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"src",
+								"api",
+								"cadastro",
+								""
+							],
+							"query": [
+								{
+									"key": "method",
+									"value": "update"
+								}
+							]
+						},
+						"description": "Atualiza os dados de cadastro existentes no id especificado"
+					},
+					"response": []
+				}
+			],
+			"description": "Métodos referentes a cadastros"
+		},
+		{
+			"name": "Fatura",
+			"item": [
+				{
+					"name": "getById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/src/api/fatura/?method=getById&id=1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"src",
+								"api",
+								"fatura",
+								""
+							],
+							"query": [
+								{
+									"key": "method",
+									"value": "getById",
+									"description": "Metodo a ser executado pelo controller"
+								},
+								{
+									"key": "id",
+									"value": "1",
+									"description": "Paramentro de ID correspondente ao método chamado"
+								}
+							]
+						},
+						"description": "Busca uma fatura pelo id"
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/src/api/fatura/?method=getAll",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"src",
+								"api",
+								"fatura",
+								""
+							],
+							"query": [
+								{
+									"key": "method",
+									"value": "getAll",
+									"description": "Metodo a ser executado pelo controller"
+								}
+							]
+						},
+						"description": "Busca todas as faturas"
+					},
+					"response": []
+				},
+				{
+					"name": "insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cadastro_id\": 1,\r\n    \"assinatura_id\": 1,\r\n    \"vencimento\": \"2023-02-23\",\r\n    \"descricao\": \"Fatura referente ao Plano XYZ parcela Y\",\r\n    \"valor\": 300.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/src/api/fatura/?method=insert",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"src",
+								"api",
+								"fatura",
+								""
+							],
+							"query": [
+								{
+									"key": "method",
+									"value": "insert"
+								}
+							]
+						},
+						"description": "Insere uma nova fatura"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/src/api/fatura/?method=delete",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"src",
+								"api",
+								"fatura",
+								""
+							],
+							"query": [
+								{
+									"key": "method",
+									"value": "delete"
+								}
+							]
+						},
+						"description": "Remove a fatura com o id especificado"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"cadastro_id\": 1,\r\n    \"assinatura_id\": 1,\r\n    \"vencimento\": \"2023-02-23\",\r\n    \"descricao\": \"Fatura referente ao Plano XYZ parcela Y\",\r\n    \"valor\": 300.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/src/api/fatura/?method=update",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"src",
+								"api",
+								"fatura",
+								""
+							],
+							"query": [
+								{
+									"key": "method",
+									"value": "update"
+								}
+							]
+						},
+						"description": "Atualiza os dados da fatura existentes no id especificado"
+					},
+					"response": []
+				}
+			],
+			"description": "Métodos referentes a faturas"
+		}
+	]
+}
